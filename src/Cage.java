@@ -3,6 +3,7 @@
  */
 import java.util.Vector;
 import java.lang.Math;
+import Cell.Cell;
 
 public class Cage {
   private Cell[] array_of_habitat;
@@ -35,13 +36,95 @@ public class Cage {
   }
   public void AddAnimal(char animal, int i) {
     int pos_id = 0;
+    int x, y;
     do {
       pos_id = (int) Math.floor(Math.random() * size);
-      int x = array_of_habitat[pos_id].GetCellRow();
-      int y = array_of_habitat[pos_id].GetCellCol();
+      x = array_of_habitat[pos_id].GetCellRow();
+      y = array_of_habitat[pos_id].GetCellCol();
     } while (ContainAnimal(x, y));
     neff++;
-    array_of_animal[neff] = new Animal(x, y, i, animal);
+    switch(animal) {
+      case 'H' : {
+        array_of_animal[neff] = new Tiger(x, y, i);
+        break;
+      }
+      case 'B' : {
+        array_of_animal[neff] = new Panda(x, y, i);
+        break;
+      }
+      case 'A' : {
+        array_of_animal[neff] = new Anoa(x, y, i);
+        break;
+      }
+      case 'R' : {
+        array_of_animal[neff] = new Rhino(x, y, i);
+        break;
+      }
+      case 'D' : {
+        array_of_animal[neff] = new Kangaroo(x, y, i);
+        break;
+      }
+      case 'L' : {
+        array_of_animal[neff] = new Dolphin(x, y, i);
+        break;
+      }
+      case 'W' : {
+        array_of_animal[neff] = new Whale(x, y, i);
+        break;
+      }
+      case 'S' : {
+        array_of_animal[neff] = new Shark(x, y, i);
+        break;
+      }
+      case 'K' : {
+        array_of_animal[neff] = new Kelelawar(x, y, i);
+        break;
+      }
+      case 'E' : {
+        array_of_animal[neff] = new ElangB(x, y, i);
+        break;
+      }
+      case 'T' : {
+        array_of_animal[neff] = new Toucan(x, y, i);
+        break;
+      }
+      case 'P' : {
+        array_of_animal[neff] = new Penguin(x, y, i);
+        break;
+      }
+      case 'C' : {
+        array_of_animal[neff] = new Crocodile(x, y, i);
+        break;
+      }
+      case 'N' : {
+        array_of_animal[neff] = new Hippopotamus(x, y, i);
+        break;
+      }
+      case 'O' : {
+        array_of_animal[neff] = new Ostrich(x, y, i);
+        break;
+      }
+      case 'Y' : {
+        array_of_animal[neff] = new Kasuari(x, y, i);
+        break;
+      }
+      case 'I' : {
+        array_of_animal[neff] = new Kiwi(x, y, i);
+        break;
+      }
+      case 'F' : {
+        array_of_animal[neff] = new FlyingFish(x, y, i);
+        break;
+      }
+      case 'Z' : {
+        array_of_animal[neff] = new Pelikan(x, y, i);
+        break;
+      }
+      case 'M' : {
+        array_of_animal[neff] = new Cormorants(x, y, i);
+        break;
+      }
+    }
   }
   public boolean ContainAnimal(int x, int y) {
     boolean found = false;
