@@ -3,10 +3,8 @@
  */
 public class Cell {
   private char content;
-  private int cell_id_row;
-  private int cell_id_col;
-  private boolean entrance;
-  private boolean exit;
+  protected int cell_id_row;
+  protected int cell_id_col;
 
   public Cell() {
     content = '\0';
@@ -28,11 +26,12 @@ public class Cell {
     return cell_id_col;
   }
   public void SetTrueEntranceExit(int n) {
-    if (n == 0) {
-      entrance = true;
-    }
-    else if (n == 1) {
-      exit = true;
-    }
+    n = 0;
+  }
+  public boolean IsEntrance() {
+    return false;
+  }
+  public boolean IsExit() {
+    return false;
   }
 }
