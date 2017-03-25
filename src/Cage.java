@@ -4,6 +4,27 @@
 import java.util.Vector;
 import java.lang.Math;
 import Cell.Cell;
+import Animal.Animal;
+import Animal.turunananimal.binatang.Anoa;
+import Animal.turunananimal.binatang.Cormorants;
+import Animal.turunananimal.binatang.Crocodile;
+import Animal.turunananimal.binatang.Dolphin;
+import Animal.turunananimal.binatang.ElangB;
+import Animal.turunananimal.binatang.FlyingFish;
+import Animal.turunananimal.binatang.Hippopotamus;
+import Animal.turunananimal.binatang.Kangaroo;
+import Animal.turunananimal.binatang.Kasuari;
+import Animal.turunananimal.binatang.Kelelawar;
+import Animal.turunananimal.binatang.Kiwi;
+import Animal.turunananimal.binatang.Ostrich;
+import Animal.turunananimal.binatang.Panda;
+import Animal.turunananimal.binatang.Pelikan;
+import Animal.turunananimal.binatang.Penguin;
+import Animal.turunananimal.binatang.Rhino;
+import Animal.turunananimal.binatang.Shark;
+import Animal.turunananimal.binatang.Tiger;
+import Animal.turunananimal.binatang.Toucan;
+import Animal.turunananimal.binatang.Whale;
 
 public class Cage {
   private Cell[] array_of_habitat;
@@ -13,14 +34,14 @@ public class Cage {
 
   public Cage(Vector<Cell> buf) {
     size = buf.capacity();
-    array_of_habitat[] = new Cell[buf.capacity()];
+    array_of_habitat = new Cell[buf.capacity()];
     for (int i = 0; i < size; i++) {
-      array_of_habitat[i] = buf[i];
+      array_of_habitat[i] = buf.elementAt(i);
     }
     neff = -1;
     double temp_many_animal = 0.3 * size;
     int many_animal = (int) Math.floor(temp_many_animal);
-    array_of_animal[] = new Animal[many_animal];
+    array_of_animal = new Animal[many_animal];
   }
   public int GetSize() {
     return size;
