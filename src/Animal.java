@@ -1,24 +1,24 @@
-public class Animal {
-  private boolean is_tame;
-  private String interaction;
-  private int x;
-  private int y;
-  private char[] hab;
-  private char content;
-  private int cage_id;
-  private float my_weight;
-  private float how_much_i_eat;
-  private char what_i_eat;
-
-  //public abstract int GetSize();
-
-  //public abstract String Interact();
+public abstract class Animal {
+  protected boolean is_tame;
+  protected String interaction;
+  protected int x;
+  protected int y;
+  protected char[] hab;
+  protected char content;
+  protected int cage_id;
+  protected float my_weight;
+  protected float how_much_i_eat;
+  protected char what_i_eat;
 
   public Animal(int _x, int _y, int id) {
     x = _x;
     y = _y;
     cage_id = id;
   }
+
+  public abstract int GetSize();
+
+  public abstract String Interact();
 
   public boolean GetTame() {
     return is_tame;
