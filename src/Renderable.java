@@ -7,10 +7,10 @@ public class Renderable {
     int idx, animal_idx;
     for (i = 0; i < virtual_zoo.GetHeight(); i++) {
       for (j = 0; j < virtual_zoo.GetWidth(); j++) {
-        if (IsThereAnimal(virtual_zoo, i, j)) != -999) {
+        if ((IsThereAnimal(virtual_zoo, i, j)) != -999) {
           idx = IsThereAnimal(virtual_zoo, i, j);
           animal_idx = FindAnimal(virtual_zoo, idx, i, j);
-          System.out.println(virtual_zoo.GetCages()[idx].GetAnimal()[animal_idx].GetContent());
+          System.out.println(virtual_zoo.GetCages().elementAt(idx).GetAnimal()[animal_idx].GetContent());
         }
         else if (virtual_zoo.IsPlayer(i, j)) {
           System.out.println('P');
@@ -30,11 +30,12 @@ public class Renderable {
     int cage = -999;
     while ((i < virtual_zoo.GetCages().capacity()) && (!found)) {
       stop = false;
-      while ((j <=  virtual_zoo.GetCages()[i].GetNeff()) && (!found) && (!stop)) {
-        if (virtual_zoo.GetCages()[i].IsEmpty()) {
+      while ((j <=  virtual_zoo.GetCages().elementAt(i).GetNeff()) && (!found) && (!stop)) {
+        if (virtual_zoo.GetCages().elementAt(i).IsEmpty()) {
           stop = true;
         }
-        else if ((virtual_zoo.GetCages()[i].GetAnimal()[j].GetX() == x) && (virtual_zoo.GetCages()[i].GetAnimal()[j].GetY() == y)) {
+        else if ((virtual_zoo.GetCages().elementAt(i).GetAnimal()[j].GetX() == x)
+                && (virtual_zoo.GetCages().elementAt(i).GetAnimal()[j].GetY() == y)) {
           found = true;
           cage = i;
         }
@@ -49,8 +50,9 @@ public class Renderable {
   public int FindAnimal(Zoo virtual_zoo, int i, int x, int y) {
     int k = 0;
     boolean found = false;
-    while ((k < virtual_zoo.GetCages()[i].GetSize()) && (!found)) {
-      if ((virtual_zoo.GetCages()[i].GetAnimal()[k].GetX() == x) && (virtual_zoo.GetCages()[i].GetAnimal()[k].GetY() == y)) {
+    while ((k < virtual_zoo.GetCages().elementAt(i).GetSize()) && (!found)) {
+      if ((virtual_zoo.GetCages().elementAt(i).GetAnimal()[k].GetX() == x)
+              && (virtual_zoo.GetCages().elementAt(i).GetAnimal()[k].GetY() == y)) {
         found = true;
       }
       else {
