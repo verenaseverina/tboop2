@@ -23,23 +23,21 @@ public class Zoo {
 
   }
   public Cell[][] GetMap() {
-
+    return map;
   }
   public Vector<Cage> GetCages() {
-
+    return cages;
   }
   public int GetHeight() {
-
+    return height;
   }
   public int GetWidth() {
-
+    return width;
   }
-  public boolean IsHabitat(char c) {
-
+  public Cell GetPlayerPos() {
+    return playerpos;
   }
-  public boolean IsFacility(char c) {
 
-  }
   public void PutInAnimal() {
 
   }
@@ -56,15 +54,18 @@ public class Zoo {
 
   }
   public boolean Exit(Cell pos) {
-
+    return (pos.GetCellRow() == height-1 || pos.GetCellCol() == width-1);
   }
   public boolean IsPlayer(int i, int j) {
-
-  }
-  public boolean IsHabitat(char c) {
-
+    return (playerpos.GetCellRow() == i && playerpos.GetCellCol() == j);
   }
   public boolean IsRoad(Cell c) {
-    
+    return (c.GetCellContent() == '_');
+  }
+  public boolean IsHabitat(char c) {
+    return (c == '^' || c == '~' || c == '`');
+  }
+  public boolean IsFacility(char c) {
+    return (c == '#' || c == '_' || c == 'R');
   }
 }
