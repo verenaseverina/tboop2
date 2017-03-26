@@ -7,7 +7,7 @@ import Animal.Animal;
 public class Zoo {
   private Vector<Cage> cages;
   private Cell playerpos;
-  private Cell[][][] map;
+  private Cell[][] map;
   private int height;
   private int width;
 
@@ -121,7 +121,7 @@ public class Zoo {
       return(false);
     }
   }
-  public Cell[][][] GetMap() {
+  public Cell[][] GetMap() {
     return map;
   }
   public Vector<Cage> GetCages() {
