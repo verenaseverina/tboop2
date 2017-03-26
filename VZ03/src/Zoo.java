@@ -144,26 +144,40 @@ public class Zoo {
 
   }
   public void Tour() {
-	int i = playerpos.GetCellRow();
-	int j = playerpos.GetCellCol();
+    int i = playerpos.GetCellRow();
+    int j = playerpos.GetCellCol();
+    TourInteract(playerpos);
+    if(IsRoad(map[i][j+1])) {
+      Cell next = new Cell(i, j+1);
+      playerpos = next;
+    }
+    else if(IsRoad(map[i+1][j])) {
+      Cell next = new Cell(i+1, j);
+      playerpos = next;
+    }
+    else if(IsRoad(map[i-1][j])) {
+      Cell next = new Cell(i-1, j);
+      playerpos = next;
+    }
+    else if(IsRoad(map[i][j-1])) {
+      Cell next = new Cell(i, j-1);
+      playerpos = next;
+    }
   }
   public void TourInteract(Cell pos) {
-	if(pos.GetCellRow > 0) {
-	  int x = pos.GetCellRow()-1;
-	  int y = pos.GetCellCol();
-	  for(int k = 0; k < cages.size(); k++)
-	  {
-		if(cages[k].InsideCage(x,y))
-		{
-		  if(!cages[k].IsEmpty())
-		  {
-			System.out.print(cages[k].GetAnimal()[0].GetContent + ":");
-			System.out.println(cages[k].GetAnimal()[0].Interact());
-			System.out.print(cages[k].GetAnimal()[0].GiveFood());
-		  }			  
-		}			
-	  }
-	}
+    if(pos.GetCellRow > 0) {
+      int x = pos.GetCellRow()-1;
+      int y = pos.GetCellCol();
+      for(int k = 0; k < cages.size(); k++)
+      {
+        if(cages[k].InsideCage(x,y))  {
+          if(!cages[k].IsEmpty()) {
+            System.out.println(cages[k].GetAnimal()[0].GetContent + ":" + cages[k].GetAnimal()[0].Interact());
+            System.out.println(cages[k].GetAnimal()[0].GiveFood());
+          }			  
+        }			
+      }
+    }
   }
   public void RandomEntrance() {
     Vector<Cell> ent = new Vector<Cell>();
