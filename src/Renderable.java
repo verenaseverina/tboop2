@@ -10,17 +10,17 @@ public class Renderable {
         if ((SearchCageIndex(virtual_zoo, i, j)) != -999) {
           cage_idx = SearchCageIndex(virtual_zoo, i, j);
           animal_idx = SearchAnimalIndex(virtual_zoo, cage_idx, i, j);
-          System.out.println(virtual_zoo.GetCages().elementAt(cage_idx).GetAnimal()[animal_idx].GetContent());
+          System.out.printf("%c", virtual_zoo.GetCages().elementAt(cage_idx).GetAnimal()[animal_idx].GetContent());
         }
         else if (virtual_zoo.IsPlayer(i, j)) {
-          System.out.println('P');
+          System.out.printf("P");
         }
         else {
-            System.out.println(virtual_zoo.GetMap()[i][j].GetCellContent());
+            System.out.printf("%c", virtual_zoo.GetMap()[i][j].GetCellContent());
         }
       }
     }
-      System.out.println("\n");
+      System.out.printf("\n");
   }
 
   public int SearchCageIndex(Zoo virtual_zoo, int x, int y) {
