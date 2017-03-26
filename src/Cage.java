@@ -150,8 +150,10 @@ public class Cage {
   public boolean ContainAnimal(int x, int y) {
     boolean found = false;
     int i = 0;
+    double temp_many_animal = 0.3 * size;
+    int many_animal = (int) Math.floor(temp_many_animal);
     if(!IsEmpty()) {
-      while ((i < size) && (!found)) {
+      while ((i < many_animal) && (!found)) {
         if ((x == array_of_animal[i].GetX()) && (y == array_of_animal[i].GetY())) {
           found = true;
         }
