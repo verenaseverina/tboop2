@@ -29,22 +29,22 @@ import Animal.turunananimal.binatang.Whale;
 public class Cage {
   private Cell[] array_of_habitat;
   private Animal[] array_of_animal;
-  private int size;
-  private int neff;
+  private int cage_size;
+  private int animal_neff;
 
   public Cage(Vector<Cell> buf) {
-    size = buf.capacity();
+    cage_size = buf.capacity();
     array_of_habitat = new Cell[buf.capacity()];
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < cage_size; i++) {
       array_of_habitat[i] = buf.elementAt(i);
     }
-    neff = -1;
-    double temp_many_animal = 0.3 * size;
+    animal_neff = -1;
+    double temp_many_animal = 0.3 * cage_size;
     int many_animal = (int) Math.floor(temp_many_animal);
     array_of_animal = new Animal[many_animal];
   }
-  public int GetSize() {
-    return size;
+  public int GetCageSize() {
+    return cage_size;
   }
   public Animal[] GetAnimal() {
     return array_of_animal;
@@ -53,96 +53,96 @@ public class Cage {
     return array_of_habitat;
   }
   public int GetNeff() {
-    return neff;
+    return animal_neff;
   }
   public void AddAnimal(char animal, int i) {
     int pos_id = 0;
     int x, y;
     do {
-      pos_id = (int) Math.floor(Math.random() * size);
+      pos_id = (int) Math.floor(Math.random() * cage_size);
       x = array_of_habitat[pos_id].GetCellRow();
       y = array_of_habitat[pos_id].GetCellCol();
     } while (ContainAnimal(x, y));
-    neff++;
+    animal_neff++;
     switch(animal) {
       case 'H' : {
-        array_of_animal[neff] = new Tiger(x, y, i);
+        array_of_animal[animal_neff] = new Tiger(x, y, i);
         break;
       }
       case 'B' : {
-        array_of_animal[neff] = new Panda(x, y, i);
+        array_of_animal[animal_neff] = new Panda(x, y, i);
         break;
       }
       case 'A' : {
-        array_of_animal[neff] = new Anoa(x, y, i);
+        array_of_animal[animal_neff] = new Anoa(x, y, i);
         break;
       }
       case 'R' : {
-        array_of_animal[neff] = new Rhino(x, y, i);
+        array_of_animal[animal_neff] = new Rhino(x, y, i);
         break;
       }
       case 'D' : {
-        array_of_animal[neff] = new Kangaroo(x, y, i);
+        array_of_animal[animal_neff] = new Kangaroo(x, y, i);
         break;
       }
       case 'L' : {
-        array_of_animal[neff] = new Dolphin(x, y, i);
+        array_of_animal[animal_neff] = new Dolphin(x, y, i);
         break;
       }
       case 'W' : {
-        array_of_animal[neff] = new Whale(x, y, i);
+        array_of_animal[animal_neff] = new Whale(x, y, i);
         break;
       }
       case 'S' : {
-        array_of_animal[neff] = new Shark(x, y, i);
+        array_of_animal[animal_neff] = new Shark(x, y, i);
         break;
       }
       case 'K' : {
-        array_of_animal[neff] = new Kelelawar(x, y, i);
+        array_of_animal[animal_neff] = new Kelelawar(x, y, i);
         break;
       }
       case 'E' : {
-        array_of_animal[neff] = new ElangB(x, y, i);
+        array_of_animal[animal_neff] = new ElangB(x, y, i);
         break;
       }
       case 'T' : {
-        array_of_animal[neff] = new Toucan(x, y, i);
+        array_of_animal[animal_neff] = new Toucan(x, y, i);
         break;
       }
       case 'P' : {
-        array_of_animal[neff] = new Penguin(x, y, i);
+        array_of_animal[animal_neff] = new Penguin(x, y, i);
         break;
       }
       case 'C' : {
-        array_of_animal[neff] = new Crocodile(x, y, i);
+        array_of_animal[animal_neff] = new Crocodile(x, y, i);
         break;
       }
       case 'N' : {
-        array_of_animal[neff] = new Hippopotamus(x, y, i);
+        array_of_animal[animal_neff] = new Hippopotamus(x, y, i);
         break;
       }
       case 'O' : {
-        array_of_animal[neff] = new Ostrich(x, y, i);
+        array_of_animal[animal_neff] = new Ostrich(x, y, i);
         break;
       }
       case 'Y' : {
-        array_of_animal[neff] = new Kasuari(x, y, i);
+        array_of_animal[animal_neff] = new Kasuari(x, y, i);
         break;
       }
       case 'I' : {
-        array_of_animal[neff] = new Kiwi(x, y, i);
+        array_of_animal[animal_neff] = new Kiwi(x, y, i);
         break;
       }
       case 'F' : {
-        array_of_animal[neff] = new FlyingFish(x, y, i);
+        array_of_animal[animal_neff] = new FlyingFish(x, y, i);
         break;
       }
       case 'Z' : {
-        array_of_animal[neff] = new Pelikan(x, y, i);
+        array_of_animal[animal_neff] = new Pelikan(x, y, i);
         break;
       }
       case 'M' : {
-        array_of_animal[neff] = new Cormorants(x, y, i);
+        array_of_animal[animal_neff] = new Cormorants(x, y, i);
         break;
       }
     }
@@ -150,7 +150,7 @@ public class Cage {
   public boolean ContainAnimal(int x, int y) {
     boolean found = false;
     int i = 0;
-    double temp_many_animal = 0.3 * size;
+    double temp_many_animal = 0.3 * cage_size;
     int many_animal = (int) Math.floor(temp_many_animal);
     if(!IsEmpty()) {
       while ((i < many_animal) && (!found)) {
@@ -165,9 +165,11 @@ public class Cage {
     return found;
   }
   public boolean IsEmpty() {
-    return (neff == -1);
+    return (animal_neff == -1);
   }
   public boolean IsFull() {
-    return (size == neff);
+    double temp_many_animal = 0.3 * cage_size;
+    int many_animal = (int) Math.floor(temp_many_animal);
+    return (many_animal == animal_neff);
   }
 }
