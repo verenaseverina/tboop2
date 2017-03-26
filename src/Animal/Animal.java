@@ -18,9 +18,9 @@ public abstract class Animal {
     cage_id = id;
   }
 
-  public abstract int GetSize();
-
   public abstract String Interact();
+
+  public abstract int GetSize();
 
   public boolean GetTame() {
     return is_tame;

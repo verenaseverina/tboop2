@@ -56,12 +56,12 @@ public class Cage {
     return animal_neff;
   }
   public void AddAnimal(char animal, int i) {
-    int pos_id = 0;
+    int position_index = 0;
     int x, y;
     do {
-      pos_id = (int) Math.floor(Math.random() * cage_size);
-      x = array_of_habitat[pos_id].GetCellRow();
-      y = array_of_habitat[pos_id].GetCellCol();
+      position_index = (int) Math.floor(Math.random() * cage_size);
+      x = array_of_habitat[position_index].GetCellRow();
+      y = array_of_habitat[position_index].GetCellCol();
     } while (ContainAnimal(x, y));
     animal_neff++;
     switch(animal) {
