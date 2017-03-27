@@ -42,11 +42,11 @@ public class State {
           height = (10 * height) + s_height;
           i++;
         }
-        i=i+2;
+        i=i+3;
         
         int s_width;
         width=0;
-        while(string_buffer_map.charAt(i) != '\n') {
+        while(Character.getNumericValue(string_buffer_map.charAt(i)) != -1) { //For some reason numeric value always returns -1 at the end of line
           s_width=Character.getNumericValue(string_buffer_map.charAt(i));
           width = (10 * width) + s_width;
           i++;
@@ -181,7 +181,9 @@ public class State {
   }
 
 
-  public int GetHeight() { return height; }
+  public int GetHeight() {
+    return height;
+  }
 
 
   public int GetWidth() {
