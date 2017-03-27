@@ -69,4 +69,70 @@ public class Cage {
     int many_animal = (int) Math.floor(temp_many_animal);
     return (many_animal == animal_neff);
   }
+  public boolean InsideCage(int x, int y) {
+    int i = 0;
+    boolean found = false;
+    while(!found && i < cage_size) {
+      if(x == array_of_habitat[i].GetCellRow() && y == array_of_habitat[i].GetCellCol()) {
+        found = true;
+      }
+      else {
+        i++;
+      }
+    }
+    return found;
+  }
+  public void UpdatePosition() {
+    for(int i=0; i<=animal_neff; i++) {
+      boolean found = false;
+      int j = 1;
+      while(!found) {
+        switch(j) {
+          case 1:
+            for (int k = 0; k <= animal_neff; k++) {
+              int y = array_of_animal[i].GetY()-1;
+              if (y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
+                array_of_animal[i].Move(1);
+                found = true;
+              }
+            }
+            j++;
+            break;
+          case 2:
+            for (int k = 0; k <= animal_neff; k++) {
+              int x = array_of_animal[i].GetX()+1;
+              if (x != array_of_animal[k].GetX() && InsideCage(x,array_of_animal[i].GetY())) {
+                array_of_animal[i].Move(2);
+                found = true;
+              }
+            }
+            j++;
+            break;
+          case 3:
+            for (int k = 0; k <= animal_neff; k++) {
+              int y = array_of_animal[i].GetY()+1;
+              if (y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
+                array_of_animal[i].Move(3);
+                found = true;
+              }
+            }
+            j++;
+            break;
+          case 4:
+            for (int k = 0; k <= animal_neff; k++) {
+              int x = array_of_animal[i].GetX()-1;
+              if (x != array_of_animal[k].GetX() && InsideCage(x,array_of_animal[i].GetY())) {
+                array_of_animal[i].Move(4);
+                found = true;
+              }
+            }
+            j++;
+            break;
+          default:
+            found = true;
+            break;
+        }
+      }
+    }
+  }
 }
