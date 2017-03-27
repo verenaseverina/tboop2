@@ -187,87 +187,73 @@ public class Zoo {
 
     switch (input_user) {
       case 'H': {
-        Tiger H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Tiger H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'B': {
-        Panda H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Panda H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'A': {
-        Anoa H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Anoa H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'R': {
-        Rhino H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Rhino H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'D': {
-        Kangaroo H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Kangaroo H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'L': {
-        Dolphin H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Dolphin H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'W': {
-        Whale H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Whale H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'S': {
-        Shark H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Shark H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'K': {
-        Kelelawar H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Kelelawar H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'E': {
-        ElangB H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        ElangB H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'T': {
-        Toucan H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Toucan H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'P': {
-        Penguin H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Penguin H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'C': {
-        Crocodile H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Crocodile H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
       case 'N': {
-        Hippopotamus H
-        (-1,-1,-1);
-            CheckCage(arr, H);
+        Hippopotamus H(-1,-1,-1);
+        CheckCage(arr, H);
         break;
       }
     }
