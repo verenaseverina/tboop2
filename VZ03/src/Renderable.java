@@ -28,7 +28,7 @@ public class Renderable {
     int j = 0;
     boolean found = false, stop;
     int cage = -999;
-    while ((i < virtual_zoo.GetCages().capacity()) && (!found)) {
+    while ((i < virtual_zoo.GetCages().size()) && (!found)) {
       stop = false;
       while ((j <=  virtual_zoo.GetCages().elementAt(i).GetNeff()) && (!found) && (!stop)) {
         if (virtual_zoo.GetCages().elementAt(i).IsEmpty()) {
