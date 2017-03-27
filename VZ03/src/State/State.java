@@ -2,7 +2,8 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,53 +26,57 @@ public class State {
   }
  */
   public State() {
-    BufferedReader buffer_map;
-    buffer_map = new BufferedReader(new FileReader("src/map.txt"));
     try {
-      StringBuilder string_builder_map = new StringBuilder();
-      String line = buffer_map.readLine();
-     
-      while (line != null) {
-        string_builder_map.append(line);
-        string_builder_map.append(System.lineSeparator());
-        line = buffer_map.readLine();
-      }
-      String string_buffer_map;
-      string_buffer_map = string_builder_map.toString();
-      //System.out.printf(string_buffer_map);
-      
-      int i = 0;
-      int s_height;
-      height=0;
-      while(string_buffer_map.charAt(i) != ' ') {
-        s_height=Character.getNumericValue(string_buffer_map.charAt(i));
-        height = (10 * height) + s_height;
-        i++;
-      }
-      i=i+2;
-      
-      int s_width;
-      width=0;
-      while(string_buffer_map.charAt(i) != '\n') {
-        s_width=Character.getNumericValue(string_buffer_map.charAt(i));
-        width = (10 * width) + s_width;
-        i++;
-      }
-      
-      int k = 0, l = 0;
-      map = new char [height][width];
-      while (string_buffer_map.charAt(i) != '\0') {
-        if (string_buffer_map.charAt(i) !='\n') {
-          map[k][l] = string_buffer_map.charAt(i);
-          l++;
+      BufferedReader buffer_map;
+      buffer_map = new BufferedReader(new FileReader("src/map.txt"));
+      try {
+        StringBuilder string_builder_map = new StringBuilder();
+        String line = buffer_map.readLine();
+        
+        while (line != null) {
+          string_builder_map.append(line);
+          string_builder_map.append(System.lineSeparator());
+          line = buffer_map.readLine();
         }
-        else {
-          k++;
+        String string_buffer_map;
+        string_buffer_map = string_builder_map.toString();
+        //System.out.printf(string_buffer_map);
+        
+        int i = 0;
+        int s_height;
+        height=0;
+        while(string_buffer_map.charAt(i) != ' ') {
+          s_height=Character.getNumericValue(string_buffer_map.charAt(i));
+          height = (10 * height) + s_height;
+          i++;
         }
+        i=i+2;
+        
+        int s_width;
+        width=0;
+        while(string_buffer_map.charAt(i) != '\n') {
+          s_width=Character.getNumericValue(string_buffer_map.charAt(i));
+          width = (10 * width) + s_width;
+          i++;
+        }
+        
+        int k = 0, l = 0;
+        map = new char [height][width];
+        while (string_buffer_map.charAt(i) != '\0') {
+          if (string_buffer_map.charAt(i) !='\n') {
+            map[k][l] = string_buffer_map.charAt(i);
+            l++;
+          }
+          else {
+            k++;
+          }
+        }
+        buffer_map.close();
+      } catch(Exception E) {
+        MakeDefaultMap();
       }
-      buffer_map.close();
-    } catch(Exception E) {
-      MakeDefaultMap();  
+    } catch(FileNotFoundException ex) {
+      Logger.getLogger(State.class.getName()).log(Level.SEVERE, null, ex);  
     }
   }
   
