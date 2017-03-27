@@ -1,6 +1,7 @@
 package State;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.logging.Level;
@@ -19,7 +20,7 @@ public class State {
   public State() {
     try {
       BufferedReader buffer_map;
-      buffer_map = new BufferedReader(new FileReader("src/map.txt"));
+      buffer_map = new BufferedReader(new FileReader("VZ03/src/State/map.txt"));
       try {
         StringBuilder string_builder_map = new StringBuilder();
         String line = buffer_map.readLine();
@@ -180,9 +181,7 @@ public class State {
   }
 
 
-  public int GetHeight() {
-    return height;
-  }
+  public int GetHeight() { return height; }
 
 
   public int GetWidth() {

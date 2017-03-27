@@ -384,4 +384,9 @@ public class Zoo {
   public boolean IsFacility(char c) {
     return (c == '#' || c == '_' || c == 'R');
   }
+
+  public static void main(String args[]) {
+    Zoo z = new Zoo();
+    System.out.println("Virtual zoo");
+  }
 }
