@@ -3,7 +3,7 @@
  */
 import java.util.Vector;
 import java.lang.Math;
-import Cell.Cell;
+import Cell.turunancell.Habitat;
 import Animal.Animal;
 import Animal.turunananimal.binatang.Anoa;
 import Animal.turunananimal.binatang.Cormorants;
@@ -27,14 +27,14 @@ import Animal.turunananimal.binatang.Toucan;
 import Animal.turunananimal.binatang.Whale;
 
 public class Cage {
-  private Cell[] array_of_habitat;
+  private Habitat[] array_of_habitat;
   private Animal[] array_of_animal;
   private int cage_size;
   private int animal_neff;
 
-  public Cage(Vector<Cell> buf) {
-    cage_size = buf.capacity();
-    array_of_habitat = new Cell[buf.capacity()];
+  public Cage(Vector<Habitat> buf) {
+    cage_size = buf.size();
+    array_of_habitat = new Habitat[buf.size()];
     for (int i = 0; i < cage_size; i++) {
       array_of_habitat[i] = buf.elementAt(i);
     }
@@ -49,7 +49,7 @@ public class Cage {
   public Animal[] GetAnimal() {
     return array_of_animal;
   }
-  public Cell[] GetHabitat() {
+  public Habitat[] GetHabitat() {
     return array_of_habitat;
   }
   public int GetNeff() {
