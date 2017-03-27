@@ -13,6 +13,7 @@ public class Animal {
   private boolean is_tame;
   private char[] array_of_habitat;
   private int size_of_habitat;
+  private String type;
 
   public Animal(int _x, int _y, int id,char con) {
     x = _x;
@@ -31,6 +32,7 @@ public class Animal {
         how_much_i_eat = 7.23f * my_weight / 100f;
         what_i_eat = 'c';
         is_tame = false;
+        type = "LandAnimal";
         break;
       }
       case 'B': {
@@ -43,6 +45,7 @@ public class Animal {
         how_much_i_eat = 38f * my_weight / 100f;
         what_i_eat = 'h';
         is_tame = true;
+        type = "LandAnimal";
         break;
       }
       case 'A': {
@@ -55,6 +58,7 @@ public class Animal {
         how_much_i_eat = 5f * my_weight / 100f;
         what_i_eat = 'h';
         is_tame = true;
+        type = "LandAnimal";
         break;
       }
       case 'R': {
@@ -67,6 +71,7 @@ public class Animal {
         how_much_i_eat = 7.23f * my_weight / 100f;
         what_i_eat = 'h';
         is_tame = false;
+        type = "LandAnimal";
         break;
       }
       case 'D': {
@@ -79,6 +84,7 @@ public class Animal {
         how_much_i_eat = 0.35f * my_weight / 100f;
         what_i_eat = 'h';
         is_tame = true;
+        type = "LandAnimal";
         break;
       }
       case 'L': {
@@ -91,6 +97,7 @@ public class Animal {
         how_much_i_eat = 2f * my_weight / 20f;
         what_i_eat = 'c';
         is_tame = true;
+        type = "WaterAnimal";
         break;
       }
       case 'W': {
@@ -103,6 +110,7 @@ public class Animal {
         how_much_i_eat = 0.667f * my_weight;
         what_i_eat = 'c';
         is_tame = true;
+        type = "WaterAnimal";
         break;
       }
       case 'S': {
@@ -115,6 +123,7 @@ public class Animal {
         how_much_i_eat = 0.0667f * my_weight;
         what_i_eat = 'c';
         is_tame = false;
+        type = "WaterAnimal";
         break;
       }
       case 'K': {
@@ -127,6 +136,7 @@ public class Animal {
         how_much_i_eat = my_weight;
         what_i_eat = 'o';
         is_tame = true;
+        type = "AirAnimal";
         break;
       }
       case 'E': {
@@ -139,6 +149,7 @@ public class Animal {
         how_much_i_eat = 0.4535f * my_weight / 4f;
         what_i_eat = 'c';
         is_tame = true;
+        type = "AirAnimal";
         break;
       }
       case 'T': {
@@ -151,6 +162,7 @@ public class Animal {
         how_much_i_eat = 0.5f * my_weight / 100f;
         what_i_eat = 'o';
         is_tame = true;
+        type = "AirAnimal";
         break;
       }
       case 'P': {
@@ -164,6 +176,7 @@ public class Animal {
         how_much_i_eat = 0.9f * my_weight / 27f;
         what_i_eat = 'c';
         is_tame = true;
+        type = "LWAnimal";
         break;
       }
       case 'C': {
@@ -177,6 +190,7 @@ public class Animal {
         how_much_i_eat = 2f * my_weight / 700f;
         what_i_eat = 'c';
         is_tame = false;
+        type = "LWAnimal";
         break;
       }
       case 'N': {
@@ -190,6 +204,7 @@ public class Animal {
         how_much_i_eat = 40f * my_weight / 2400f;
         what_i_eat = 'h';
         is_tame = true;
+        type = "LWAnimal";
         break;
       }
       case 'M': {
@@ -203,6 +218,7 @@ public class Animal {
         how_much_i_eat = 10f * my_weight / 100f;
         what_i_eat = 'c';
         is_tame = true;
+        type = "WAAnimal";
         break;
       }
       case 'F': {
@@ -216,6 +232,7 @@ public class Animal {
         how_much_i_eat = 5f * my_weight / 100f;
         what_i_eat = 'o';
         is_tame = true;
+        type = "WAAnimal";
         break;
       }
       case 'Y': {
@@ -229,6 +246,7 @@ public class Animal {
         how_much_i_eat = 5f * my_weight / 100f;
         what_i_eat = 'o';
         is_tame = true;
+        type = "LAAnimal";
         break;
       }
       case 'I': {
@@ -242,6 +260,7 @@ public class Animal {
         how_much_i_eat = 5f * my_weight / 100f;
         what_i_eat = 'o';
         is_tame = true;
+        type = "LAAnimal";
         break;
       }
       case 'O': {
@@ -255,6 +274,7 @@ public class Animal {
         how_much_i_eat = 5f * my_weight / 100f;
         what_i_eat = 'o';
         is_tame = true;
+        type = "LAAnimal";
         break;
       }
       case 'Z': {
@@ -268,6 +288,7 @@ public class Animal {
         how_much_i_eat = 26.67f * my_weight / 100f;
         what_i_eat = 'c';
         is_tame = true;
+        type = "WAAnimal";
         break;
       }
     }
@@ -336,5 +357,8 @@ public class Animal {
         break;
       }
     }
+  }
+  public void GiveFood() {
+    System.out.println("Animal makan sebanyak" + how_much_i_eat + " kg\n");
   }
 }
