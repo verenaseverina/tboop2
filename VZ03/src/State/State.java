@@ -1,7 +1,6 @@
 package State;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.logging.Level;
@@ -11,23 +10,17 @@ public class State {
   private char[][] map;
   private int width;
   private int height;
-
-  /*
-  public static void main(String[] args){
-    
-  }
- */
+  
   public State() {
     try {
       BufferedReader buffer_map;
-      buffer_map = new BufferedReader(new FileReader("VZ03/src/State/map.txt"));
+      buffer_map = new BufferedReader(new FileReader("src/map.txt"));
       try {
         StringBuilder string_builder_map = new StringBuilder();
         String line = buffer_map.readLine();
         
         while (line != null) {
           string_builder_map.append(line);
-          string_builder_map.append(System.lineSeparator());
           line = buffer_map.readLine();
         }
         String string_buffer_map;
@@ -46,7 +39,7 @@ public class State {
         
         int s_width;
         width=0;
-        while(Character.getNumericValue(string_buffer_map.charAt(i)) != -1) { //For some reason numeric value always returns -1 at the end of line
+        while(string_buffer_map.charAt(i) <= '9' && string_buffer_map.charAt(i) >= '0') {
           s_width=Character.getNumericValue(string_buffer_map.charAt(i));
           width = (10 * width) + s_width;
           i++;
@@ -54,13 +47,17 @@ public class State {
         
         int k = 0, l = 0;
         map = new char [height][width];
-        while (string_buffer_map.charAt(i) != '\0') {
-          if (string_buffer_map.charAt(i) !='\n') {
+        //char[] temp_string_char = string_buffer_map.toCharArray();
+        int length = string_buffer_map.length();
+        while (i < length) {
+          if (l < width) {
             map[k][l] = string_buffer_map.charAt(i);
             l++;
+            i++;
           }
           else {
             k++;
+            l=0;
           }
         }
         buffer_map.close();
