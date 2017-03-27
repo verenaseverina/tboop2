@@ -24,7 +24,7 @@ public class State {
     
   }
  */
-  public State() throws FileNotFoundException, IOException {
+  public State() {
     BufferedReader buffer_map;
     buffer_map = new BufferedReader(new FileReader("src/map.txt"));
     try {
@@ -68,9 +68,10 @@ public class State {
         else {
           k++;
         }
-      }   
-    } finally {
-        buffer_map.close();
+      }
+      buffer_map.close();
+    } catch(Exception E) {
+      MakeDefaultMap();  
     }
   }
   
