@@ -74,7 +74,8 @@ public class Zoo {
         if (IsHabitat(smap[i][j])) {
           boolean recorded = false;
           int x = 0;
-          while ((!recorded) && (x < cage_buffer.size())) {
+          while ((!recorded) && (x < cage_buffer.capacity())) {
+
             recorded = InCage(cage_buffer.get(x), map[i][j]);
             x++;
           }
@@ -86,6 +87,7 @@ public class Zoo {
         }
       }
     }
+
     for (int i = 0; i < cage_buffer.size(); i++) {
       Cage cgbuf = new Cage(cage_buffer.get(i));
       cages.add(cgbuf);
@@ -387,6 +389,8 @@ public class Zoo {
 
   public static void main(String args[]) {
     Zoo z = new Zoo();
-    System.out.println("Virtual zoo");
+    //Renderable r = new Renderable();
+    //r.Render(z);
+    //System.out.println(z.GetCages().get(0).GetCageSize());
   }
 }
