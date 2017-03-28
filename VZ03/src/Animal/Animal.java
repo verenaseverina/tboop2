@@ -5,7 +5,7 @@ public abstract class Animal {
   protected String interaction;
   protected int x;
   protected int y;
-  protected char[] hab;
+  protected char[] array_of_habitat;
   protected char content;
   protected int cage_id;
   protected float my_weight;
@@ -18,7 +18,7 @@ public abstract class Animal {
     cage_id = id;
   }
 
-  public abstract String Interact();
+  public abstract String GetInteract();
 
   public abstract int GetSize();
 
@@ -34,8 +34,8 @@ public abstract class Animal {
     return x;
   }
 
-  public char[] GetHab() {
-    return hab;
+  public char[] GetArrayOfHabitat() {
+    return array_of_habitat;
   }
 
   public char GetContent() {
@@ -43,7 +43,7 @@ public abstract class Animal {
   }
 
   public void GiveFood() {
-    System.out.println("Animal makan sebanyak" + how_much_i_eat + " kg\n");
+    System.out.println("Animal makan ANisebanyak" + how_much_i_eat + " kg\n");
   }
 
   public void Move(int dir) {
