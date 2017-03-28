@@ -64,6 +64,9 @@ public abstract class Animal {
         absis -= 1;
         break;
       }
+      default: {
+        break;
+      }
     }
   }
 }
