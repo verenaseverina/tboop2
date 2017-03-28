@@ -6,9 +6,9 @@ public abstract class LWAnimal extends Animal {
 
   public LWAnimal(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
-    array_of_habitat = new char[size];
-    array_of_habitat[0] = '^';
-    array_of_habitat[1] = '~';
+    arrayOfHabitat = new char[size];
+    arrayOfHabitat[0] = '^';
+    arrayOfHabitat[1] = '~';
   }
 
   public abstract String getInteract();
