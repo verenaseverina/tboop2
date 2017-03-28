@@ -12,7 +12,7 @@ public class State {
   public State() {
     //BufferedReader buffer_map;
     // buffer_map = new BufferedReader(new FileReader("src/map.txt"));
-    try (BufferedReader buffer_map = new BufferedReader(new FileReader("src/map.txt"))) {
+    try (BufferedReader buffer_map = new BufferedReader(new FileReader("VZ03/src/map.txt"))) {
       StringBuilder string_builder_map = new StringBuilder();
       String line = buffer_map.readLine();
 

@@ -305,6 +305,13 @@ public class Zoo {
   }
 
   public void CheckCage(boolean arr[], Animal animal) {
+    for(int i = 0;i < cages.size();i++) {
+      for(int j = 0;j < cages.get(i).GetCageSize();j++) {
+        System.out.print(cages.get(i).GetHabitat()[j].GetCellContent());
+      }
+      System.out.println();
+    }
+    System.out.print(cages.size());
     for (int j = 0; j < animal.GetSize(); j++) {
       int i = 0;
       while (i < cages.size()) {
@@ -396,39 +403,5 @@ public class Zoo {
 
   public boolean IsFacility(char c) {
     return (c == '#' || c == '_' || c == 'R');
-  }
-
-  public static void main(String args[]) throws IOException, InterruptedException {
-    Zoo z = new Zoo();
-    int input;
-    Renderable r = new Renderable();
-    Scanner T = new Scanner(System.in);
-    boolean endloop = false;
-    z.RandomEntrance();
-    do {
-      System.out.print("1.Tambahkan Animal\n2. Tour\n3. Exit\n");
-      input = T.nextInt();
-      switch (input) {
-        case 1: {
-          r.Render(z);
-          z.PutInAnimal();
-          break;
-        }
-        case 2: {
-          z.RandomEntrance();
-          r.Render(z);
-          while(!z.Exit(z.GetPlayerPos())) {
-            sleep(100);
-            z.Tour();
-            r.Render(z);
-          }
-          break;
-        }
-        case 3: {
-          endloop = true;
-          break;
-        }
-      }
-    } while(!endloop);
   }
 }
