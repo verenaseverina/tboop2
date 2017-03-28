@@ -13,27 +13,27 @@ public class Cell {
     cellIdRow = -1;
     cellIdCol = -1;
   }
-  public Cell(char _content, int x, int y) {
-    content = _content;
-    cellIdRow = x;
-    cellIdCol = y;
+  public Cell(char contentInput, int xRow, int yCol) {
+    content = contentInput;
+    cellIdRow = xRow;
+    cellIdCol = yCol;
   }
-  public char GetCellContent() {
+  public char getCellContent() {
     return content;
   }
-  public int GetCellRow() {
+  public int getCellRow() {
     return cellIdRow;
   }
-  public int GetCellCol() {
+  public int getCellCol() {
     return cellIdCol;
   }
-  public void SetTrueEntranceExit(int n) {
-    n = 0;
+  public void SetTrueEntranceExit(int nX) {
+    nX = 0;
   }
-  public boolean IsEntrance() {
+  public boolean isEntrance() {
     return false;
   }
-  public boolean IsExit() {
+  public boolean isExit() {
     return false;
   }
 }

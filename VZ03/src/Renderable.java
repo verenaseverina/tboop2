@@ -7,9 +7,9 @@ public class Renderable {
     int cageIdx, animalIdx;
     for (iIdx = 0; iIdx < virtualZoo.GetHeight(); iIdx++) {
       for (jIdx = 0; jIdx < virtualZoo.GetWidth(); jIdx++) {
-        if ((SearchCageIndex(virtualZoo, iIdx, jIdx)) != -999) {
-          cageIdx = SearchCageIndex(virtualZoo, iIdx, jIdx);
-          animalIdx = SearchAnimalIndex(virtualZoo, cageIdx, iIdx, jIdx);
+        if ((searchCageIndex(virtualZoo, iIdx, jIdx)) != -999) {
+          cageIdx = searchCageIndex(virtualZoo, iIdx, jIdx);
+          animalIdx = searchAnimalIndex(virtualZoo, cageIdx, iIdx, jIdx);
           System.out.printf("%c", virtualZoo.GetCages().get(cageIdx).GetAnimal()[animal_idx].GetContent());
         }
         else if (virtualZoo.IsPlayer(iIdx, jIdx)) {
@@ -24,7 +24,7 @@ public class Renderable {
       System.out.printf("\n");
   }
 
-  public int SearchCageIndex(Zoo virtualZoo, int xRow, int yCol) {
+  public int searchCageIndex(Zoo virtualZoo, int xRow, int yCol) {
     int iIdx = 0;
     int jIdx = 0;
     boolean found = false, stop;
@@ -48,7 +48,7 @@ public class Renderable {
     }
     return cage;
   }
-  public int SearchAnimalIndex(Zoo virtualZoo, int iIdx, int xRow, int yCol) {
+  public int searchAnimalIndex(Zoo virtualZoo, int iIdx, int xRow, int yCol) {
     int kIdx = 0;
     boolean found = false;
     while ((kIdx < virtualZoo.GetCages().get(iIdx).GetCageSize()) && (!found)) {
