@@ -10,45 +10,45 @@ public class State {
   private int height;
   
   public State() {
-    //BufferedReader buffer_map;
-    // buffer_map = new BufferedReader(new FileReader("src/map.txt"));
-    try (BufferedReader buffer_map = new BufferedReader(new FileReader("VZ03/src/map.txt"))) {
-      StringBuilder string_builder_map = new StringBuilder();
-      String line = buffer_map.readLine();
+    //BufferedReader bufferMap;
+    // bufferMap = new BufferedReader(new FileReader("src/map.txt"));
+    try (BufferedReader bufferMap = new BufferedReader(new FileReader("VZ03/src/map.txt"))) {
+      StringBuilder stringBuilderMap = new StringBuilder();
+      String line = bufferMap.readLine();
 
       while (line != null) {
-        string_builder_map.append(line);
-        line = buffer_map.readLine();
+        stringBuilderMap.append(line);
+        line = bufferMap.readLine();
       }
-      String string_buffer_map;
-      string_buffer_map = string_builder_map.toString();
-      //System.out.printf(string_buffer_map);
+      String stringBufferMap;
+      stringBufferMap = stringBuilderMap.toString();
+      //System.out.printf(stringBufferMap);
 
       int i = 0;
-      int s_height;
+      int sHeight;
       height=0;
-      while(string_buffer_map.charAt(i) != ' ') {
-        s_height=Character.getNumericValue(string_buffer_map.charAt(i));
-        height = (10 * height) + s_height;
+      while(stringBufferMap.charAt(i) != ' ') {
+        sHeight=Character.getNumericValue(stringBufferMap.charAt(i));
+        height = (10 * height) + sHeight;
         i++;
       }
       i=i+3;
 
-      int s_width;
+      int sWidth;
       width=0;
-      while(string_buffer_map.charAt(i) <= '9' && string_buffer_map.charAt(i) >= '0') {
-        s_width=Character.getNumericValue(string_buffer_map.charAt(i));
-        width = (10 * width) + s_width;
+      while(stringBufferMap.charAt(i) <= '9' && stringBufferMap.charAt(i) >= '0') {
+        sWidth=Character.getNumericValue(stringBufferMap.charAt(i));
+        width = (10 * width) + sWidth;
         i++;
       }
 
       int k = 0, l = 0;
       map = new char [height][width];
-      //char[] temp_string_char = string_buffer_map.toCharArray();
-      int length = string_buffer_map.length();
+      //char[] temp_string_char = stringBufferMap.toCharArray();
+      int length = stringBufferMap.length();
       while (i < length) {
         if (l < width) {
-          map[k][l] = string_buffer_map.charAt(i);
+          map[k][l] = stringBufferMap.charAt(i);
           l++;
           i++;
         }
@@ -57,7 +57,7 @@ public class State {
           l=0;
         }
       }
-      buffer_map.close();
+      bufferMap.close();
     } catch(Exception E) {
       MakeDefaultMap();
     }
