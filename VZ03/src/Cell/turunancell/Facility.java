@@ -8,16 +8,16 @@ public class Facility extends Cell {
   private boolean entrance = false;
   private boolean exit = false;
 
-  public Facility(char _content, int i, int j) {
-    super(_content, i, j);
+  public Facility(char contentInput, int iIdx, int jIdx) {
+    super(contentInput, iIdx, jIdx);
   }
-  public boolean IsEntrance() {
+  public boolean isEntrance() {
     return entrance;
   }
-  public boolean IsExit() {
+  public boolean isExit() {
     return exit;
   }
-  public void SetTrue(int n) {
+  public void setTrue(int n) {
     if (n == 0) {
       entrance = true;
     }

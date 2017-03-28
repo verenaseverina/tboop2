@@ -24,151 +24,151 @@ public class State {
       stringBufferMap = stringBuilderMap.toString();
       //System.out.printf(stringBufferMap);
 
-      int i = 0;
+      int iIdx = 0;
       int sHeight;
       height=0;
       while(stringBufferMap.charAt(i) != ' ') {
-        sHeight=Character.getNumericValue(stringBufferMap.charAt(i));
+        sHeight=Character.getNumericValue(stringBufferMap.charAt(iIdx));
         height = (10 * height) + sHeight;
-        i++;
+        iIdx++;
       }
-      i=i+3;
+      iIdx = iIdx + 3;
 
       int sWidth;
       width=0;
-      while(stringBufferMap.charAt(i) <= '9' && stringBufferMap.charAt(i) >= '0') {
-        sWidth=Character.getNumericValue(stringBufferMap.charAt(i));
+      while(stringBufferMap.charAt(iIdx) <= '9' && stringBufferMap.charAt(iIdx) >= '0') {
+        sWidth=Character.getNumericValue(stringBufferMap.charAt(iIdx));
         width = (10 * width) + sWidth;
-        i++;
+        iIdx++;
       }
 
-      int k = 0, l = 0;
+      int kIdx = 0, lIdx = 0;
       map = new char [height][width];
       //char[] temp_string_char = stringBufferMap.toCharArray();
       int length = stringBufferMap.length();
-      while (i < length) {
-        if (l < width) {
-          map[k][l] = stringBufferMap.charAt(i);
-          l++;
-          i++;
+      while (iIdx < length) {
+        if (lIdx < width) {
+          map[kIdx][lIdx] = stringBufferMap.charAt(iIdx);
+          lIdx++;
+          iIdx++;
         }
         else {
-          k++;
-          l=0;
+          kIdx++;
+          lIdx=0;
         }
       }
       bufferMap.close();
     } catch(Exception E) {
-      MakeDefaultMap();
+      makeDefaultMap();
     }
   }
   
-  private void MakeDefaultMap() {
+  private void makeDefaultMap() {
     map = new char [8][8];
     width = 8;
     height = 8;    
     
-    for (int i = 0; i < 8 ; i++) {
-      for (int j = 0; j < 8; j++) {
-        switch (i) {
+    for (int iIdx = 0; iIdx < 8 ; iIdx++) {
+      for (int jIdx = 0; jIdx < 8; jIdx++) {
+        switch (iIdx) {
           case 0 : {
             if (j < 2) {
-              map[i][j] = '~';
+              map[iIdx][jIdx] = '~';
             } 
             else if (j < 3) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             else if (j < 6) {
-              map[i][j] = '~';
+              map[iIdx][jIdx] = '~';
             }
             else if (j < 8) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             break;
           }
           case 1 : {
             if (j < 2) {
-              map[i][j] = '`';
+              map[iIdx][jIdx] = '`';
             }
             else if (j < 3) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             else if (j < 8) {
-              map[i][j] = '~';
+              map[iIdx][jIdx] = '~';
             }
             break;
           }
           case 2 : {
             if (j < 3) {
-              map[i][j] = '_';
+              map[iIdx][jIdx] = '_';
             }
             else if (j < 4) {
-              map[i][j] = '~';
+              map[iIdx][jIdx] = '~';
             }
             else if (j < 5) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             else if (j < 8) {
-              map[i][j] = '~';
+              map[iIdx][jIdx] = '~';
             }
             break;
           }
           case 3 : {
             if (j < 1) {
-              map[i][j] = '^';
+              map[iIdx][jIdx] = '^';
             }
             else if (j < 3) {
-              map[i][j] = '_';
+              map[iIdx][jIdx] = '_';
             }
             else if (j < 4) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             else if (j < 8) {
-              map[i][j] = '_';
+              map[iIdx][jIdx] = '_';
             }
             break;
           }
           case 4 : {
             if (j < 1) {
-              map[i][j] = '^';
+              map[iIdx][jIdx] = '^';
             }
             else if (j < 3) {
-              map[i][j] = '_';
+              map[iIdx][jIdx] = '_';
             }
             else if (j < 4) {
-              map[i][j] = '^';
+              map[iIdx][jIdx] = '^';
             }
             else if (j < 6) {
-              map[i][j] = '_';
+              map[iIdx][jIdx] = '_';
             }
             else if (j < 8) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             break;
           }
           case 5 : {
             if (j < 1) {
-              map[i][j] = '^';
+              map[iIdx][jIdx] = '^';
             }
             else if (j < 5) {
-              map[i][j] = '_';
+              map[iIdx][jIdx] = '_';
             }
             else if (j < 8) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             break;
           }
           case 6 : {
             if (j < 5) {
-              map[i][j] = 'R';
+              map[iIdx][jIdx] = 'R';
             }
             else if (i < 8) {
-              map[i][j] = '#';
+              map[iIdx][jIdx] = '#';
             }
             break;
           }
           case 7 : {
-            map[i][j] = '_';
+            map[iIdx][jIdx] = '_';
             break;
           }
         }
@@ -176,17 +176,17 @@ public class State {
     }
   }
   
-  public char[][] GetMap() {
+  public char[][] getMap() {
     return map;
   }
 
 
-  public int GetHeight() {
+  public int getHeight() {
     return height;
   }
 
 
-  public int GetWidth() {
+  public int getWidth() {
     return width;
   }
 }
