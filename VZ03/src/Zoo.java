@@ -6,8 +6,11 @@ import Cell.turunancell.Facility;
 import Cell.turunancell.Habitat;
 import State.State;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
+
+import static java.lang.Thread.sleep;
 
 public class Zoo {
 
@@ -259,27 +262,44 @@ public class Zoo {
     System.out.println("Masukkan kode binatang yang ingin dimasukkan kedalam kandang: ");
     System.out.println("Untuk kandang bebas masukkan -1");
     System.out.println("Untuk membatalkan masukkan -2");
-    Scanner T = new Scanner(System.in);
-    int x = T.nextInt();
+    int x;
     do {
+      Scanner T = new Scanner(System.in);
+      x = T.nextInt();
       found = true;
+      if(x==-1 || x==-2){
+        break;
+      }
       if((x>=size)||(x<-2)) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
       }
-      else if(arr[x]==false && x<size && x>-2) {
+      else if(arr[x]==false && x<size && x>=0) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
       }
     } while (!found);
     if (x==-1) {
-      do
-      {
-        x = (int)(Math.random() * size);
-      } while (arr[x]==false);
+      int i = 0;
+      found = false;
+      while(i<size && !found) {
+        if(arr[i]) {
+          found = true;
+        } else {
+          i++;
+        }
+      }
+      if(found) {
+        do {
+          x = (int) (Math.random() * size);
+        } while (arr[x] == false);
+      }
+      else {
+        System.out.println("Tidak ada kandang yang cocok");
+      }
     }
 
-    if (x!=-2) {
+    if (x!=-2 && found) {
       cages.get(x).AddAnimal(input_user,x);
     }
   }
@@ -289,7 +309,7 @@ public class Zoo {
       int i = 0;
       while (i < cages.size()) {
         if ((arr[i] == false) && (animal.GetHab()[j] == cages.get(i).GetHabitat()[0].GetCellContent())) {
-          System.out.println(cages.get(i).GetNeff());
+          //System.out.println(cages.get(i).GetNeff());
           if (cages.get(i).IsEmpty()) {
             arr[i] = true;
           } else if ((!cages.get(i).IsFull()) && (animal.GetTame() == cages.get(i).GetAnimal()[0].GetTame())) {
@@ -378,12 +398,37 @@ public class Zoo {
     return (c == '#' || c == '_' || c == 'R');
   }
 
-  public static void main(String args[]) {
+  public static void main(String args[]) throws IOException, InterruptedException {
     Zoo z = new Zoo();
+    int input;
     Renderable r = new Renderable();
-    z.PutInAnimal();
+    Scanner T = new Scanner(System.in);
+    boolean endloop = false;
     z.RandomEntrance();
-    r.Render(z);
-    //System.out.println(z.GetCages().get(0).GetCageSize());
+    do {
+      System.out.print("1.Tambahkan Animal\n2. Tour\n3. Exit\n");
+      input = T.nextInt();
+      switch (input) {
+        case 1: {
+          r.Render(z);
+          z.PutInAnimal();
+          break;
+        }
+        case 2: {
+          z.RandomEntrance();
+          r.Render(z);
+          while(!z.Exit(z.GetPlayerPos())) {
+            sleep(100);
+            z.Tour();
+            r.Render(z);
+          }
+          break;
+        }
+        case 3: {
+          endloop = true;
+          break;
+        }
+      }
+    } while(!endloop);
   }
 }
