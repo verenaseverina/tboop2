@@ -47,20 +47,20 @@ public abstract class Animal {
   }
 
   public void move(int dir) {
-    switch(dir) {
-      case 1: {//top
+    switch (dir) {
+      case 1: { //top
         ordinat -= 1;
         break;
       }
-      case 2: {//right
+      case 2: { //right
         absis += 1;
         break;
       }
-      case 3:  {//down
+      case 3:  { //down
         ordinat += 1;
         break;
       }
-      case 4: {//left
+      case 4: { //left
         absis -= 1;
         break;
       }
