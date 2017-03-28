@@ -1,6 +1,7 @@
 package animal.turunananimal;
 
 import animal.Animal;
+
 public abstract class LandAnimal extends Animal {
   protected int size = 1;
 
