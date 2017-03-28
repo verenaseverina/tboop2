@@ -41,9 +41,11 @@ public class Cage {
     int x, y;
     do {
       position_index = (int) Math.floor(Math.random() * cage_size);
-      x = array_of_habitat[position_index].GetCellCol();
-      y = array_of_habitat[position_index].GetCellRow();
+      x = array_of_habitat[position_index].GetCellRow();
+      y = array_of_habitat[position_index].GetCellCol();
     } while (ContainAnimal(x, y));
+    System.out.println(x);
+    System.out.println(y);
     animal_neff++;
     switch(animal) {
       case 'H' : {
@@ -168,6 +170,8 @@ public class Cage {
           case 1:
           for (int k = 0; k <= animal_neff; k++) {
             int y = array_of_animal[i].GetY()-1;
+            System.out.print(y);
+            System.out.print(InsideCage(array_of_animal[i].GetX(),y));
             if (array_of_animal[i].GetX() != array_of_animal[k].GetX() && y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
               array_of_animal[i].Move(1);
               found = true;
