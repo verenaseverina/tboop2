@@ -1,30 +1,30 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
-import Animal.turunananimal.AirAnimal;
+import animal.turunananimal.AirAnimal;
 import java.lang.Math;
 
 public class Toucan extends AirAnimal {
-  public Toucan(int x, int y, int id) {
-    super(x,y,id);
+  public Toucan(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Kwwaakk";
     content = 'T';
-    my_weight = 0.592f + (float)(Math.random() * 0.168f + 1);
-    how_much_i_eat = 0.5f * my_weight / 100f;
-    what_i_eat = 'o';
-    is_tame = true;
+    myWeight = 0.592f + (float)(Math.random() * 0.168f + 1);
+    howMuchIEat = 0.5f * myWeight / 100f;
+    whatIEat = 'o';
+    isTame = true;
   }
   @Override
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }
 

@@ -1,28 +1,28 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.AirAnimal;
+import animal.turunananimal.AirAnimal;
 public class Kelelawar extends AirAnimal {
-  public Kelelawar(int x, int y, int id) {
-    super(x,y,id);
+  public Kelelawar(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Kiiiaaa";
     content = 'K';
-    my_weight = 1.2f + (float)(Math.random() * 0.2f + 1);
-    how_much_i_eat = my_weight;
-    what_i_eat = 'o';
-    is_tame = true;
+    myWeight = 1.2f + (float)(Math.random() * 0.2f + 1);
+    howMuchIEat = myWeight;
+    whatIEat = 'o';
+    isTame = true;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }
 

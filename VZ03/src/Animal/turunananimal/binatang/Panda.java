@@ -1,27 +1,27 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.LandAnimal;
+import animal.turunananimal.LandAnimal;
 public class Panda extends LandAnimal {
-  public Panda(int x, int y, int id) {
-    super(x,y,id);
+  public Panda(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Mmmm";
     content = 'B';
-    my_weight = 70f + (float)(Math.random() * 30 + 1);
-    how_much_i_eat = 38f * my_weight / 100f;
-    what_i_eat = 'h';
-    is_tame = true;
+    myWeight = 70f + (float)(Math.random() * 30 + 1);
+    howMuchIEat = 38f * myWeight / 100f;
+    whatIEat = 'h';
+    isTame = true;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }

@@ -1,28 +1,28 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.WAAnimal;
+import animal.turunananimal.WAAnimal;
 
 public class Cormorants extends WAAnimal {
-  public Cormorants(int x, int y, int id) {
-    super(x,y,id);
+  public Cormorants(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "*fly and swim*";
     content = 'M';
-    my_weight = 2.5f + (float)(Math.random() * 2.5 + 1);
-    how_much_i_eat = 10f * my_weight / 100f;
-    what_i_eat = 'c';
-    is_tame = true;
+    myWeight = 2.5f + (float)(Math.random() * 2.5 + 1);
+    howMuchIEat = 10f * myWeight / 100f;
+    whatIEat = 'c';
+    isTame = true;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }

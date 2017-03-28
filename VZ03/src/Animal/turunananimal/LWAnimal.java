@@ -1,19 +1,19 @@
-package Animal.turunananimal;
+package animal.turunananimal;
 
-import Animal.Animal;
+import animal.Animal;
 public abstract class LWAnimal extends Animal {
   protected int size = 2;
 
-  public LWAnimal(int x, int y, int id) {
-    super(x,y,id);
+  public LWAnimal(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     array_of_habitat = new char[size];
     array_of_habitat[0] = '^';
     array_of_habitat[1] = '~';
   }
 
-  public abstract String GetInteract();
+  public abstract String getInteract();
 
-  public int GetSize() {
+  public int getSize() {
     return size;
   }
 }

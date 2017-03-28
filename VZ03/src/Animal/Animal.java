@@ -1,67 +1,67 @@
-package Animal;
+package animal;
 
 public abstract class Animal {
-  protected boolean is_tame;
+  protected boolean isTame;
   protected String interaction;
-  protected int x;
-  protected int y;
-  protected char[] array_of_habitat;
+  protected int absis;
+  protected int ordinat;
+  protected char[] arrayOfHabitat;
   protected char content;
-  protected int cage_id;
-  protected float my_weight;
-  protected float how_much_i_eat;
-  protected char what_i_eat;
+  protected int cageId;
+  protected float myWeight;
+  protected float howMuchIEat;
+  protected char whaIEat;
 
-  public Animal(int _x, int _y, int id) {
-    x = _x;
-    y = _y;
-    cage_id = id;
+  public Animal(int absisin, int ordinatin, int id) {
+    absis = absisin;
+    ordinat = ordinatin;
+    cageId = id;
   }
 
-  public abstract String GetInteract();
+  public abstract String getInteract();
 
-  public abstract int GetSize();
+  public abstract int getSize();
 
-  public boolean GetTame() {
-    return is_tame;
+  public boolean getTame() {
+    return isTame;
   }
 
-  public int GetX() {
-    return x;
+  public int getX() {
+    return absis;
   }
 
-  public int GetY() {
-    return y;
+  public int getY() {
+    return ordinat;
   }
 
-  public char[] GetArrayOfHabitat() {
-    return array_of_habitat;
+  public char[] getArrayOfHabitat() {
+    return arrayOfHabitat;
   }
 
-  public char GetContent() {
+  public char getContent() {
     return content;
   }
 
-  public void GiveFood() {
-    System.out.println("Animal makan ANisebanyak" + how_much_i_eat + " kg\n");
+  public void giveFood() {
+    System.out.println("Animal makanan sebanyak" + howMuchIEat + " kg\n");
   }
 
-  public void Move(int dir) {
+  public void move(int dir) {
     switch(dir) {
       case 1: {//top
-        y -= 1;
+        ordinat -= 1;
         break;
       }
       case 2: {//right
-        x += 1;
+        absis += 1;
         break;
       }
       case 3:  {//down
-        y += 1;
+        ordinat += 1;
         break;
       }
       case 4: {//left
-        x -= 1;
+        absis -= 1;
         break;
       }
     }

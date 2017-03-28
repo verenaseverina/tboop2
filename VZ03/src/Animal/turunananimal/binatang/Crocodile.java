@@ -1,28 +1,28 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.LWAnimal;
+import animal.turunananimal.LWAnimal;
 
 public class Crocodile extends LWAnimal {
-  public Crocodile(int x, int y, int id) {
-    super(x,y,id);
+  public Crocodile(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Rrrrr";
     content = 'C';
-    my_weight = 400f + (float)(Math.random() * 300 + 1);
-    how_much_i_eat = 2f * my_weight / 700f;
-    what_i_eat = 'c';
-    is_tame = false;
+    myWeight = 400f + (float)(Math.random() * 300 + 1);
+    howMuchIEat = 2f * myWeight / 700f;
+    whatIEat = 'c';
+    isTame = false;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }

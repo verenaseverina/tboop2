@@ -1,29 +1,29 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.AirAnimal;
+import animal.turunananimal.AirAnimal;
 public class ElangB extends AirAnimal {
-  public ElangB(int x, int y, int id) {
-    super(x,y,id);
+  public ElangB(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Kiiiaaa";
     content = 'E';
-    my_weight = 4f + (float)(Math.random() * 2 + 1);
-    how_much_i_eat = 0.4535f * my_weight / 4f;
-    what_i_eat = 'c';
-    is_tame = true;
+    myWeight = 4f + (float)(Math.random() * 2 + 1);
+    howMuchIEat = 0.4535f * myWeight / 4f;
+    whatIEat = 'c';
+    isTame = true;
   }
   @Override
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }
 

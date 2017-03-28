@@ -1,29 +1,29 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
-import Animal.turunananimal.LandAnimal;
+import animal.turunananimal.LandAnimal;
 import java.lang.Math;
 
 public class Rhino extends LandAnimal {
-  public Rhino(int x, int y, int id) {
-    super(x,y,id);
+  public Rhino(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Woooo";
     content = 'R';
-    my_weight = 900f + (float)(Math.random() * 1400f + 1);
-    how_much_i_eat = 7.23f * my_weight / 100f;
-    what_i_eat = 'h';
-    is_tame = false;
+    myWeight = 900f + (float)(Math.random() * 1400f + 1);
+    howMuchIEat = 7.23f * myWeight / 100f;
+    whatIEat = 'h';
+    isTame = false;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }
 

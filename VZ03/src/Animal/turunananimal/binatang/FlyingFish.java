@@ -1,27 +1,27 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.WAAnimal;
+import animal.turunananimal.WAAnimal;
 public class FlyingFish extends WAAnimal {
-  public FlyingFish(int x, int y, int id) {
-    super(x,y,id);
+  public FlyingFish(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "*stride*";
     content = 'F';
-    my_weight = 1f + (float)(Math.random() * 6 + 1);
-    how_much_i_eat = 5f * my_weight / 100f;
-    what_i_eat = 'o';
-    is_tame = true;
+    myWeight = 1f + (float)(Math.random() * 6 + 1);
+    howMuchIEat = 5f * myWeight / 100f;
+    whatIEat = 'o';
+    isTame = true;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }

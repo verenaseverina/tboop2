@@ -1,28 +1,28 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.LWAnimal;
+import animal.turunananimal.LWAnimal;
 public class Hippopotamus extends LWAnimal {
-  public Hippopotamus(int x, int y, int id) {
-    super(x,y,id);
+  public Hippopotamus(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Grooowwll";
     content = 'N';
-    my_weight = 1400f + (float)(Math.random() * 1800 + 1);
-    how_much_i_eat = 40f * my_weight / 2400f;
-    what_i_eat = 'h';
-    is_tame = true;
+    myWeight = 1400f + (float)(Math.random() * 1800 + 1);
+    howMuchIEat = 40f * myWeight / 2400f;
+    whatIEat = 'h';
+    isTame = true;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }
 

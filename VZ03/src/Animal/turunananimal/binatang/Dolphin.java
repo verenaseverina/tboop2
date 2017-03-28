@@ -1,32 +1,32 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.WaterAnimal;
+import animal.turunananimal.WaterAnimal;
 
 public class Dolphin extends WaterAnimal {
-  public Dolphin(int x, int y, int id) {
-    super(x,y,id);
+  public Dolphin(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "Cuitttt";
     content = 'L';
-    my_weight = 110f + (float)(Math.random() * 90 + 1);
-    how_much_i_eat = 2f * my_weight / 20f;
-    what_i_eat = 'c';
-    is_tame = true;
+    myWeight = 110f + (float)(Math.random() * 90 + 1);
+    howMuchIEat = 2f * myWeight / 20f;
+    whatIEat = 'c';
+    isTame = true;
   }
 
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
 
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
 
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
 
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }

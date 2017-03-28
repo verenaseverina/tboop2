@@ -1,28 +1,28 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
-import Animal.turunananimal.WaterAnimal;
+import animal.turunananimal.WaterAnimal;
 import java.lang.Math;
 
 public class Whale extends WaterAnimal {
-  public Whale(int x, int y, int id) {
-    super(x,y,id);
+  public Whale(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "*Wet*";
     content = 'W';
-    my_weight = 14000f + (float)(Math.random() * 2000 + 1);
-    how_much_i_eat = 0.667f * my_weight;
-    what_i_eat = 'c';
-    is_tame = true;
+    myWeight = 14000f + (float)(Math.random() * 2000 + 1);
+    howMuchIEat = 0.667f * myWeight;
+    whatIEat = 'c';
+    isTame = true;
   }
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
-    return my_weight;
+  public float getWeight() {
+    return myWeight;
   }
-  public float GetEat() {
-    return how_much_i_eat;
+  public float getEat() {
+    return howMuchIEat;
   }
-  public char GetWEat() {
-    return what_i_eat;
+  public char getWEat() {
+    return whatIEat;
   }
 }
