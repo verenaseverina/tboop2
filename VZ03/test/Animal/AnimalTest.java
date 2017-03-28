@@ -1,13 +1,36 @@
 package Animal;
 
 import Animal.turunananimal.binatang.Tiger;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
-/**
- * Created by Winarto on 03/27/2017.
- */
 public class AnimalTest {
+  
+    public AnimalTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() {
+    }
+
+    @AfterClass
+    public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() {
+      System.out.println("Testing Animal Class");
+    }
+
+    @After
+    public void tearDown() {
+      System.out.println();
+    }
+    
     @Test
     public void getTame() throws Exception {
         System.out.print("Testing Method GetTame... ");

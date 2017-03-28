@@ -1,13 +1,36 @@
 package Animal.turunananimal;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
-/**
- * Created by Winarto on 03/27/2017.
- */
 public class LandAnimalTest {
+    
+    public LandAnimalTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() {
+    }
+
+    @AfterClass
+    public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() {
+      System.out.println("Testing LandAnimal Class");
+    }
+
+    @After
+    public void tearDown() {
+      System.out.println();
+    }
+    
     @Test
     public void getSize() throws Exception {
         System.out.print("Testing Method GetSize...");
