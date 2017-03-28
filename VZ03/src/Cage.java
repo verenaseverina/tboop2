@@ -1,11 +1,27 @@
-/**
- * Created by verenaseverina on 3/25/17.
- */
-import java.util.Vector;
-import java.lang.Math;
-import cell.turunancell.Habitat;
 import animal.Animal;
-import animal.turunananimal.binatang.*;
+import animal.turunananimal.binatang.Anoa;
+import animal.turunananimal.binatang.Cormorants;
+import animal.turunananimal.binatang.Crocodile;
+import animal.turunananimal.binatang.Dolphin;
+import animal.turunananimal.binatang.ElangB;
+import animal.turunananimal.binatang.FlyingFish;
+import animal.turunananimal.binatang.Hippopotamus;
+import animal.turunananimal.binatang.Kangaroo;
+import animal.turunananimal.binatang.Kasuari;
+import animal.turunananimal.binatang.Kelelawar;
+import animal.turunananimal.binatang.Kiwi;
+import animal.turunananimal.binatang.Ostrich;
+import animal.turunananimal.binatang.Panda;
+import animal.turunananimal.binatang.Pelikan;
+import animal.turunananimal.binatang.Penguin;
+import animal.turunananimal.binatang.Rhino;
+import animal.turunananimal.binatang.Shark;
+import animal.turunananimal.binatang.Tiger;
+import animal.turunananimal.binatang.Toucan;
+import animal.turunananimal.binatang.Whale;
+import cell.turunancell.Habitat;
+import java.lang.Math;
+import java.util.Vector;
 
 /**
  * Kelas yang merepresentasikan sebuah kandang pada Zoo.
@@ -42,8 +58,8 @@ public class Cage {
   public Cage(Vector<Habitat> buf) {
     cageSize = buf.size();
     arrayOfHabitat = new Habitat[buf.size()];
-    for (int iIdx = 0; iIdx < cageSize; iIdx++) {
-      arrayOfHabitat[iIdx] = buf.elementAt(iIdx);
+    for (int iidx = 0; iidx < cageSize; iidx++) {
+      arrayOfHabitat[iidx] = buf.elementAt(iidx);
     }
     animalNeff = -1;
     double tempManyAnimal = 0.3 * cageSize;
@@ -88,119 +104,123 @@ public class Cage {
    *
    * @param animal Hewan yang akan dimasukkan dalam Cage, direpresentasiakan
    *               dengan kode satu karakter.
-   * @param iIdx ID Cage tempat hewan akan ditempatkan
+   * @param iidx ID Cage tempat hewan akan ditempatkan
    */
-  public void AddAnimal(char animal, int iIdx) {
+  public void addAnimal(char animal, int iidx) {
     int positionIndex = 0;
-    int xRow, yCol;
+    int xrow;
+    int ycol;
     do {
       positionIndex = (int) Math.floor(Math.random() * cageSize);
-      xRow = arrayOfHabitat[positionIndex].getCellRow();
-      yCol = arrayOfHabitat[positionIndex].getCellCol();
-    } while (containAnimal(xRow, yCol));
+      xrow = arrayOfHabitat[positionIndex].getCellRow();
+      ycol = arrayOfHabitat[positionIndex].getCellCol();
+    } while (containAnimal(xrow, ycol));
     animalNeff++;
-    switch(animal) {
+    switch (animal) {
       case 'H' : {
-        arrayOfAnimal[animalNeff] = new Tiger(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Tiger(xrow, ycol, iidx);
         break;
       }
       case 'B' : {
-        arrayOfAnimal[animalNeff] = new Panda(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Panda(xrow, ycol, iidx);
         break;
       }
       case 'A' : {
-        arrayOfAnimal[animalNeff] = new Anoa(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Anoa(xrow, ycol, iidx);
         break;
       }
       case 'R' : {
-        arrayOfAnimal[animalNeff] = new Rhino(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Rhino(xrow, ycol, iidx);
         break;
       }
       case 'D' : {
-        arrayOfAnimal[animalNeff] = new Kangaroo(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Kangaroo(xrow, ycol, iidx);
         break;
       }
       case 'L' : {
-        arrayOfAnimal[animalNeff] = new Dolphin(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Dolphin(xrow, ycol, iidx);
         break;
       }
       case 'W' : {
-        arrayOfAnimal[animalNeff] = new Whale(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Whale(xrow, ycol, iidx);
         break;
       }
       case 'S' : {
-        arrayOfAnimal[animalNeff] = new Shark(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Shark(xrow, ycol, iidx);
         break;
       }
       case 'K' : {
-        arrayOfAnimal[animalNeff] = new Kelelawar(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Kelelawar(xrow, ycol, iidx);
         break;
       }
       case 'E' : {
-        arrayOfAnimal[animalNeff] = new ElangB(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new ElangB(xrow, ycol, iidx);
         break;
       }
       case 'T' : {
-        arrayOfAnimal[animalNeff] = new Toucan(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Toucan(xrow, ycol, iidx);
         break;
       }
       case 'P' : {
-        arrayOfAnimal[animalNeff] = new Penguin(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Penguin(xrow, ycol, iidx);
         break;
       }
       case 'C' : {
-        arrayOfAnimal[animalNeff] = new Crocodile(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Crocodile(xrow, ycol, iidx);
         break;
       }
       case 'N' : {
-        arrayOfAnimal[animalNeff] = new Hippopotamus(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Hippopotamus(xrow, ycol, iidx);
         break;
       }
       case 'O' : {
-        arrayOfAnimal[animalNeff] = new Ostrich(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Ostrich(xrow, ycol, iidx);
         break;
       }
       case 'Y' : {
-        arrayOfAnimal[animalNeff] = new Kasuari(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Kasuari(xrow, ycol, iidx);
         break;
       }
       case 'I' : {
-        arrayOfAnimal[animalNeff] = new Kiwi(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Kiwi(xrow, ycol, iidx);
         break;
       }
       case 'F' : {
-        arrayOfAnimal[animalNeff] = new FlyingFish(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new FlyingFish(xrow, ycol, iidx);
         break;
       }
       case 'Z' : {
-        arrayOfAnimal[animalNeff] = new Pelikan(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Pelikan(xrow, ycol, iidx);
         break;
       }
       case 'M' : {
-        arrayOfAnimal[animalNeff] = new Cormorants(xRow, yCol, iIdx);
+        arrayOfAnimal[animalNeff] = new Cormorants(xrow, ycol, iidx);
+        break;
+      }
+      default : {
         break;
       }
     }
   }
 
   /**
-   * Menentukan apakah suatu posisi xRow, yCol dalam peta sedang diisi oleh Animal
-   * @param xRow baris yang ditinjau
-   * @param yCol kolom yang ditinjau
-   * @return boolean kebenaran suaut peta xRow, yCol sedang diisi Animal
+   * Menentukan apakah suatu posisi xrow, ycol dalam peta sedang diisi oleh Animal
+   * @param xrow baris yang ditinjau
+   * @param ycol kolom yang ditinjau
+   * @return boolean kebenaran suaut peta xrow, ycol sedang diisi Animal
    */
-  public boolean containAnimal(int xRow, int yCol) {
+  public boolean containAnimal(int xrow, int ycol) {
     boolean found = false;
-    int iIdx = 0;
+    int iidx = 0;
     double tempManyAnimal = 0.3 * cageSize;
     int manyAnimal = (int) Math.floor(tempManyAnimal);
-    if(!isEmpty()) {
-      while ((iIdx < manyAnimal) && (!found) && (iIdx < animalNeff+1)) {
-        if ((xRow == arrayOfAnimal[iIdx].getX()) && (yCol == arrayOfAnimal[iIdx].getY())) {
+    if (!isEmpty()) {
+      while ((iidx < manyAnimal) && (!found) && (iidx < animalNeff+1)) {
+        if ((xrow == arrayOfAnimal[iidx].getX()) && (ycol == arrayOfAnimal[iidx].getY())) {
           found = true;
         }
       else {
-          iIdx++;
+          iidx = iidx + 1;
         }
       }
     }
@@ -210,20 +230,20 @@ public class Cage {
   /**
    * Memeriksa apakah suatu lokasi pada peta termasuk dalam Cage.
    *
-   * @param xRow baris Cell yang ditinjau
-   * @param yCol kolom Cell yang ditinjau
-   * @return Boolean kebenaran suatu Cell dengan indeks xRow, yCol berada
+   * @param xrow baris Cell yang ditinjau
+   * @param ycol kolom Cell yang ditinjau
+   * @return Boolean kebenaran suatu Cell dengan indeks xrow, ycol berada
    * didalam kandang
    */
-  public boolean insideCage(int xRow, int yCol) {
-    int iIdx = 0;
+  public boolean insideCage(int xrow, int ycol) {
+    int iidx = 0;
     boolean found = false;
-    while(!found && iIdx < cageSize) {
-      if(xRow == arrayOfHabitat[iIdx].getCellRow() && yCol == arrayOfHabitat[iIdx].getCellCol()) {
+    while(!found && iidx < cageSize) {
+      if(xrow == arrayOfHabitat[iidx].getCellRow() && ycol == arrayOfHabitat[iidx].getCellCol()) {
         found = true;
       }
       else {
-        iIdx++;
+        iidx++;
       }
     }
     return found;
@@ -234,47 +254,47 @@ public class Cage {
    * terus berubah pada iterasi Tour Zoo. Algoritma pergerakan Animal
    * diimplementasi secara brute-force dengan urutan:
    * <ol>
-   *     <li>Memanggil method Animal Move(1).</li>
-   *     <li>Memanggil method Animal Move(2).</li>
-   *     <li>Memanggil method Animal Move(3).</li>
-   *     <li>Memanggil method Animal Move(4).</li>
+   *     <li>Memanggil method Animal move(1).</li>
+   *     <li>Memanggil method Animal move(2).</li>
+   *     <li>Memanggil method Animal move(3).</li>
+   *     <li>Memanggil method Animal move(4).</li>
    * </ol>
    */
   public void updatePosition() {
-    for(int iIdx=0; iIdx<=animalNeff; iIdx++) {
+    for(int iidx=0; iidx<=animalNeff; iidx++) {
       boolean found = false;
       int jIdx = 1;
-      int xRow,yCol;
+      int xrow,ycol;
       while(!found) {
           if(jIdx == 1) {
-            yCol = arrayOfAnimal[iIdx].getY() - 1;
-            if (!containAnimal(arrayOfAnimal[iIdx].getX(), yCol) && insideCage(arrayOfAnimal[iIdx].getX(), yCol)) {
+            ycol = arrayOfAnimal[iidx].getY() - 1;
+            if (!containAnimal(arrayOfAnimal[iidx].getX(), ycol) && insideCage(arrayOfAnimal[iidx].getX(), ycol)) {
               System.out.println(jIdx);
-              arrayOfAnimal[iIdx].Move(1);
+              arrayOfAnimal[iidx].move(1);
               found = true;
             }
             jIdx = jIdx + 1;
           }else if(jIdx == 2) {
-            xRow = arrayOfAnimal[iIdx].getX() + 1;
+            xrow = arrayOfAnimal[iidx].getX() + 1;
             System.out.println(jIdx);
-            if (!containAnimal(xRow, arrayOfAnimal[iIdx].getY()) && insideCage(xRow, arrayOfAnimal[i].getY())) {
-             arrayOfAnimal[iIdx].Move(2);
+            if (!containAnimal(xrow, arrayOfAnimal[iidx].getY()) && insideCage(xrow, arrayOfAnimal[iidx].getY())) {
+             arrayOfAnimal[iidx].move(2);
              found = true;
             }
             jIdx = jIdx+1;
           }
           else if(jIdx == 3) {
-            yCol = arrayOfAnimal[iIdx].getY() + 1;
-            if (!containAnimal(arrayOfAnimal[iIdx].getX(), yCol) && insideCage(arrayOfAnimal[iIdx].getX(), yCol)) {
-             arrayOfAnimal[iIdx].Move(3);
+            ycol = arrayOfAnimal[iidx].getY() + 1;
+            if (!containAnimal(arrayOfAnimal[iidx].getX(), ycol) && insideCage(arrayOfAnimal[iidx].getX(), ycol)) {
+             arrayOfAnimal[iidx].move(3);
              found = true;
             }
             jIdx = jIdx+1;
           }
           else if(jIdx == 4) {
-            xRow = arrayOfAnimal[iIdx].getX() - 1;
-            if (!containAnimal(xRow, arrayOfAnimal[iIdx].getY()) && insideCage(xRow, arrayOfAnimal[iIdx].getY())) {
-             arrayOfAnimal[iIdx].Move(4);
+            xrow = arrayOfAnimal[iidx].getX() - 1;
+            if (!containAnimal(xrow, arrayOfAnimal[iidx].getY()) && insideCage(xrow, arrayOfAnimal[iidx].getY())) {
+             arrayOfAnimal[iidx].move(4);
              found = true;
             }
             jIdx = jIdx+1;
