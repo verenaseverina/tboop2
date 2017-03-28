@@ -1,4 +1,6 @@
-
+/**
+ * Created by Kebun Binatang Bandung on 3/26/17.
+ */
 import animal.Animal;
 import animal.turunananimal.binatang.*;
 import cell.Cell;
@@ -11,14 +13,45 @@ import java.util.Vector;
 
 import static java.lang.Thread.sleep;
 
+/**
+ * Kelas yang merepresentasikan sebuah virtual zoo. Kelas memiliki atribut
+ * berupa peta zoo, height dan width, posisi pengunjung, dan kumpulan kandang
+ * yang ada pada zoo.
+ * @author Winarto
+ * @author Kukuh Basuki Rahmat
+ *
+ * @see Cage
+ * @see Cell
+ */
 public class Zoo {
-
+  /**
+   * Atribut kandang-kandang yang ada di Zoo
+   */
   private Vector<Cage> cages;
+  /**
+   * Atribut posisi pengunjung
+   */
   private Cell playerPos;
+  /**
+   * Atribut matriks peta
+   */
   private Cell[][] map;
+  /**
+   * Atribut height Zoo
+   */
   private int height;
+  /**
+   * Atribut width Zoo
+   */
   private int width;
 
+  /**
+   * Konstruktor Zoo.
+   * Zoo mengambil informasi dari State untuk menginisialisasi height dan width Zoo.
+   * Lalu dilakukan iterasi untuk mengisi atribut map dari Zoo.
+   *
+   * @see State
+   */
   public Zoo() {
     cages = new Vector<>();
     State stateMap = new State();
@@ -46,6 +79,13 @@ public class Zoo {
     initAllCage(s);
   }
 
+  /**
+   * Menginisialisasi seluruh cage yang ada pada zoo. Melakukan iterasi
+   * ke seluruh map. Apabila ditemukan Cell Habitat yang belum dimasukkan
+   * ke cage, panggil prosedur initCage.
+   *
+   * @param stateMap State yang akan ditelusuri cagenya.
+   */
   public void initAllCage(State stateMap) {
     Vector<Vector<Habitat>> cageBuffer = new Vector<Vector<Habitat>>(1);
     char[][] smap = new char[height][];
@@ -76,6 +116,13 @@ public class Zoo {
     }
   }
 
+  /**
+   * Menelusuri seluruh habitat yang termasuk dalam satu cage dengan
+   * algoritma Breadth First Search.
+   *
+   * @param hab Habitat penelusuran cage dimulai
+   * @return Vector habitat yang berisi seluruh habitat dalam satu cage.
+   */
   public Vector<Habitat> initCage(Habitat hab) {
     Vector<Habitat> cage = new Vector<Habitat>(1);
     Habitat habitatMap;
@@ -113,6 +160,14 @@ public class Zoo {
     return cage;
   }
 
+  /**
+   * Melihat apakah suatu parameter cell termasuk dari suatu
+   * parameter vector of Habitat.
+   *
+   * @param vMap vector Habitat yang akan ditinjau
+   * @param cellMap cell yang akan ditinjau
+   * @return boolean kebenaran suatu cell termasuk bagian dari suatu vector Habitat.
+   */
   public boolean inCage(Vector<Habitat> vMap, Cell cellMap) {
     if (isHabitat(cellMap.getCellContent())) {
       boolean found = false;
@@ -129,26 +184,55 @@ public class Zoo {
     }
   }
 
+  /**
+   * Getter atribut map
+   * @return Atribut matriks Cell sebagai peta suatu Zoo
+   */
   public Cell[][] getMap() {
     return map;
   }
 
+  /**
+   * Getter atribut cages
+   * @return Atribut kumpulan dari semua cage yang ada di Zoo
+   */
   public Vector<Cage> getCages() {
     return cages;
   }
 
+  /**
+   * Getter atribut height
+   * @return Atribut height Zoo
+   */
   public int getHeight() {
     return height;
   }
 
+  /**
+   * Getter atribut width
+   * @return Atribut width Zoo
+   */
   public int getWidth() {
     return width;
   }
 
+  /**
+   * Getter posisi pengunjung
+   * @return Atribut posisi pengunjung
+   */
   public Cell getPlayerPos() {
     return playerPos;
   }
 
+  /**
+   * Prosedur untuk memasukkan binatang pada kandang yang tersedia
+   * dan memenuhi kriteria. Kriteria yang dimaksud adalah
+   * <ol>
+   *     <li>Berada pada alam tempat tinggalnya</li>
+   *     <li>Hewan jinak tidak bersama dengan hewan tidak jinak</li>
+   *     <li>Kadang tidak penuh (Jumlah hewan < 30% Jumlah cell pada cage)</li>
+   * </ol>
+   */
   public void putInAnimal() {
     int size = cages.size();
     System.out.println("Nama-Nama Binatang dan kodenya");
@@ -303,6 +387,14 @@ public class Zoo {
     }
   }
 
+  /**
+   * Mengubah nilai array kebenaran arr menjadi true untuk semua cage yang
+   * dapat diisi oleh parameter animal.
+   *
+   * @param arr array of boolean yang berisi kebenaran apakah parameter animal
+   *            dapat dimasukkan ke cage dengan indeks yang sama dengan arr.
+   * @param animal Animal yang akan dimasukkan ke Cage
+   */
   public void checkCage(boolean arr[], Animal animal) {
     for (int jIdx = 0; jIdx < animal.getSize(); jIdx++) {
       int iIdx = 0;
@@ -320,6 +412,17 @@ public class Zoo {
     }
   }
 
+  /**
+   * Prosedur untuk melakukan tour virtual zoo.
+   * Algoritma mencari exit dari Zoo dengan cara brute-force.
+   * Jalan tour yang diambil pada iterasi tour diurutkan sebagai berikut:
+   * <ol>
+   *     <li>Kanan</li>
+   *     <li>Bawan</li>
+   *     <li>Kiri</li>
+   *     <li>Atas</li>
+   * </ol>
+   */
   public void tour() {
     int iIdx = playerPos.getCellRow();
     int jIdx = playerPos.getCellCol();
@@ -339,6 +442,13 @@ public class Zoo {
     }
   }
 
+  /**
+   * Menuliskan interaksi pengunjung dengan hewan.
+   * Interaksi terjadi apabila pengunjung dengan hewan-hewan yang ada
+   * di kandang saling bersisian.
+   *
+   * @param pos posisi pengunjung saat ini
+   */
   public void tourInteract(Cell pos) {
     if (pos.getCellRow() > 0) {
       int xRow = pos.getCellRow() - 1;
@@ -354,6 +464,12 @@ public class Zoo {
     }
   }
 
+  /**
+   * Melakukan pengacakan pemilihan pintu masuk pengunjung.
+   * Road yang berada pada baris ke-0 dan kolom ke-0 dianggap sebagai
+   * pintu masuk. Algoritma mencatat seluruh pintu masuk ini dan
+   * menempatkan pengunjung pada salah satu pintu masuk tersebut.
+   */
   public void randomEntrance() {
     Vector<Cell> ent = new Vector<Cell>();
     Vector<Cell> ex = new Vector<Cell>();
@@ -377,22 +493,48 @@ public class Zoo {
     playerPos = new Cell(ent.get(randidx).getCellContent(), ent.get(randidx).getCellRow(), ent.get(randidx).getCellCol());
   }
 
+  /**
+   * Peninjauan apakah suatu Cell termasuk pintu keluar Zoo
+   * @param pos Cell yang ditinjau
+   * @return boolean kebenaran Cell adalah pintu keluar
+   */
   public boolean isExit(Cell pos) {
     return (pos.getCellRow() == height - 1 || pos.getCellCol() == width - 1);
   }
 
+  /**
+   * Peninjauan kebenaran suatu posisi (iIdx,jIdx) adalah posisi pengunjung Zoo
+   * @param iIdx baris map yang ditinjau
+   * @param jIdx kolom map yang ditinjau
+   * @return boolean kebenaran cell dengan baris ke-iIdx dan kolom ke-jIdx adalah posisi pemain.
+   */
   public boolean isPlayer(int iIdx, int jIdx) {
     return (playerPos.getCellRow() == iIdx && playerPos.getCellCol() == jIdx);
   }
 
+  /**
+   * Peninjauan apakah suatu Cell termasuk jalanan untuk manusia
+   * @param cellMap Cell yang ditinjau
+   * @return nilai kebenaran suatu Cell adalah Road
+   */
   public boolean isRoad(Cell cellMap) {
     return (cellMap.getCellContent() == '_');
   }
 
+  /**
+   * Peninjauan apakah suatu Cell termasuk habitat untuk hewan
+   * @param cellMap Cell yang ditinjau
+   * @return nilai kebenaran suatu Cell adalah Habitat
+   */
   public boolean isHabitat(char cellMap) {
     return (cellMap == '^' || cellMap == '~' || cellMap == '`');
   }
 
+  /**
+   * Peninjauan apakah suatu Cell termasuk restoran, taman, atau jalanan manusia
+   * @param cellMap Cell yang ditinjau
+   * @return nilai kebenaran suatu Cell adalah Facility
+   */
   public boolean isFacility(char cellMap) {
     return (cellMap == '#' || cellMap == '_' || cellMap == 'R');
   }

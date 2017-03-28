@@ -1,8 +1,18 @@
 /**
- * Created by verenaseverina on 3/26/17.
+ * Created by Kebun Binatang Bandung on 3/26/17.
+ */
+/**
+ * Kelas untuk menampilkan Zoo dan state saat ini dari Zoo.
+ * Kelas dan seluruh methodnya menerima parameter Zoo.
+ * @author Verena Severina
+ * @author Winarto
  */
 public class Renderable {
-  public void Render(Zoo virtualZoo) {
+  /**
+   * Menampilkan Zoo yang diterima sebagai parameter method.
+   * @param virtualZoo Zoo yang akan ditampilkan di layar console.
+   */
+  public void render(Zoo virtualZoo) {
     int iIdx, jIdx;
     int cageIdx, animalIdx;
     for (iIdx = 0; iIdx < virtualZoo.GetHeight(); iIdx++) {
@@ -24,6 +34,15 @@ public class Renderable {
       System.out.printf("\n");
   }
 
+  /**
+   * Mencari dikandang indeks berapa animal dengan posisi baris x dan kolom y
+   * ditemukan.
+   *
+   * @param virtualZoo Zoo yang ditinjau
+   * @param xRow Baris posisi Animal
+   * @param yCol Kolom posisi Animal
+   * @return integer indeks detemukannya animal
+   */
   public int searchCageIndex(Zoo virtualZoo, int xRow, int yCol) {
     int iIdx = 0;
     int jIdx = 0;
@@ -48,6 +67,17 @@ public class Renderable {
     }
     return cage;
   }
+
+  /**
+   * Memberikan nilai indeks animal dari cage ke i yang ditemukan
+   * pada posisi baris x dan kolom y.
+   *
+   * @param virtualZoo Zoo yang ditinjau
+   * @param iIdx Indeks cage yang ditinjau
+   * @param xRow Baris posisi Animal
+   * @param yCol Kolom posisi Animal
+   * @return integer indeks animal pada posisi x,y dan cage indeks i
+   */
   public int searchAnimalIndex(Zoo virtualZoo, int iIdx, int xRow, int yCol) {
     int kIdx = 0;
     boolean found = false;

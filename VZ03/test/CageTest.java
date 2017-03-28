@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-import Animal.Animal;
-import Cell.turunancell.Habitat;
+//import Animal.Animal;
+//import Cell.turunancell.Habitat;
 import java.util.Vector;
 import org.junit.After;
 import org.junit.AfterClass;
