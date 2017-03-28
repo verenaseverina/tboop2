@@ -1,9 +1,9 @@
 package animal.turunananimal.binatang;
 
-import animal.turunananimal.LAAnimal;
+import animal.turunananimal.LaAnimal;
 import java.lang.Math;
 
-public class Kiwi extends LAAnimal {
+public class Kiwi extends LaAnimal {
   public Kiwi(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
     interaction = "*walk and fly slightly*";

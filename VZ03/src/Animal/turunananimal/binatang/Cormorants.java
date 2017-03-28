@@ -1,9 +1,9 @@
 package animal.turunananimal.binatang;
 
-import animal.turunananimal.WAAnimal;
+import animal.turunananimal.WaAnimal;
 import java.lang.Math;
 
-public class Cormorants extends WAAnimal {
+public class Cormorants extends WaAnimal {
   public Cormorants(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
     interaction = "*fly and swim*";

@@ -1,9 +1,9 @@
 package animal.turunananimal.binatang;
 
-import animal.turunananimal.LAAnimal;
+import animal.turunananimal.LaAnimal;
 import java.lang.Math;
 
-public class Ostrich extends LAAnimal {
+public class Ostrich extends LaAnimal {
   public Ostrich(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
     interaction = "Nguuukkk";

@@ -1,9 +1,9 @@
 package animal.turunananimal.binatang;
 
-import animal.turunananimal.WAAnimal;
+import animal.turunananimal.WaAnimal;
 import java.lang.Math;
 
-public class FlyingFish extends WAAnimal {
+public class FlyingFish extends WaAnimal {
   public FlyingFish(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
     interaction = "*stride*";

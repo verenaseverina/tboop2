@@ -1,9 +1,9 @@
 package animal.turunananimal.binatang;
 
-import animal.turunananimal.LWAnimal;
+import animal.turunananimal.LwAnimal;
 import java.lang.Math;
 
-public class Crocodile extends LWAnimal {
+public class Crocodile extends LwAnimal {
   public Crocodile(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
     interaction = "Rrrrr";

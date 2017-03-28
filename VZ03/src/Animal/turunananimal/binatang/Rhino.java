@@ -1,7 +1,7 @@
 package animal.turunananimal.binatang;
 
-import java.lang.Math;
 import animal.turunananimal.LandAnimal;
+import java.lang.Math;
 
 public class Rhino extends LandAnimal {
   public Rhino(int absis, int ordinat, int id) {

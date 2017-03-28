@@ -2,10 +2,10 @@ package animal.turunananimal;
 
 import animal.Animal;
 
-public abstract class WAAnimal extends Animal {
+public abstract class WaAnimal extends Animal {
   protected int size = 2;
 
-  public WAAnimal(int absis, int ordinat, int id) {
+  public WaAnimal(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
     arrayOfHabitat = new char[size];
     arrayOfHabitat[0] = '~';

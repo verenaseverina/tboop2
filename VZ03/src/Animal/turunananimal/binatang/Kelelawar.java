@@ -2,6 +2,7 @@ package animal.turunananimal.binatang;
 
 import animal.turunananimal.AirAnimal;
 import java.lang.Math;
+
 public class Kelelawar extends AirAnimal {
   public Kelelawar(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
