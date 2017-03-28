@@ -24,16 +24,16 @@ public class Cage {
     int manyAnimal = (int) Math.floor(tempManyAnimal);
     arrayOfAnimal = new Animal[manyAnimal];
   }
-  public int GetCageSize() {
+  public int getCageSize() {
     return cageSize;
   }
-  public Animal[] GetAnimal() {
+  public Animal[] getAnimal() {
     return arrayOfAnimal;
   }
-  public Habitat[] GetHabitat() {
+  public Habitat[] getHabitat() {
     return arrayOfHabitat;
   }
-  public int GetNeff() {
+  public int getNeff() {
     return animalNeff;
   }
   public void AddAnimal(char animal, int iIdx) {
@@ -41,9 +41,9 @@ public class Cage {
     int xRow, yCol;
     do {
       positionIndex = (int) Math.floor(Math.random() * cageSize);
-      xRow = arrayOfHabitat[positionIndex].GetCellRow();
-      yCol = arrayOfHabitat[positionIndex].GetCellCol();
-    } while (ContainAnimal(x, y));
+      xRow = arrayOfHabitat[positionIndex].getCellRow();
+      yCol = arrayOfHabitat[positionIndex].getCellCol();
+    } while (containAnimal(xRow, yCol));
     animalNeff++;
     switch(animal) {
       case 'H' : {
@@ -128,14 +128,14 @@ public class Cage {
       }
     }
   }
-  public boolean ContainAnimal(int xRow, int yCol) {
+  public boolean containAnimal(int xRow, int yCol) {
     boolean found = false;
     int iIdx = 0;
     double tempManyAnimal = 0.3 * cageSize;
     int manyAnimal = (int) Math.floor(tempManyAnimal);
-    if(!IsEmpty()) {
+    if(!isEmpty()) {
       while ((iIdx < manyAnimal) && (!found) && (iIdx < animalNeff+1)) {
-        if ((xRow == arrayOfAnimal[iIdx].GetX()) && (yCol == arrayOfAnimal[iIdx].GetY())) {
+        if ((xRow == arrayOfAnimal[iIdx].getX()) && (yCol == arrayOfAnimal[iIdx].getY())) {
           found = true;
         }
       else {
@@ -146,11 +146,11 @@ public class Cage {
     return found;
   }
   
-  public boolean InsideCage(int xRow, int yCol) {
+  public boolean insideCage(int xRow, int yCol) {
     int iIdx = 0;
     boolean found = false;
     while(!found && iIdx < cageSize) {
-      if(xRow == arrayOfHabitat[iIdx].GetCellRow() && yCol == arrayOfHabitat[iIdx].GetCellCol()) {
+      if(xRow == arrayOfHabitat[iIdx].getCellRow() && yCol == arrayOfHabitat[iIdx].getCellCol()) {
         found = true;
       }
       else {
@@ -159,40 +159,40 @@ public class Cage {
     }
     return found;
   }
-  public void UpdatePosition() {
+  public void updatePosition() {
     for(int iIdx=0; iIdx<=animalNeff; iIdx++) {
       boolean found = false;
       int jIdx = 1;
       int xRow,yCol;
       while(!found) {
           if(jIdx == 1) {
-            yCol = arrayOfAnimal[iIdx].GetY() - 1;
-            if (!ContainAnimal(arrayOfAnimal[iIdx].GetX(), yCol) && InsideCage(arrayOfAnimal[iIdx].GetX(), yCol)) {
+            yCol = arrayOfAnimal[iIdx].getY() - 1;
+            if (!containAnimal(arrayOfAnimal[iIdx].getX(), yCol) && insideCage(arrayOfAnimal[iIdx].getX(), yCol)) {
               System.out.println(jIdx);
               arrayOfAnimal[iIdx].Move(1);
               found = true;
             }
             jIdx = jIdx + 1;
           }else if(jIdx == 2) {
-            xRow = arrayOfAnimal[iIdx].GetX() + 1;
+            xRow = arrayOfAnimal[iIdx].getX() + 1;
             System.out.println(jIdx);
-            if (!ContainAnimal(xRow, arrayOfAnimal[iIdx].GetY()) && InsideCage(xRow, arrayOfAnimal[i].GetY())) {
+            if (!containAnimal(xRow, arrayOfAnimal[iIdx].getY()) && insideCage(xRow, arrayOfAnimal[i].getY())) {
              arrayOfAnimal[iIdx].Move(2);
              found = true;
             }
             jIdx = jIdx+1;
           }
           else if(jIdx == 3) {
-            yCol = arrayOfAnimal[iIdx].GetY() + 1;
-            if (!ContainAnimal(arrayOfAnimal[iIdx].GetX(), yCol) && InsideCage(arrayOfAnimal[iIdx].GetX(), yCol)) {
+            yCol = arrayOfAnimal[iIdx].getY() + 1;
+            if (!containAnimal(arrayOfAnimal[iIdx].getX(), yCol) && insideCage(arrayOfAnimal[iIdx].getX(), yCol)) {
              arrayOfAnimal[iIdx].Move(3);
              found = true;
             }
             jIdx = jIdx+1;
           }
           else if(jIdx == 4) {
-            xRow = arrayOfAnimal[iIdx].GetX() - 1;
-            if (!ContainAnimal(xRow, arrayOfAnimal[iIdx].GetY()) && InsideCage(xRow, arrayOfAnimal[iIdx].GetY())) {
+            xRow = arrayOfAnimal[iIdx].getX() - 1;
+            if (!containAnimal(xRow, arrayOfAnimal[iIdx].getY()) && insideCage(xRow, arrayOfAnimal[iIdx].getY())) {
              arrayOfAnimal[iIdx].Move(4);
              found = true;
             }
@@ -205,10 +205,10 @@ public class Cage {
         }
       }
   }
-  public boolean IsEmpty() {
+  public boolean isEmpty() {
     return (animalNeff == -1);
   }
-  public boolean IsFull() {
+  public boolean isFull() {
     double tempManyAnimal = 0.3 * cageSize;
     int manyAnimal = (int) Math.floor(tempManyAnimal);
     return (manyAnimal == animalNeff+1);
