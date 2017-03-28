@@ -1,7 +1,8 @@
 package animal.turunananimal.binatang;
 
-import java.lang.Math;
 import animal.turunananimal.LandAnimal;
+import java.lang.Math;
+
 public class Panda extends LandAnimal {
   public Panda(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
@@ -12,15 +13,19 @@ public class Panda extends LandAnimal {
     whatIEat = 'h';
     isTame = true;
   }
+
   public String getInteract() {
     return interaction;
   }
+
   public float getWeight() {
     return myWeight;
   }
+
   public float getEat() {
     return howMuchIEat;
   }
+
   public char getWEat() {
     return whatIEat;
   }

@@ -13,15 +13,20 @@ public class Tiger extends LandAnimal {
     whatIEat = 'c';
     isTame = false;
   }
+
+
   public String getInteract() {
     return interaction;
   }
+
   public float getWeight() {
     return myWeight;
   }
+
   public float getEat() {
     return howMuchIEat;
   }
+
   public char getWEat() {
     return whatIEat;
   }

@@ -1,7 +1,7 @@
 package animal.turunananimal.binatang;
 
-import java.lang.Math;
 import animal.turunananimal.WAAnimal;
+import java.lang.Math;
 
 public class Pelikan extends WAAnimal {
   public Pelikan(int absis, int ordinat, int id) {
@@ -13,17 +13,22 @@ public class Pelikan extends WAAnimal {
     whatIEat = 'c';
     isTame = true;
   }
+
   public String getInteract() {
     return interaction;
   }
+
   public float getWeight() {
     return myWeight;
   }
+
   public float getEat() {
     return howMuchIEat;
   }
+
   public char getWEat() {
     return whatIEat;
   }
 }
+
 

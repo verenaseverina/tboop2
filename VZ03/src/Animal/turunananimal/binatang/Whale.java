@@ -13,15 +13,19 @@ public class Whale extends WaterAnimal {
     whatIEat = 'c';
     isTame = true;
   }
+
   public String getInteract() {
     return interaction;
   }
+
   public float getWeight() {
     return myWeight;
   }
+
   public float getEat() {
     return howMuchIEat;
   }
+
   public char getWEat() {
     return whatIEat;
   }

@@ -1,7 +1,7 @@
 package animal.turunananimal.binatang;
 
-import java.lang.Math;
 import animal.turunananimal.WaterAnimal;
+import java.lang.Math;
 
 public class Dolphin extends WaterAnimal {
   public Dolphin(int absis, int ordinat, int id) {

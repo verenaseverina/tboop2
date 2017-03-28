@@ -13,6 +13,7 @@ public class Anoa extends LandAnimal {
     whatIEat = 'h';
     isTame = true;
   }
+
   public String getInteract() {
     return interaction;
   }

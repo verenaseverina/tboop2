@@ -1,7 +1,8 @@
 package animal.turunananimal.binatang;
 
-import java.lang.Math;
 import animal.turunananimal.LAAnimal;
+import java.lang.Math;
+
 public class Kiwi extends LAAnimal {
   public Kiwi(int absis, int ordinat, int id) {
     super(absis,ordinat,id);
@@ -12,16 +13,20 @@ public class Kiwi extends LAAnimal {
     whatIEat = 'o';
     isTame = true;
   }
-  public String GetInteract() {
+
+  public String getInteract() {
     return interaction;
   }
-  public float GetWeight() {
+
+  public float getWeight() {
     return myWeight;
   }
-  public float GetEat() {
+
+  public float getEat() {
     return howMuchIEat;
   }
-  public char GetWEat() {
-    return whatiEat;
+
+  public char getWEat() {
+    return whatIEat;
   }
 }
