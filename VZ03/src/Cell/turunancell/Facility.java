@@ -1,9 +1,9 @@
-package Cell.turunancell;
+package cell.turunancell;
 
 /**
  * Created by verenaseverina on 3/26/17.
  */
-import Cell.Cell;
+import cell.Cell;
 public class Facility extends Cell {
   private boolean entrance = false;
   private boolean exit = false;

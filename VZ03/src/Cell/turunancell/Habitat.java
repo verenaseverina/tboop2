@@ -1,9 +1,9 @@
-package Cell.turunancell;
+package cell.turunancell;
 
 /**
  * Created by verenaseverina on 3/25/17.
  */
-import Cell.Cell;
+import cell.Cell;
 public class Habitat extends Cell {
   public Habitat() {
     super();

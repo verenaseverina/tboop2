@@ -3,127 +3,127 @@
  */
 import java.util.Vector;
 import java.lang.Math;
-import Cell.turunancell.Habitat;
-import Animal.Animal;
-import Animal.turunananimal.binatang.*;
+import cell.turunancell.Habitat;
+import animal.Animal;
+import animal.turunananimal.binatang.*;
 
 public class Cage {
-  private Habitat[] array_of_habitat;
-  private Animal[] array_of_animal;
-  private int cage_size;
-  private int animal_neff;
+  private Habitat[] arrayOfHabitat;
+  private Animal[] arrayOfAnimal;
+  private int cageSize;
+  private int animalNeff;
 
   public Cage(Vector<Habitat> buf) {
-    cage_size = buf.size();
-    array_of_habitat = new Habitat[buf.size()];
-    for (int i = 0; i < cage_size; i++) {
-      array_of_habitat[i] = buf.elementAt(i);
+    cageSize = buf.size();
+    arrayOfHabitat = new Habitat[buf.size()];
+    for (int i = 0; i < cageSize; i++) {
+      arrayOfHabitat[i] = buf.elementAt(i);
     }
-    animal_neff = -1;
-    double temp_many_animal = 0.3 * cage_size;
+    animalNeff = -1;
+    double temp_many_animal = 0.3 * cageSize;
     int many_animal = (int) Math.floor(temp_many_animal);
-    array_of_animal = new Animal[many_animal];
+    arrayOfAnimal = new Animal[many_animal];
   }
   public int GetCageSize() {
-    return cage_size;
+    return cageSize;
   }
   public Animal[] GetAnimal() {
-    return array_of_animal;
+    return arrayOfAnimal;
   }
   public Habitat[] GetHabitat() {
-    return array_of_habitat;
+    return arrayOfHabitat;
   }
   public int GetNeff() {
-    return animal_neff;
+    return animalNeff;
   }
   public void AddAnimal(char animal, int i) {
     int position_index = 0;
     int x, y;
     do {
-      position_index = (int) Math.floor(Math.random() * cage_size);
-      x = array_of_habitat[position_index].GetCellRow();
-      y = array_of_habitat[position_index].GetCellCol();
+      position_index = (int) Math.floor(Math.random() * cageSize);
+      x = arrayOfHabitat[position_index].GetCellRow();
+      y = arrayOfHabitat[position_index].GetCellCol();
     } while (ContainAnimal(x, y));
-    animal_neff++;
+    animalNeff++;
     switch(animal) {
       case 'H' : {
-        array_of_animal[animal_neff] = new Tiger(x, y, i);
+        arrayOfAnimal[animalNeff] = new Tiger(x, y, i);
         break;
       }
       case 'B' : {
-        array_of_animal[animal_neff] = new Panda(x, y, i);
+        arrayOfAnimal[animalNeff] = new Panda(x, y, i);
         break;
       }
       case 'A' : {
-        array_of_animal[animal_neff] = new Anoa(x, y, i);
+        arrayOfAnimal[animalNeff] = new Anoa(x, y, i);
         break;
       }
       case 'R' : {
-        array_of_animal[animal_neff] = new Rhino(x, y, i);
+        arrayOfAnimal[animalNeff] = new Rhino(x, y, i);
         break;
       }
       case 'D' : {
-        array_of_animal[animal_neff] = new Kangaroo(x, y, i);
+        arrayOfAnimal[animalNeff] = new Kangaroo(x, y, i);
         break;
       }
       case 'L' : {
-        array_of_animal[animal_neff] = new Dolphin(x, y, i);
+        arrayOfAnimal[animalNeff] = new Dolphin(x, y, i);
         break;
       }
       case 'W' : {
-        array_of_animal[animal_neff] = new Whale(x, y, i);
+        arrayOfAnimal[animalNeff] = new Whale(x, y, i);
         break;
       }
       case 'S' : {
-        array_of_animal[animal_neff] = new Shark(x, y, i);
+        arrayOfAnimal[animalNeff] = new Shark(x, y, i);
         break;
       }
       case 'K' : {
-        array_of_animal[animal_neff] = new Kelelawar(x, y, i);
+        arrayOfAnimal[animalNeff] = new Kelelawar(x, y, i);
         break;
       }
       case 'E' : {
-        array_of_animal[animal_neff] = new ElangB(x, y, i);
+        arrayOfAnimal[animalNeff] = new ElangB(x, y, i);
         break;
       }
       case 'T' : {
-        array_of_animal[animal_neff] = new Toucan(x, y, i);
+        arrayOfAnimal[animalNeff] = new Toucan(x, y, i);
         break;
       }
       case 'P' : {
-        array_of_animal[animal_neff] = new Penguin(x, y, i);
+        arrayOfAnimal[animalNeff] = new Penguin(x, y, i);
         break;
       }
       case 'C' : {
-        array_of_animal[animal_neff] = new Crocodile(x, y, i);
+        arrayOfAnimal[animalNeff] = new Crocodile(x, y, i);
         break;
       }
       case 'N' : {
-        array_of_animal[animal_neff] = new Hippopotamus(x, y, i);
+        arrayOfAnimal[animalNeff] = new Hippopotamus(x, y, i);
         break;
       }
       case 'O' : {
-        array_of_animal[animal_neff] = new Ostrich(x, y, i);
+        arrayOfAnimal[animalNeff] = new Ostrich(x, y, i);
         break;
       }
       case 'Y' : {
-        array_of_animal[animal_neff] = new Kasuari(x, y, i);
+        arrayOfAnimal[animalNeff] = new Kasuari(x, y, i);
         break;
       }
       case 'I' : {
-        array_of_animal[animal_neff] = new Kiwi(x, y, i);
+        arrayOfAnimal[animalNeff] = new Kiwi(x, y, i);
         break;
       }
       case 'F' : {
-        array_of_animal[animal_neff] = new FlyingFish(x, y, i);
+        arrayOfAnimal[animalNeff] = new FlyingFish(x, y, i);
         break;
       }
       case 'Z' : {
-        array_of_animal[animal_neff] = new Pelikan(x, y, i);
+        arrayOfAnimal[animalNeff] = new Pelikan(x, y, i);
         break;
       }
       case 'M' : {
-        array_of_animal[animal_neff] = new Cormorants(x, y, i);
+        arrayOfAnimal[animalNeff] = new Cormorants(x, y, i);
         break;
       }
     }
@@ -131,11 +131,11 @@ public class Cage {
   public boolean ContainAnimal(int x, int y) {
     boolean found = false;
     int i = 0;
-    double temp_many_animal = 0.3 * cage_size;
+    double temp_many_animal = 0.3 * cageSize;
     int many_animal = (int) Math.floor(temp_many_animal);
     if(!IsEmpty()) {
-      while ((i < many_animal) && (!found) && (i < animal_neff+1)) {
-        if ((x == array_of_animal[i].GetX()) && (y == array_of_animal[i].GetY())) {
+      while ((i < many_animal) && (!found) && (i < animalNeff+1)) {
+        if ((x == arrayOfAnimal[i].GetX()) && (y == arrayOfAnimal[i].GetY())) {
           found = true;
         }
       else {
@@ -149,8 +149,8 @@ public class Cage {
   public boolean InsideCage(int x, int y) {
     int i = 0;
     boolean found = false;
-    while(!found && i < cage_size) {
-      if(x == array_of_habitat[i].GetCellRow() && y == array_of_habitat[i].GetCellCol()) {
+    while(!found && i < cageSize) {
+      if(x == arrayOfHabitat[i].GetCellRow() && y == arrayOfHabitat[i].GetCellCol()) {
         found = true;
       }
       else {
@@ -160,40 +160,40 @@ public class Cage {
     return found;
   }
   public void UpdatePosition() {
-    for(int i=0; i<=animal_neff; i++) {
+    for(int i=0; i<=animalNeff; i++) {
       boolean found = false;
       int j = 1;
       int x,y;
       while(!found) {
           if(j==1) {
-            y = array_of_animal[i].GetY() - 1;
-            if (!ContainAnimal(array_of_animal[i].GetX(), y) && InsideCage(array_of_animal[i].GetX(), y)) {
+            y = arrayOfAnimal[i].GetY() - 1;
+            if (!ContainAnimal(arrayOfAnimal[i].GetX(), y) && InsideCage(arrayOfAnimal[i].GetX(), y)) {
               System.out.println(j);
-              array_of_animal[i].Move(1);
+              arrayOfAnimal[i].Move(1);
               found = true;
             }
             j = j+1;
           }else if(j==2) {
-            x = array_of_animal[i].GetX() + 1;
+            x = arrayOfAnimal[i].GetX() + 1;
             System.out.println(j);
-            if (!ContainAnimal(x, array_of_animal[i].GetY()) && InsideCage(x, array_of_animal[i].GetY())) {
-             array_of_animal[i].Move(2);
+            if (!ContainAnimal(x, arrayOfAnimal[i].GetY()) && InsideCage(x, arrayOfAnimal[i].GetY())) {
+             arrayOfAnimal[i].Move(2);
              found = true;
             }
             j = j+1;
           }
           else if(j==3) {
-            y = array_of_animal[i].GetY() + 1;
-            if (!ContainAnimal(array_of_animal[i].GetX(), y) && InsideCage(array_of_animal[i].GetX(), y)) {
-             array_of_animal[i].Move(3);
+            y = arrayOfAnimal[i].GetY() + 1;
+            if (!ContainAnimal(arrayOfAnimal[i].GetX(), y) && InsideCage(arrayOfAnimal[i].GetX(), y)) {
+             arrayOfAnimal[i].Move(3);
              found = true;
             }
             j = j+1;
           }
           else if(j==4) {
-            x = array_of_animal[i].GetX() - 1;
-            if (!ContainAnimal(x, array_of_animal[i].GetY()) && InsideCage(x, array_of_animal[i].GetY())) {
-             array_of_animal[i].Move(4);
+            x = arrayOfAnimal[i].GetX() - 1;
+            if (!ContainAnimal(x, arrayOfAnimal[i].GetY()) && InsideCage(x, arrayOfAnimal[i].GetY())) {
+             arrayOfAnimal[i].Move(4);
              found = true;
             }
             j = j+1;
@@ -206,11 +206,11 @@ public class Cage {
       }
   }
   public boolean IsEmpty() {
-    return (animal_neff == -1);
+    return (animalNeff == -1);
   }
   public boolean IsFull() {
-    double temp_many_animal = 0.3 * cage_size;
+    double temp_many_animal = 0.3 * cageSize;
     int many_animal = (int) Math.floor(temp_many_animal);
-    return (many_animal == animal_neff+1);
+    return (many_animal == animalNeff+1);
   }
 }

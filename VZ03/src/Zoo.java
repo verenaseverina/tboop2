@@ -1,10 +1,10 @@
 
-import Animal.Animal;
-import Animal.turunananimal.binatang.*;
-import Cell.Cell;
-import Cell.turunancell.Facility;
-import Cell.turunancell.Habitat;
-import State.State;
+import animal.Animal;
+import animal.turunananimal.binatang.*;
+import cell.Cell;
+import cell.turunancell.Facility;
+import cell.turunancell.Habitat;
+import state.State;
 
 import java.util.Scanner;
 import java.util.Vector;
@@ -14,7 +14,7 @@ import static java.lang.Thread.sleep;
 public class Zoo {
 
   private Vector<Cage> cages;
-  private Cell playerpos;
+  private Cell playerPos;
   private Cell[][] map;
   private int height;
   private int width;
@@ -146,7 +146,7 @@ public class Zoo {
   }
 
   public Cell GetPlayerPos() {
-    return playerpos;
+    return playerPos;
   }
 
   public void PutInAnimal() {
@@ -321,21 +321,21 @@ public class Zoo {
   }
 
   public void Tour() {
-    int i = playerpos.GetCellRow();
-    int j = playerpos.GetCellCol();
-    TourInteract(playerpos);
+    int i = playerPos.GetCellRow();
+    int j = playerPos.GetCellCol();
+    TourInteract(playerPos);
     if (IsRoad(map[i][j + 1])) {
       Cell next = new Cell('=',i, j + 1);
-      playerpos = next;
+      playerPos = next;
     } else if (IsRoad(map[i + 1][j])) {
       Cell next = new Cell('=',i + 1, j);
-      playerpos = next;
+      playerPos = next;
     } else if (IsRoad(map[i - 1][j])) {
       Cell next = new Cell('=',i - 1, j);
-      playerpos = next;
+      playerPos = next;
     } else if (IsRoad(map[i][j - 1])) {
       Cell next = new Cell('=',i, j - 1);
-      playerpos = next;
+      playerPos = next;
     }
   }
 
@@ -374,7 +374,7 @@ public class Zoo {
       }
     }
     int randidx = (int)(Math.random() * ent.size());
-    playerpos = new Cell(ent.get(randidx).GetCellContent(), ent.get(randidx).GetCellRow(), ent.get(randidx).GetCellCol());
+    playerPos = new Cell(ent.get(randidx).GetCellContent(), ent.get(randidx).GetCellRow(), ent.get(randidx).GetCellCol());
   }
 
   public boolean IsExit(Cell pos) {
@@ -382,7 +382,7 @@ public class Zoo {
   }
 
   public boolean IsPlayer(int i, int j) {
-    return (playerpos.GetCellRow() == i && playerpos.GetCellCol() == j);
+    return (playerPos.GetCellRow() == i && playerPos.GetCellCol() == j);
   }
 
   public boolean IsRoad(Cell c) {

@@ -1,31 +1,31 @@
-package Cell;
+package cell;
 
 /**
  * Created by verenaseverina on 3/25/17.
  */
 public class Cell {
   protected char content;
-  protected int cell_id_row;
-  protected int cell_id_col;
+  protected int cellIdRow;
+  protected int cellIdCol;
 
   public Cell() {
     content = '\0';
-    cell_id_row = -1;
-    cell_id_col = -1;
+    cellIdRow = -1;
+    cellIdCol = -1;
   }
   public Cell(char _content, int x, int y) {
     content = _content;
-    cell_id_row = x;
-    cell_id_col = y;
+    cellIdRow = x;
+    cellIdCol = y;
   }
   public char GetCellContent() {
     return content;
   }
   public int GetCellRow() {
-    return cell_id_row;
+    return cellIdRow;
   }
   public int GetCellCol() {
-    return cell_id_col;
+    return cellIdCol;
   }
   public void SetTrueEntranceExit(int n) {
     n = 0;
