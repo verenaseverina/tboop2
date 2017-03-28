@@ -13,7 +13,8 @@ public class Kangaroo extends LandAnimal {
     what_i_eat = 'h';
     is_tame = true;
   }
-  public String Interact() {
+  @Override
+  public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {

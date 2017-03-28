@@ -168,7 +168,7 @@ public class Cage {
           case 1:
           for (int k = 0; k <= animal_neff; k++) {
             int y = array_of_animal[i].GetY()-1;
-            if (y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
+            if (array_of_animal[i].GetX() != array_of_animal[k].GetX() && y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
               array_of_animal[i].Move(1);
               found = true;
             }
@@ -178,7 +178,7 @@ public class Cage {
         case 2:
           for (int k = 0; k <= animal_neff; k++) {
             int x = array_of_animal[i].GetX()+1;
-            if (x != array_of_animal[k].GetX() && InsideCage(x,array_of_animal[i].GetY())) {
+            if (x != array_of_animal[k].GetX() && array_of_animal[i].GetY() != array_of_animal[k].GetY() && InsideCage(x,array_of_animal[i].GetY())) {
               array_of_animal[i].Move(2);
               found = true;
             }
@@ -188,7 +188,7 @@ public class Cage {
         case 3:
           for (int k = 0; k <= animal_neff; k++) {
             int y = array_of_animal[i].GetY()+1;
-            if (y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
+            if (array_of_animal[i].GetX() != array_of_animal[k].GetX() && y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
               array_of_animal[i].Move(3);
               found = true;
             }
@@ -198,7 +198,7 @@ public class Cage {
         case 4:
           for (int k = 0; k <= animal_neff; k++) {
             int x = array_of_animal[i].GetX()-1;
-            if (x != array_of_animal[k].GetX() && InsideCage(x,array_of_animal[i].GetY())) {
+            if (x != array_of_animal[k].GetX() && array_of_animal[i].GetY() != array_of_animal[k].GetY() && InsideCage(x,array_of_animal[i].GetY())) {
               array_of_animal[i].Move(4);
               found = true;
             }

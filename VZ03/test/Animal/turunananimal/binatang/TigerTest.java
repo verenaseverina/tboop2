@@ -12,7 +12,7 @@ public class TigerTest {
     public void interact() throws Exception {
         System.out.print("Testing Method Interact... ");
         Tiger a = new Tiger(1, 1, 1);
-        assertTrue(a.Interact().equals("Roooarrrr") == true);
+        assertTrue(a.GetInteract().equals("Roooarrrr") == true);
         System.out.println("OK");
     }
 

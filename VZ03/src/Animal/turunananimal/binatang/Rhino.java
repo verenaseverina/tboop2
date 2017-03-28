@@ -13,7 +13,7 @@ public class Rhino extends LandAnimal {
     what_i_eat = 'h';
     is_tame = false;
   }
-  public String Interact() {
+  public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {

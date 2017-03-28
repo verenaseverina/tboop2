@@ -305,17 +305,10 @@ public class Zoo {
   }
 
   public void CheckCage(boolean arr[], Animal animal) {
-    for(int i = 0;i < cages.size();i++) {
-      for(int j = 0;j < cages.get(i).GetCageSize();j++) {
-        System.out.print(cages.get(i).GetHabitat()[j].GetCellContent());
-      }
-      System.out.println();
-    }
-    System.out.print(cages.size());
     for (int j = 0; j < animal.GetSize(); j++) {
       int i = 0;
       while (i < cages.size()) {
-        if ((arr[i] == false) && (animal.GetHab()[j] == cages.get(i).GetHabitat()[0].GetCellContent())) {
+        if ((arr[i] == false) && (animal.GetArrayOfHabitat()[j] == cages.get(i).GetHabitat()[0].GetCellContent())) {
           //System.out.println(cages.get(i).GetNeff());
           if (cages.get(i).IsEmpty()) {
             arr[i] = true;
@@ -354,7 +347,7 @@ public class Zoo {
       for (int k = 0; k < cages.size(); k++) {
         if (cages.get(k).InsideCage(x, y)) {
           if (!cages.get(k).IsEmpty()) {
-            System.out.println(cages.get(k).GetAnimal()[0].GetContent() + ":" + cages.get(k).GetAnimal()[0].Interact());
+            System.out.println(cages.get(k).GetAnimal()[0].GetContent() + ":" + cages.get(k).GetAnimal()[0].GetInteract());
             cages.get(k).GetAnimal()[0].GiveFood();
           }
         }

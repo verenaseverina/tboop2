@@ -12,8 +12,7 @@ public class LandAnimalTest {
     public void getSize() throws Exception {
         System.out.print("Testing Method GetSize...");
         LandAnimal a = new LandAnimal(1, 1, 1) {
-            @Override
-            public String Interact() {
+            public String GetInteract() {
                 return null;
             }
         };

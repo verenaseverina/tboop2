@@ -21,7 +21,7 @@ public class AnimalTest {
         System.out.print("Testing Method GetX...");
         Animal a = new Animal(1, 1, 1) {
             @Override
-            public String Interact() {
+            public String GetInteract() {
                 return null;
             }
 
@@ -39,7 +39,7 @@ public class AnimalTest {
         System.out.print("Testing Method GetY...");
         Animal a = new Animal(1, 1, 1) {
             @Override
-            public String Interact() {
+            public String GetInteract() {
                 return null;
             }
 
@@ -56,7 +56,7 @@ public class AnimalTest {
     public void getHab() throws Exception {
         System.out.print("Testing Method GetHab...");
         Animal a = new Tiger(1, 1, 1);
-        assertTrue(a.GetHab()[0] == '^');
+        assertTrue(a.GetArrayOfHabitat()[0] == '^');
         System.out.println("OK");
     }
 

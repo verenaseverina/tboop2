@@ -12,7 +12,8 @@ public class ElangB extends AirAnimal {
     what_i_eat = 'c';
     is_tame = true;
   }
-  public String Interact() {
+  @Override
+  public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {
