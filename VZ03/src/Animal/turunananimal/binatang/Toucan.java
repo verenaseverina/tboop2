@@ -13,7 +13,8 @@ public class Toucan extends AirAnimal {
     what_i_eat = 'o';
     is_tame = true;
   }
-  public String Interact() {
+  @Override
+  public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {

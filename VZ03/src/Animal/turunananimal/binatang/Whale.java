@@ -13,7 +13,7 @@ public class Whale extends WaterAnimal {
     what_i_eat = 'c';
     is_tame = true;
   }
-  public String Interact() {
+  public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {

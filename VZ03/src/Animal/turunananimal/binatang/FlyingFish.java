@@ -12,7 +12,7 @@ public class FlyingFish extends WAAnimal {
     what_i_eat = 'o';
     is_tame = true;
   }
-  public String Interact() {
+  public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {

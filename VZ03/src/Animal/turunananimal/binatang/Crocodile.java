@@ -13,7 +13,7 @@ public class Crocodile extends LWAnimal {
     what_i_eat = 'c';
     is_tame = false;
   }
-  public String Interact() {
+  public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {

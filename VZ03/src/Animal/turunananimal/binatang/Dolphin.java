@@ -14,7 +14,7 @@ public class Dolphin extends WaterAnimal {
     is_tame = true;
   }
 
-  public String Interact() {
+  public String GetInteract() {
     return interaction;
   }
 

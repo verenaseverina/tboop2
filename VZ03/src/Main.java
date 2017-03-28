@@ -29,6 +29,9 @@ public class Main {
                   while(!z.Exit(z.GetPlayerPos())) {
                       sleep(500);
                       z.Tour();
+                      for(int i= 0;i<z.GetCages().size();i++) {
+                          z.GetCages().get(i).UpdatePosition();
+                      }
                       r.Render(z);
                   }
                   break;
