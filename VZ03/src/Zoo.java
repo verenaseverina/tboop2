@@ -370,8 +370,8 @@ public class Zoo {
 
   public static void main(String args[]) {
     Zoo z = new Zoo();
-    //Renderable r = new Renderable();
-    //r.Render(z);
+    Renderable r = new Renderable();
+    r.Render(z);
     //System.out.println(z.GetCages().get(0).GetCageSize());
   }
 }

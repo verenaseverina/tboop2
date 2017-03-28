@@ -14,7 +14,7 @@ public class State {
   public State() {
     try {
       BufferedReader buffer_map;
-      buffer_map = new BufferedReader(new FileReader("VZ03/src/State/map.txt"));
+      buffer_map = new BufferedReader(new FileReader("VZ03/src/map.txt"));
       try {
         StringBuilder string_builder_map = new StringBuilder();
         String line = buffer_map.readLine();
