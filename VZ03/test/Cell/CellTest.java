@@ -7,17 +7,12 @@ package Cell;
 
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
-/**
- *
- * @author nim_13515091
- */
 public class CellTest {
-  
   public CellTest() {
   }
   
@@ -31,93 +26,95 @@ public class CellTest {
   
   @Before
   public void setUp() {
+    System.out.println("Testing Cell Class");
   }
   
   @After
   public void tearDown() {
+    System.out.println();
   }
 
   /**
    * Test of GetCellContent method, of class Cell.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testGetCellContent() {
-    System.out.println("GetCellContent");
-    Cell instance = new Cell();
-    char expResult = ' ';
+  public void testGetCellContent() throws Exception {
+    System.out.print("Testing Method GetCellContent... ");
+    Cell instance = new Cell('~',3,3);
+    char expResult = '~';
     char result = instance.GetCellContent();
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of GetCellRow method, of class Cell.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testGetCellRow() {
-    System.out.println("GetCellRow");
+  public void testGetCellRow() throws Exception {
+    System.out.print("Testing Method GetCellRow... ");
     Cell instance = new Cell();
-    int expResult = 0;
+    int expResult = -1;
     int result = instance.GetCellRow();
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of GetCellCol method, of class Cell.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testGetCellCol() {
-    System.out.println("GetCellCol");
+  public void testGetCellCol() throws Exception {
+    System.out.print("Testing Method GetCellCol... ");
     Cell instance = new Cell();
-    int expResult = 0;
+    int expResult = -1;
     int result = instance.GetCellCol();
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of SetTrueEntranceExit method, of class Cell.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testSetTrueEntranceExit() {
-    System.out.println("SetTrueEntranceExit");
+  public void testSetTrueEntranceExit() throws Exception {
+    System.out.print("Testing Method SetTrueEntranceExit... ");
     int n = 0;
     Cell instance = new Cell();
     instance.SetTrueEntranceExit(n);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of IsEntrance method, of class Cell.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testIsEntrance() {
-    System.out.println("IsEntrance");
+  public void testIsEntrance() throws Exception {
+    System.out.print("Testing Method IsEntrance... ");
     Cell instance = new Cell();
     boolean expResult = false;
     boolean result = instance.IsEntrance();
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of IsExit method, of class Cell.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testIsExit() {
-    System.out.println("IsExit");
+  public void testIsExit() throws Exception {
+    System.out.print("Testing Method IsExit... ");
     Cell instance = new Cell();
     boolean expResult = false;
     boolean result = instance.IsExit();
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
   
 }

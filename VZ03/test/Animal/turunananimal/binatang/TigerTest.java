@@ -1,13 +1,39 @@
 package Animal.turunananimal.binatang;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
 /**
  * Created by Winarto on 03/27/2017.
  */
 public class TigerTest {
+    
+    public TigerTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() {
+    }
+
+    @AfterClass
+    public static void tearDownClass() {
+    }
+
+    @Before
+    public void setUp() {
+      System.out.println("Testing Tiger Class");
+    }
+
+    @After
+    public void tearDown() {
+      System.out.println();
+    }
+    
     @Test
     public void interact() throws Exception {
         System.out.print("Testing Method Interact... ");

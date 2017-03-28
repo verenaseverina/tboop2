@@ -30,31 +30,34 @@ public class RenderableTest {
   
   @Before
   public void setUp() {
+    System.out.println("Testing Renderable class");
   }
   
   @After
   public void tearDown() {
+    System.out.println();
   }
 
   /**
    * Test of Render method, of class Renderable.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testRender() {
-    System.out.println("Render");
+  public void testRender() throws Exception {
+    System.out.print("Testing Method Render... ");
     Zoo virtual_zoo = null;
     Renderable instance = new Renderable();
     instance.Render(virtual_zoo);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of SearchCageIndex method, of class Renderable.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testSearchCageIndex() {
-    System.out.println("SearchCageIndex");
+  public void testSearchCageIndex() throws Exception {
+    System.out.print("Testing Method SearchCageIndex... ");
     Zoo virtual_zoo = null;
     int x = 0;
     int y = 0;
@@ -62,16 +65,16 @@ public class RenderableTest {
     int expResult = 0;
     int result = instance.SearchCageIndex(virtual_zoo, x, y);
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of SearchAnimalIndex method, of class Renderable.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testSearchAnimalIndex() {
-    System.out.println("SearchAnimalIndex");
+  public void testSearchAnimalIndex() throws Exception {
+    System.out.print("Testing Method SearchAnimalIndex... ");
     Zoo virtual_zoo = null;
     int i = 0;
     int x = 0;
@@ -80,8 +83,7 @@ public class RenderableTest {
     int expResult = 0;
     int result = instance.SearchAnimalIndex(virtual_zoo, i, x, y);
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
   
 }

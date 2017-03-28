@@ -7,76 +7,75 @@ package State;
 
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
-/**
- *
- * @author nim_13515091
- */
 public class StateTest {
-  
+
   public StateTest() {
   }
-  
+
   @BeforeClass
   public static void setUpClass() {
   }
-  
+
   @AfterClass
   public static void tearDownClass() {
   }
-  
+
   @Before
   public void setUp() {
+    System.out.println("Testing State Class");
   }
-  
+
   @After
   public void tearDown() {
+    System.out.println();
   }
 
   /**
    * Test of GetMap method, of class State.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testGetMap() {
-    System.out.println("GetMap");
+  public void testGetMap() throws Exception {
+    System.out.print("Testing Method GetMap... ");
     State instance = new State();
-    char[][] expResult = null;
+    State instance2 = new State();
+    char[][] expResult = instance2.GetMap();
     char[][] result = instance.GetMap();
     assertArrayEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of GetHeight method, of class State.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testGetHeight() {
-    System.out.println("GetHeight");
+  public void testGetHeight() throws Exception {
+    System.out.print("Testing Method GetHeight... ");
     State instance = new State();
-    int expResult = 0;
+    int expResult = 8;
     int result = instance.GetHeight();
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
 
   /**
    * Test of GetWidth method, of class State.
+   * @throws java.lang.Exception
    */
   @Test
-  public void testGetWidth() {
-    System.out.println("GetWidth");
+  public void testGetWidth() throws Exception {
+    System.out.print("Testing Method GetWidth... ");
     State instance = new State();
-    int expResult = 0;
+    int expResult = 8;
     int result = instance.GetWidth();
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
+    System.out.println("OK");
   }
   
 }
