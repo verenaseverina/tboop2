@@ -1,293 +1,290 @@
-/**
- * Created by verenaseverina on 3/26/17.
- */
 public class Animal {
   private String interaction;
   private char content;
-  private int x;
-  private int y;
-  private int cage_id;
-  private float my_weight;
-  private float how_much_i_eat;
-  private char what_i_eat;
-  private boolean is_tame;
-  private char[] array_of_habitat;
-  private int size_of_habitat;
+  private int positionX;
+  private int positionY;
+  private int cageID;
+  private float myWeight;
+  private float howMuchIEat;
+  private char whatIEat;
+  private boolean isTame;
+  private char[] arrayOfHabitat;
+  private int sizeOfHabitat;
   private String type;
 
-  public Animal(int _x, int _y, int id,char con) {
-    x = _x;
-    y = _y;
-    cage_id = id;
+  public Animal(int posX, int posY, int id,char con) {
+    positionX = posX;
+    positionY = posY;
+    cageID = id;
     content = con;
 
     switch(content) {
       case 'H': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
 
         interaction = "Roooarrrr";
-        my_weight = 90f + (float)(Math.random() * 220 + 1);
-        how_much_i_eat = 7.23f * my_weight / 100f;
-        what_i_eat = 'c';
-        is_tame = false;
+        myWeight = 90f + (float)(Math.random() * 220 + 1);
+        howMuchIEat = 7.23f * myWeight / 100f;
+        whatIEat = 'c';
+        isTame = false;
         type = "LandAnimal";
         break;
       }
       case 'B': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '`';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '`';
 
         interaction = "Mmmm";
-        my_weight = 70f + (float) (Math.random() * 30 + 1);
-        how_much_i_eat = 38f * my_weight / 100f;
-        what_i_eat = 'h';
-        is_tame = true;
+        myWeight = 70f + (float) (Math.random() * 30 + 1);
+        howMuchIEat = 38f * myWeight / 100f;
+        whatIEat = 'h';
+        isTame = true;
         type = "LandAnimal";
         break;
       }
       case 'A': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '`';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '`';
 
         interaction = "Grrrr";
-        my_weight = 150f + (float) (Math.random() * 150 + 1);
-        how_much_i_eat = 5f * my_weight / 100f;
-        what_i_eat = 'h';
-        is_tame = true;
+        myWeight = 150f + (float) (Math.random() * 150 + 1);
+        howMuchIEat = 5f * myWeight / 100f;
+        whatIEat = 'h';
+        isTame = true;
         type = "LandAnimal";
         break;
       }
       case 'R': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
 
         interaction = "Woooo";
-        my_weight = 900f + (float)(Math.random() * 1400f + 1);
-        how_much_i_eat = 7.23f * my_weight / 100f;
-        what_i_eat = 'h';
-        is_tame = false;
+        myWeight = 900f + (float)(Math.random() * 1400f + 1);
+        howMuchIEat = 7.23f * myWeight / 100f;
+        whatIEat = 'h';
+        isTame = false;
         type = "LandAnimal";
         break;
       }
       case 'D': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
 
         interaction = "*Jummpp*";
-        my_weight = 18f + (float) (Math.random() * 72 + 1);
-        how_much_i_eat = 0.35f * my_weight / 100f;
-        what_i_eat = 'h';
-        is_tame = true;
+        myWeight = 18f + (float) (Math.random() * 72 + 1);
+        howMuchIEat = 0.35f * myWeight / 100f;
+        whatIEat = 'h';
+        isTame = true;
         type = "LandAnimal";
         break;
       }
       case 'L': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '~';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '~';
 
         interaction = "Cuitttt";
-        my_weight = 110f + (float) (Math.random() * 90 + 1);
-        how_much_i_eat = 2f * my_weight / 20f;
-        what_i_eat = 'c';
-        is_tame = true;
+        myWeight = 110f + (float) (Math.random() * 90 + 1);
+        howMuchIEat = 2f * myWeight / 20f;
+        whatIEat = 'c';
+        isTame = true;
         type = "WaterAnimal";
         break;
       }
       case 'W': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '~';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '~';
 
         interaction = "*Wet*";
-        my_weight = 14000f + (float)(Math.random() * 2000 + 1);
-        how_much_i_eat = 0.667f * my_weight;
-        what_i_eat = 'c';
-        is_tame = true;
+        myWeight = 14000f + (float)(Math.random() * 2000 + 1);
+        howMuchIEat = 0.667f * myWeight;
+        whatIEat = 'c';
+        isTame = true;
         type = "WaterAnimal";
         break;
       }
       case 'S': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '~';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '~';
 
         interaction = "*Wett*";
-        my_weight = 21500f + (float)(Math.random() * 8500 + 1);
-        how_much_i_eat = 0.0667f * my_weight;
-        what_i_eat = 'c';
-        is_tame = false;
+        myWeight = 21500f + (float)(Math.random() * 8500 + 1);
+        howMuchIEat = 0.0667f * myWeight;
+        whatIEat = 'c';
+        isTame = false;
         type = "WaterAnimal";
         break;
       }
       case 'K': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '`';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '`';
 
         interaction = "Kiiiaaa";
-        my_weight = 1.2f + (float) (Math.random() * 0.2f + 1);
-        how_much_i_eat = my_weight;
-        what_i_eat = 'o';
-        is_tame = true;
+        myWeight = 1.2f + (float) (Math.random() * 0.2f + 1);
+        howMuchIEat = myWeight;
+        whatIEat = 'o';
+        isTame = true;
         type = "AirAnimal";
         break;
       }
       case 'E': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '`';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '`';
 
         interaction = "Kiiiaaa";
-        my_weight = 4f + (float) (Math.random() * 2 + 1);
-        how_much_i_eat = 0.4535f * my_weight / 4f;
-        what_i_eat = 'c';
-        is_tame = true;
+        myWeight = 4f + (float) (Math.random() * 2 + 1);
+        howMuchIEat = 0.4535f * myWeight / 4f;
+        whatIEat = 'c';
+        isTame = true;
         type = "AirAnimal";
         break;
       }
       case 'T': {
-        size_of_habitat = 1;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '`';
+        sizeOfHabitat = 1;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '`';
 
         interaction = "Kwwaakk";
-        my_weight = 0.592f + (float)(Math.random() * 0.168f + 1);
-        how_much_i_eat = 0.5f * my_weight / 100f;
-        what_i_eat = 'o';
-        is_tame = true;
+        myWeight = 0.592f + (float)(Math.random() * 0.168f + 1);
+        howMuchIEat = 0.5f * myWeight / 100f;
+        whatIEat = 'o';
+        isTame = true;
         type = "AirAnimal";
         break;
       }
       case 'P': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '~';
-        array_of_habitat[1] = '^';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '~';
+        arrayOfHabitat[1] = '^';
 
         interaction = "Sqqqaaa";
-        my_weight = 27f + (float)(Math.random() * 14 + 1);
-        how_much_i_eat = 0.9f * my_weight / 27f;
-        what_i_eat = 'c';
-        is_tame = true;
+        myWeight = 27f + (float)(Math.random() * 14 + 1);
+        howMuchIEat = 0.9f * myWeight / 27f;
+        whatIEat = 'c';
+        isTame = true;
         type = "LWAnimal";
         break;
       }
       case 'C': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
-        array_of_habitat[1] = '~';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
+        arrayOfHabitat[1] = '~';
 
         interaction = "Rrrrr";
-        my_weight = 400f + (float) (Math.random() * 300 + 1);
-        how_much_i_eat = 2f * my_weight / 700f;
-        what_i_eat = 'c';
-        is_tame = false;
+        myWeight = 400f + (float) (Math.random() * 300 + 1);
+        howMuchIEat = 2f * myWeight / 700f;
+        whatIEat = 'c';
+        isTame = false;
         type = "LWAnimal";
         break;
       }
       case 'N': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
-        array_of_habitat[1] = '~';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
+        arrayOfHabitat[1] = '~';
 
         interaction = "Grooowwll";
-        my_weight = 1400f + (float) (Math.random() * 1800 + 1);
-        how_much_i_eat = 40f * my_weight / 2400f;
-        what_i_eat = 'h';
-        is_tame = true;
+        myWeight = 1400f + (float) (Math.random() * 1800 + 1);
+        howMuchIEat = 40f * myWeight / 2400f;
+        whatIEat = 'h';
+        isTame = true;
         type = "LWAnimal";
         break;
       }
       case 'M': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '~';
-        array_of_habitat[1] = '`';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '~';
+        arrayOfHabitat[1] = '`';
 
         interaction = "*fly and swim*";
-        my_weight = 2.5f + (float) (Math.random() * 2.5 + 1);
-        how_much_i_eat = 10f * my_weight / 100f;
-        what_i_eat = 'c';
-        is_tame = true;
+        myWeight = 2.5f + (float) (Math.random() * 2.5 + 1);
+        howMuchIEat = 10f * myWeight / 100f;
+        whatIEat = 'c';
+        isTame = true;
         type = "WAAnimal";
         break;
       }
       case 'F': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '~';
-        array_of_habitat[1] = '`';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '~';
+        arrayOfHabitat[1] = '`';
 
         interaction = "*stride*";
-        my_weight = 1f + (float) (Math.random() * 6 + 1);
-        how_much_i_eat = 5f * my_weight / 100f;
-        what_i_eat = 'o';
-        is_tame = true;
+        myWeight = 1f + (float) (Math.random() * 6 + 1);
+        howMuchIEat = 5f * myWeight / 100f;
+        whatIEat = 'o';
+        isTame = true;
         type = "WAAnimal";
         break;
       }
       case 'Y': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
-        array_of_habitat[1] = '`';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
+        arrayOfHabitat[1] = '`';
 
         interaction = "Arrrrkkkk";
-        my_weight = 25f + (float) (Math.random() * 34 + 1);
-        how_much_i_eat = 5f * my_weight / 100f;
-        what_i_eat = 'o';
-        is_tame = true;
+        myWeight = 25f + (float) (Math.random() * 34 + 1);
+        howMuchIEat = 5f * myWeight / 100f;
+        whatIEat = 'o';
+        isTame = true;
         type = "LAAnimal";
         break;
       }
       case 'I': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
-        array_of_habitat[1] = '`';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
+        arrayOfHabitat[1] = '`';
 
         interaction = "*walk and fly slightly*";
-        my_weight = 1f + (float) (Math.random() * 2 + 1);
-        how_much_i_eat = 5f * my_weight / 100f;
-        what_i_eat = 'o';
-        is_tame = true;
+        myWeight = 1f + (float) (Math.random() * 2 + 1);
+        howMuchIEat = 5f * myWeight / 100f;
+        whatIEat = 'o';
+        isTame = true;
         type = "LAAnimal";
         break;
       }
       case 'O': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '^';
-        array_of_habitat[1] = '`';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '^';
+        arrayOfHabitat[1] = '`';
 
         interaction = "Nguuukkk";
-        my_weight = 25f + (float) (Math.random() * 34 + 1);
-        how_much_i_eat = 5f * my_weight / 100f;
-        what_i_eat = 'o';
-        is_tame = true;
+        myWeight = 25f + (float) (Math.random() * 34 + 1);
+        howMuchIEat = 5f * myWeight / 100f;
+        whatIEat = 'o';
+        isTame = true;
         type = "LAAnimal";
         break;
       }
       case 'Z': {
-        size_of_habitat = 2;
-        array_of_habitat = new char[size_of_habitat];
-        array_of_habitat[0] = '~';
-        array_of_habitat[1] = '`';
+        sizeOfHabitat = 2;
+        arrayOfHabitat = new char[sizeOfHabitat];
+        arrayOfHabitat[0] = '~';
+        arrayOfHabitat[1] = '`';
 
         interaction = "Aaaakk";
-        my_weight = 2.8f + (float) (Math.random() * 12.2 + 1);
-        how_much_i_eat = 26.67f * my_weight / 100f;
-        what_i_eat = 'c';
-        is_tame = true;
+        myWeight = 2.8f + (float) (Math.random() * 12.2 + 1);
+        howMuchIEat = 26.67f * myWeight / 100f;
+        whatIEat = 'c';
+        isTame = true;
         type = "WAAnimal";
         break;
       }
@@ -299,7 +296,7 @@ public class Animal {
   }
 
   public int GetSizeOfHabitat() {
-    return size_of_habitat;
+    return sizeOfHabitat;
   }
 
   public char GetContent() {
@@ -307,58 +304,62 @@ public class Animal {
   }
 
   public float GetWeight() {
-    return my_weight;
+    return myWeight;
   }
 
   public float GetEat() {
-    return how_much_i_eat;
+    return howMuchIEat;
   }
 
   public int GetID() {
-    return cage_id;
+    return cageID;
   }
 
   public int GetWEat() {
-    return what_i_eat;
+    return whatIEat;
   }
 
   public int GetX() {
-    return x;
+    return positionX;
   }
 
   public int GetY() {
-    return y;
+    return positionY;
   }
 
   public boolean GetTame() {
-    return is_tame;
+    return isTame;
   }
 
   public char[] GetArrayOfHabitat() {
-    return array_of_habitat;
+    return arrayOfHabitat;
+  }
+
+  public int GetSize() {
+    return sizeOfHabitat;
   }
 
   public void Move(int dir) {
     switch(dir) {
       case 1: { //top
-        y -=  1;
+        positionY -=  1;
         break;
       }
       case 2: { //right
-        x +=  1;
+        positionX +=  1;
         break;
       }
       case 3: { //down
-        y +=  1;
+        positionY +=  1;
         break;
       }
       case 4: { //left
-        x -=  1;
+        positionX -=  1;
         break;
       }
     }
   }
   public void GiveFood() {
-    System.out.println("Animal makan sebanyak" + how_much_i_eat + " kg\n");
+    System.out.println("Animal makan sebanyak" + howMuchIEat + " kg\n");
   }
 }

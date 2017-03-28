@@ -1,64 +1,62 @@
-/**
- * Created by verenaseverina on 3/26/17.
- */
 public class Renderable {
-  public void Render(Zoo virtual_zoo) {
-    int i, j;
-    int cage_idx, animal_idx;
-    for (i = 0; i < virtual_zoo.GetHeight(); i++) {
-      for (j = 0; j < virtual_zoo.GetWidth(); j++) {
-        if ((SearchCageIndex(virtual_zoo, i, j)) != -999) {
-          cage_idx = SearchCageIndex(virtual_zoo, i, j);
-          animal_idx = SearchAnimalIndex(virtual_zoo, cage_idx, i, j);
-          System.out.printf("%c", virtual_zoo.GetCages().elementAt(cage_idx).GetAnimal()[animal_idx].GetContent());
+  public void Render(Zoo virtualZoo) {
+    int iIdx, jIdx;
+    int cageIdx, animalIdx;
+    for (iIdx = 0; iIdx < virtualZoo.GetHeight(); iIdx++) {
+      for (jIdx = 0; jIdx < virtualZoo.GetWidth(); jIdx++) {
+        if ((searchCageIndex(virtualZoo, iIdx, jIdx)) != -999) {
+          cageIdx = searchCageIndex(virtualZoo, iIdx, jIdx);
+          animalIdx = searchAnimalIndex(virtualZoo, cageIdx, iIdx, jIdx);
+          System.out.printf("%c", virtualZoo.GetCages().get(cageIdx).getAnimal()[animalIdx].GetContent());
         }
-        else if (virtual_zoo.IsPlayer(i, j)) {
+        else if (virtualZoo.IsPlayer(iIdx, jIdx)) {
           System.out.printf("P");
         }
         else {
-            System.out.printf("%c", virtual_zoo.GetMap()[i][j].GetCellContent());
+          System.out.printf("%c", virtualZoo.GetMap()[iIdx][jIdx].GetCellContent());
         }
       }
-    }
       System.out.printf("\n");
+    }
+    System.out.printf("\n");
   }
 
-  public int SearchCageIndex(Zoo virtual_zoo, int x, int y) {
-    int i = 0;
-    int j = 0;
+  public int searchCageIndex(Zoo virtualZoo, int xRow, int yCol) {
+    int iIdx = 0;
+    int jIdx = 0;
     boolean found = false, stop;
     int cage = -999;
-    while ((i < virtual_zoo.GetCages().capacity()) && (!found)) {
+    while ((iIdx < virtualZoo.GetCages().size()) && (!found)) {
       stop = false;
-      while ((j <=  virtual_zoo.GetCages().elementAt(i).GetNeff()) && (!found) && (!stop)) {
-        if (virtual_zoo.GetCages().elementAt(i).IsEmpty()) {
+      while ((jIdx <=  virtualZoo.GetCages().get(iIdx).getNeff()) && (!found) && (!stop)) {
+        if (virtualZoo.GetCages().get(iIdx).isEmpty()) {
           stop = true;
         }
-        else if ((virtual_zoo.GetCages().elementAt(i).GetAnimal()[j].GetX() == x)
-                && (virtual_zoo.GetCages().elementAt(i).GetAnimal()[j].GetY() == y)) {
+        else if ((virtualZoo.GetCages().get(iIdx).getAnimal()[jIdx].GetX() == xRow)
+                && (virtualZoo.GetCages().get(iIdx).getAnimal()[jIdx].GetY() == yCol)) {
           found = true;
-          cage = i;
+          cage = iIdx;
         }
         else {
-          j++;
+          jIdx++;
         }
       }
-      i++;
+      iIdx++;
     }
     return cage;
   }
-  public int SearchAnimalIndex(Zoo virtual_zoo, int i, int x, int y) {
-    int k = 0;
+  public int searchAnimalIndex(Zoo virtualZoo, int iIdx, int xRow, int yCol) {
+    int kIdx = 0;
     boolean found = false;
-    while ((k < virtual_zoo.GetCages().elementAt(i).GetCageSize()) && (!found)) {
-      if ((virtual_zoo.GetCages().elementAt(i).GetAnimal()[k].GetX() == x)
-              && (virtual_zoo.GetCages().elementAt(i).GetAnimal()[k].GetY() == y)) {
+    while ((kIdx < virtualZoo.GetCages().get(iIdx).getCageSize()) && (!found)) {
+      if ((virtualZoo.GetCages().get(iIdx).getAnimal()[kIdx].GetX() == xRow)
+              && (virtualZoo.GetCages().get(iIdx).getAnimal()[kIdx].GetY() == yCol)) {
         found = true;
       }
       else {
-        k++;
+        kIdx++;
       }
     }
-    return k;
+    return kIdx;
   }
 }

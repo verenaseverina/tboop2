@@ -1,23 +1,20 @@
-/**
- * Created by verenaseverina on 3/27/17.
- */
 public class Cell {
   private char content;
-  private int cell_id_row;
-  private int cell_id_col;
+  private int cellIdRow;
+  private int cellIdCol;
   private boolean entrance;
   private boolean exit;
 
   public Cell() {
     content = '\0';
-    cell_id_row = -1;
-    cell_id_col = -1;
+    cellIdRow = -1;
+    cellIdCol = -1;
   }
 
   public Cell(char _content, int x, int y) {
     content = _content;
-    cell_id_row = x;
-    cell_id_col = y;
+    cellIdRow = x;
+    cellIdCol = y;
   }
 
   public char GetCellContent() {
@@ -25,11 +22,11 @@ public class Cell {
   }
 
   public int GetCellRow() {
-    return cell_id_row;
+    return cellIdRow;
   }
 
   public int GetCellCol() {
-    return cell_id_col;
+    return cellIdCol;
   }
 
   public void SetTrueEntranceExit(int n) {
