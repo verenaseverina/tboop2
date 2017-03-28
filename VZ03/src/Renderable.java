@@ -16,9 +16,10 @@ public class Renderable {
           System.out.printf("P");
         }
         else {
-            System.out.printf("%c", virtual_zoo.GetMap()[i][j].GetCellContent());
+          System.out.printf("%c", virtual_zoo.GetMap()[i][j].GetCellContent());
         }
       }
+      System.out.printf("\n");
     }
       System.out.printf("\n");
   }

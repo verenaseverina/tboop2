@@ -41,8 +41,8 @@ public class Cage {
     int x, y;
     do {
       position_index = (int) Math.floor(Math.random() * cage_size);
-      x = array_of_habitat[position_index].GetCellRow();
-      y = array_of_habitat[position_index].GetCellCol();
+      x = array_of_habitat[position_index].GetCellCol();
+      y = array_of_habitat[position_index].GetCellRow();
     } while (ContainAnimal(x, y));
     animal_neff++;
     switch(animal) {
@@ -134,7 +134,7 @@ public class Cage {
     double temp_many_animal = 0.3 * cage_size;
     int many_animal = (int) Math.floor(temp_many_animal);
     if(!IsEmpty()) {
-      while ((i < many_animal) && (!found)) {
+      while ((i < many_animal) && (!found) && (i < animal_neff+1)) {
         if ((x == array_of_animal[i].GetX()) && (y == array_of_animal[i].GetY())) {
           found = true;
         }
@@ -218,6 +218,6 @@ public class Cage {
   public boolean IsFull() {
     double temp_many_animal = 0.3 * cage_size;
     int many_animal = (int) Math.floor(temp_many_animal);
-    return (many_animal == animal_neff);
+    return (many_animal == animal_neff+1);
   }
 }

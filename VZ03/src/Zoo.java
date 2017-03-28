@@ -6,8 +6,11 @@ import Cell.turunancell.Facility;
 import Cell.turunancell.Habitat;
 import State.State;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
+
+import static java.lang.Thread.sleep;
 
 public class Zoo {
 
@@ -18,6 +21,7 @@ public class Zoo {
   private int width;
 
   public Zoo() {
+    cages = new Vector<>();
     State s = new State();
     height = s.GetHeight();
     width = s.GetWidth();
@@ -55,8 +59,7 @@ public class Zoo {
         if (IsHabitat(smap[i][j])) {
           boolean recorded = false;
           int x = 0;
-          while ((!recorded) && (x < cage_buffer.capacity())) {
-
+          while ((!recorded) && (x < cage_buffer.size())) {
             recorded = InCage(cage_buffer.get(x), map[i][j]);
             x++;
           }
@@ -68,7 +71,6 @@ public class Zoo {
         }
       }
     }
-
     for (int i = 0; i < cage_buffer.size(); i++) {
       Cage cgbuf = new Cage(cage_buffer.get(i));
       cages.add(cgbuf);
@@ -108,6 +110,7 @@ public class Zoo {
       }
       i++;
     }
+    System.out.println();
     return cage;
   }
 
@@ -259,19 +262,46 @@ public class Zoo {
     System.out.println("Masukkan kode binatang yang ingin dimasukkan kedalam kandang: ");
     System.out.println("Untuk kandang bebas masukkan -1");
     System.out.println("Untuk membatalkan masukkan -2");
+    int x;
     do {
       Scanner T = new Scanner(System.in);
-      int x = T.nextInt();
+      x = T.nextInt();
       found = true;
+      if(x==-1 || x==-2){
+        break;
+      }
       if((x>=size)||(x<-2)) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
       }
-      else if(arr[x]==false && x<size && x>-2) {
+      else if(arr[x]==false && x<size && x>=0) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
       }
     } while (!found);
+    if (x==-1) {
+      int i = 0;
+      found = false;
+      while(i<size && !found) {
+        if(arr[i]) {
+          found = true;
+        } else {
+          i++;
+        }
+      }
+      if(found) {
+        do {
+          x = (int) (Math.random() * size);
+        } while (arr[x] == false);
+      }
+      else {
+        System.out.println("Tidak ada kandang yang cocok");
+      }
+    }
+
+    if (x!=-2 && found) {
+      cages.get(x).AddAnimal(input_user,x);
+    }
   }
 
   public void CheckCage(boolean arr[], Animal animal) {
@@ -279,7 +309,7 @@ public class Zoo {
       int i = 0;
       while (i < cages.size()) {
         if ((arr[i] == false) && (animal.GetHab()[j] == cages.get(i).GetHabitat()[0].GetCellContent())) {
-          System.out.println(cages.get(i).GetNeff());
+          //System.out.println(cages.get(i).GetNeff());
           if (cages.get(i).IsEmpty()) {
             arr[i] = true;
           } else if ((!cages.get(i).IsFull()) && (animal.GetTame() == cages.get(i).GetAnimal()[0].GetTame())) {
@@ -345,7 +375,7 @@ public class Zoo {
       }
     }
     int randidx = (int)(Math.random() * ent.size());
-    playerpos = ent.get(randidx);
+    playerpos = new Cell(ent.get(randidx).GetCellContent(), ent.get(randidx).GetCellRow(), ent.get(randidx).GetCellCol());
   }
 
   public boolean Exit(Cell pos) {
@@ -368,10 +398,37 @@ public class Zoo {
     return (c == '#' || c == '_' || c == 'R');
   }
 
-  public static void main(String args[]) {
+  public static void main(String args[]) throws IOException, InterruptedException {
     Zoo z = new Zoo();
+    int input;
     Renderable r = new Renderable();
-    r.Render(z);
-    //System.out.println(z.GetCages().get(0).GetCageSize());
+    Scanner T = new Scanner(System.in);
+    boolean endloop = false;
+    z.RandomEntrance();
+    do {
+      System.out.print("1.Tambahkan Animal\n2. Tour\n3. Exit\n");
+      input = T.nextInt();
+      switch (input) {
+        case 1: {
+          r.Render(z);
+          z.PutInAnimal();
+          break;
+        }
+        case 2: {
+          z.RandomEntrance();
+          r.Render(z);
+          while(!z.Exit(z.GetPlayerPos())) {
+            sleep(100);
+            z.Tour();
+            r.Render(z);
+          }
+          break;
+        }
+        case 3: {
+          endloop = true;
+          break;
+        }
+      }
+    } while(!endloop);
   }
 }
