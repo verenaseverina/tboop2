@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -26,7 +23,7 @@ public class Main {
               case 2: {
                   z.RandomEntrance();
                   r.Render(z);
-                  while(!z.Exit(z.GetPlayerPos())) {
+                  while(!z.IsExit(z.GetPlayerPos())) {
                       sleep(500);
                       z.Tour();
                       for(int i= 0;i<z.GetCages().size();i++) {

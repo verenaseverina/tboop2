@@ -44,8 +44,6 @@ public class Cage {
       x = array_of_habitat[position_index].GetCellRow();
       y = array_of_habitat[position_index].GetCellCol();
     } while (ContainAnimal(x, y));
-    System.out.println(x);
-    System.out.println(y);
     animal_neff++;
     switch(animal) {
       case 'H' : {
@@ -165,56 +163,47 @@ public class Cage {
     for(int i=0; i<=animal_neff; i++) {
       boolean found = false;
       int j = 1;
+      int x,y;
       while(!found) {
-        switch(j) {
-          case 1:
-          for (int k = 0; k <= animal_neff; k++) {
-            int y = array_of_animal[i].GetY()-1;
-            System.out.print(y);
-            System.out.print(InsideCage(array_of_animal[i].GetX(),y));
-            if (array_of_animal[i].GetX() != array_of_animal[k].GetX() && y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
+          if(j==1) {
+            y = array_of_animal[i].GetY() - 1;
+            if (!ContainAnimal(array_of_animal[i].GetX(), y) && InsideCage(array_of_animal[i].GetX(), y)) {
+              System.out.println(j);
               array_of_animal[i].Move(1);
               found = true;
             }
-          }
-          j++;
-          break;
-        case 2:
-          for (int k = 0; k <= animal_neff; k++) {
-            int x = array_of_animal[i].GetX()+1;
-            if (x != array_of_animal[k].GetX() && array_of_animal[i].GetY() != array_of_animal[k].GetY() && InsideCage(x,array_of_animal[i].GetY())) {
-              array_of_animal[i].Move(2);
-              found = true;
+            j = j+1;
+          }else if(j==2) {
+            x = array_of_animal[i].GetX() + 1;
+            System.out.println(j);
+            if (!ContainAnimal(x, array_of_animal[i].GetY()) && InsideCage(x, array_of_animal[i].GetY())) {
+             array_of_animal[i].Move(2);
+             found = true;
             }
+            j = j+1;
           }
-          j++;
-          break;
-        case 3:
-          for (int k = 0; k <= animal_neff; k++) {
-            int y = array_of_animal[i].GetY()+1;
-            if (array_of_animal[i].GetX() != array_of_animal[k].GetX() && y != array_of_animal[k].GetY() && InsideCage(array_of_animal[i].GetX(),y)) {
-              array_of_animal[i].Move(3);
-              found = true;
+          else if(j==3) {
+            y = array_of_animal[i].GetY() + 1;
+            if (!ContainAnimal(array_of_animal[i].GetX(), y) && InsideCage(array_of_animal[i].GetX(), y)) {
+             array_of_animal[i].Move(3);
+             found = true;
             }
+            j = j+1;
           }
-          j++;
-          break;
-        case 4:
-          for (int k = 0; k <= animal_neff; k++) {
-            int x = array_of_animal[i].GetX()-1;
-            if (x != array_of_animal[k].GetX() && array_of_animal[i].GetY() != array_of_animal[k].GetY() && InsideCage(x,array_of_animal[i].GetY())) {
-              array_of_animal[i].Move(4);
-              found = true;
+          else if(j==4) {
+            x = array_of_animal[i].GetX() - 1;
+            if (!ContainAnimal(x, array_of_animal[i].GetY()) && InsideCage(x, array_of_animal[i].GetY())) {
+             array_of_animal[i].Move(4);
+             found = true;
             }
+            j = j+1;
           }
-          j++;
-          break;
-        default: 
-          found = true;
-          break;
+          else {
+            found = true;
+            System.out.println(j);
+          }
         }
       }
-    }
   }
   public boolean IsEmpty() {
     return (animal_neff == -1);

@@ -27,11 +27,11 @@ public abstract class Animal {
   }
 
   public int GetX() {
-    return y;
+    return x;
   }
 
   public int GetY() {
-    return x;
+    return y;
   }
 
   public char[] GetArrayOfHabitat() {

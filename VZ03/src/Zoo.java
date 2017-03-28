@@ -6,7 +6,6 @@ import Cell.turunancell.Facility;
 import Cell.turunancell.Habitat;
 import State.State;
 
-import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -44,10 +43,10 @@ public class Zoo {
         }
       }
     }
-    GetAllCage(s);
+    InitAllCage(s);
   }
 
-  public void GetAllCage(State s) {
+  public void InitAllCage(State s) {
     Vector<Vector<Habitat>> cage_buffer = new Vector<Vector<Habitat>>(1);
     char[][] smap = new char[height][];
     for (int i = 0; i < width; i++) {
@@ -65,7 +64,7 @@ public class Zoo {
           }
           if (!recorded) {
             cage_buffer.setSize(n);
-            cage_buffer.set(n-1,GetCage((Habitat)map[i][j]));
+            cage_buffer.set(n-1, InitCage((Habitat)map[i][j]));
             n++;
           }
         }
@@ -77,7 +76,7 @@ public class Zoo {
     }
   }
 
-  public Vector<Habitat> GetCage(Habitat hab) {
+  public Vector<Habitat> InitCage(Habitat hab) {
     Vector<Habitat> cage = new Vector<Habitat>(1);
     Habitat h;
     cage.add(hab);
@@ -378,7 +377,7 @@ public class Zoo {
     playerpos = new Cell(ent.get(randidx).GetCellContent(), ent.get(randidx).GetCellRow(), ent.get(randidx).GetCellCol());
   }
 
-  public boolean Exit(Cell pos) {
+  public boolean IsExit(Cell pos) {
     return (pos.GetCellRow() == height - 1 || pos.GetCellCol() == width - 1);
   }
 
