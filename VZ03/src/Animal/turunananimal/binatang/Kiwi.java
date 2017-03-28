@@ -1,27 +1,27 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import java.lang.Math;
-import Animal.turunananimal.LAAnimal;
+import animal.turunananimal.LAAnimal;
 public class Kiwi extends LAAnimal {
-  public Kiwi(int x, int y, int id) {
-    super(x,y,id);
+  public Kiwi(int absis, int ordinat, int id) {
+    super(absis,ordinat,id);
     interaction = "*walk and fly slightly*";
     content = 'I';
-    my_weight = 1f + (float)(Math.random() * 2 + 1);
-    how_much_i_eat = 5f * my_weight / 100f;
-    what_i_eat = 'o';
-    is_tame = true;
+    myWeight = 1f + (float)(Math.random() * 2 + 1);
+    howMuchIEat = 5f * myWeight / 100f;
+    whatIEat = 'o';
+    isTame = true;
   }
   public String GetInteract() {
     return interaction;
   }
   public float GetWeight() {
-    return my_weight;
+    return myWeight;
   }
   public float GetEat() {
-    return how_much_i_eat;
+    return howMuchIEat;
   }
   public char GetWEat() {
-    return what_i_eat;
+    return whatiEat;
   }
 }
