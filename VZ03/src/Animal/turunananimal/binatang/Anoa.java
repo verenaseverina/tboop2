@@ -1,7 +1,7 @@
 package animal.turunananimal.binatang;
 
-import java.lang.Math;
 import animal.turunananimal.LandAnimal;
+import java.lang.Math;
 
 public class Anoa extends LandAnimal {
   public Anoa(int absis, int ordinat, int id) {
@@ -16,12 +16,15 @@ public class Anoa extends LandAnimal {
   public String getInteract() {
     return interaction;
   }
+
   public float getWeight() {
     return myWeight;
   }
+
   public float getEat() {
     return howMuchIEat;
   }
+
   public char getWEat() {
     return whatIEat;
   }

@@ -10,7 +10,7 @@ public abstract class Animal {
   protected int cageId;
   protected float myWeight;
   protected float howMuchIEat;
-  protected char whaIEat;
+  protected char whatIEat;
 
   public Animal(int absisin, int ordinatin, int id) {
     absis = absisin;
