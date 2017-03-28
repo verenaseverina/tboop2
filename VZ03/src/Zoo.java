@@ -18,6 +18,7 @@ public class Zoo {
   private int width;
 
   public Zoo() {
+    cages = new Vector<>();
     State s = new State();
     height = s.GetHeight();
     width = s.GetWidth();
@@ -55,8 +56,7 @@ public class Zoo {
         if (IsHabitat(smap[i][j])) {
           boolean recorded = false;
           int x = 0;
-          while ((!recorded) && (x < cage_buffer.capacity())) {
-
+          while ((!recorded) && (x < cage_buffer.size())) {
             recorded = InCage(cage_buffer.get(x), map[i][j]);
             x++;
           }
@@ -68,7 +68,6 @@ public class Zoo {
         }
       }
     }
-
     for (int i = 0; i < cage_buffer.size(); i++) {
       Cage cgbuf = new Cage(cage_buffer.get(i));
       cages.add(cgbuf);
@@ -108,6 +107,7 @@ public class Zoo {
       }
       i++;
     }
+    System.out.println();
     return cage;
   }
 
@@ -259,9 +259,9 @@ public class Zoo {
     System.out.println("Masukkan kode binatang yang ingin dimasukkan kedalam kandang: ");
     System.out.println("Untuk kandang bebas masukkan -1");
     System.out.println("Untuk membatalkan masukkan -2");
+    Scanner T = new Scanner(System.in);
+    int x = T.nextInt();
     do {
-      Scanner T = new Scanner(System.in);
-      int x = T.nextInt();
       found = true;
       if((x>=size)||(x<-2)) {
         System.out.println("Input salah, masukkan kembali input :");
@@ -272,6 +272,16 @@ public class Zoo {
         found = false;
       }
     } while (!found);
+    if (x==-1) {
+      do
+      {
+        x = (int)(Math.random() * size);
+      } while (arr[x]==false);
+    }
+
+    if (x!=-2) {
+      cages.get(x).AddAnimal(input_user,x);
+    }
   }
 
   public void CheckCage(boolean arr[], Animal animal) {
@@ -345,7 +355,7 @@ public class Zoo {
       }
     }
     int randidx = (int)(Math.random() * ent.size());
-    playerpos = ent.get(randidx);
+    playerpos = new Cell(ent.get(randidx).GetCellContent(), ent.get(randidx).GetCellRow(), ent.get(randidx).GetCellCol());
   }
 
   public boolean Exit(Cell pos) {
@@ -371,6 +381,8 @@ public class Zoo {
   public static void main(String args[]) {
     Zoo z = new Zoo();
     Renderable r = new Renderable();
+    z.PutInAnimal();
+    z.RandomEntrance();
     r.Render(z);
     //System.out.println(z.GetCages().get(0).GetCageSize());
   }

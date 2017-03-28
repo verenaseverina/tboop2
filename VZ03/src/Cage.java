@@ -41,8 +41,8 @@ public class Cage {
     int x, y;
     do {
       position_index = (int) Math.floor(Math.random() * cage_size);
-      x = array_of_habitat[position_index].GetCellRow();
-      y = array_of_habitat[position_index].GetCellCol();
+      x = array_of_habitat[position_index].GetCellCol();
+      y = array_of_habitat[position_index].GetCellRow();
     } while (ContainAnimal(x, y));
     animal_neff++;
     switch(animal) {
