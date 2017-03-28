@@ -1,32 +1,13 @@
 
-import java.util.Scanner;
-import java.util.Vector;
-import java.lang.Math;
+import Animal.Animal;
+import Animal.turunananimal.binatang.*;
 import Cell.Cell;
 import Cell.turunancell.Facility;
 import Cell.turunancell.Habitat;
-import Animal.Animal;
-import Animal.turunananimal.binatang.Anoa;
-import Animal.turunananimal.binatang.Cormorants;
-import Animal.turunananimal.binatang.Crocodile;
-import Animal.turunananimal.binatang.Dolphin;
-import Animal.turunananimal.binatang.ElangB;
-import Animal.turunananimal.binatang.FlyingFish;
-import Animal.turunananimal.binatang.Hippopotamus;
-import Animal.turunananimal.binatang.Kangaroo;
-import Animal.turunananimal.binatang.Kasuari;
-import Animal.turunananimal.binatang.Kelelawar;
-import Animal.turunananimal.binatang.Kiwi;
-import Animal.turunananimal.binatang.Ostrich;
-import Animal.turunananimal.binatang.Panda;
-import Animal.turunananimal.binatang.Pelikan;
-import Animal.turunananimal.binatang.Penguin;
-import Animal.turunananimal.binatang.Rhino;
-import Animal.turunananimal.binatang.Shark;
-import Animal.turunananimal.binatang.Tiger;
-import Animal.turunananimal.binatang.Toucan;
-import Animal.turunananimal.binatang.Whale;
 import State.State;
+
+import java.util.Scanner;
+import java.util.Vector;
 
 public class Zoo {
 
