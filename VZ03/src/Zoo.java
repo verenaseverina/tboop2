@@ -21,24 +21,24 @@ public class Zoo {
 
   public Zoo() {
     cages = new Vector<>();
-    State s = new State();
-    height = s.GetHeight();
-    width = s.GetWidth();
+    State stateMap = new State();
+    height = stateMap.GetHeight();
+    widtanimalTemp = stateMap.GetWidth();
     char[][] smap = new char[height][];
-    for (int i = 0; i < width; i++) {
-      smap[i] = s.GetMap()[i].clone();
+    for (int iIdx = 0; iIdx < width; iIdx++) {
+      smap[iIdx] = stateMap.GetMap()[iIdx].clone();
     }
     map = new Cell[height][width];
-    for (int i = 0; i < height; i++) {
-      for (int j = 0; j < width; j++) {
-        if (IsHabitat(smap[i][j])) {
-          map[i][j] = new Habitat(smap[i][j], i, j);
-        } else if (IsFacility(smap[i][j])) {
-          map[i][j] = new Facility(smap[i][j], i, j);
-          if (i == 0 || j == 0) {
+    for (int iIdx = 0; iIdx < height; iIdx++) {
+      for (int jIdx = 0; jIdx < width; jIdx++) {
+        if (IsHabitat(smap[iIdx][jIdx])) {
+          map[iIdx][jIdx] = new Habitat(smap[iIdx][jIdx], iIdx, jIdx);
+        } else if (IsFacility(smap[iIdx][jIdx])) {
+          map[iIdx][jIdx] = new Facility(smap[iIdx][jIdx], iIdx, jIdx);
+          if (iIdx == 0 || jIdx == 0) {
             map[i][j].SetTrueEntranceExit(0);
-          } else if (i == height || j == width) {
-            map[i][j].SetTrueEntranceExit(1);
+          } else if (iIdx == height || jIdx == width) {
+            map[iIdx][jIdx].SetTrueEntranceExit(1);
           }
         }
       }
@@ -46,82 +46,82 @@ public class Zoo {
     InitAllCage(s);
   }
 
-  public void InitAllCage(State s) {
-    Vector<Vector<Habitat>> cage_buffer = new Vector<Vector<Habitat>>(1);
+  public void InitAllCage(State stateMap) {
+    Vector<Vector<Habitat>> cageBuffer = new Vector<Vector<Habitat>>(1);
     char[][] smap = new char[height][];
-    for (int i = 0; i < width; i++) {
-      smap[i] = s.GetMap()[i].clone();
+    for (int iIdx = 0; iIdx < width; iIdx++) {
+      smap[iIdx] = s.GetMap()[iIdx].clone();
     }
-    int n = 1;
-    for (int i = 0; i < height; i++) {
-      for (int j = 0; j < width; j++) {
-        if (IsHabitat(smap[i][j])) {
+    int nIdx = 1;
+    for (int iIdx = 0; iIdx < height; iIdx++) {
+      for (int jIdx = 0; jIdx < width; jIdx++) {
+        if (IsHabitat(smap[iIdx][jIdx])) {
           boolean recorded = false;
-          int x = 0;
-          while ((!recorded) && (x < cage_buffer.size())) {
-            recorded = InCage(cage_buffer.get(x), map[i][j]);
-            x++;
+          int xIdx = 0;
+          while ((!recorded) && (xIdx < cageBuffer.size())) {
+            recorded = InCage(cageBuffer.get(xIdx), map[iIdx][jIdx]);
+            xIdx++;
           }
           if (!recorded) {
-            cage_buffer.setSize(n);
-            cage_buffer.set(n-1, InitCage((Habitat)map[i][j]));
-            n++;
+            cageBuffer.setSize(nIdx);
+            cageBuffer.set(nIdx-1, InitCage((Habitat)map[iIdx][jIdx]));
+            nIdx++;
           }
         }
       }
     }
-    for (int i = 0; i < cage_buffer.size(); i++) {
-      Cage cgbuf = new Cage(cage_buffer.get(i));
+    for (int iIdx = 0; iIdx < cageBuffer.size(); iIdx++) {
+      Cage cgbuf = new Cage(cageBuffer.get(iIdx));
       cages.add(cgbuf);
     }
   }
 
   public Vector<Habitat> InitCage(Habitat hab) {
     Vector<Habitat> cage = new Vector<Habitat>(1);
-    Habitat h;
+    Habitat habitatMap;
     cage.add(hab);
-    int i = 0;
+    int iIdx = 0;
     while (i < cage.size()) {
-      h = cage.get(i);
-      if (h.GetCellRow() - 1 >= 0) {
-        if (map[h.GetCellRow() - 1][h.GetCellCol()].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[h.GetCellRow() - 1][h.GetCellCol()])) {
-          Habitat b = new Habitat(hab.GetCellContent(),h.GetCellRow() - 1,h.GetCellCol());
-          cage.add(b);
+      animalTemp = cage.get(iIdx);
+      if (habitatMap.GetCellRow() - 1 >= 0) {
+        if (map[habitatMap.GetCellRow() - 1][habitatMap.GetCellCol()].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[habitatMap.GetCellRow() - 1][habitatMap.GetCellCol()])) {
+          Habitat habTemp = new Habitat(hab.GetCellContent(),habitatMap.GetCellRow() - 1,habitatMap.GetCellCol());
+          cage.add(habTemp);
         }
       }
-      if (h.GetCellCol() + 1 < width) {
-        if (map[h.GetCellRow()][h.GetCellCol() + 1].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[h.GetCellRow()][h.GetCellCol() + 1])) {
-          Habitat b = new Habitat(hab.GetCellContent(),h.GetCellRow(),h.GetCellCol() + 1);
-          cage.add(b);
+      if (habitatMap.GetCellCol() + 1 < width) {
+        if (map[habitatMap.GetCellRow()][habitatMap.GetCellCol() + 1].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[habitatMap.GetCellRow()][habitatMap.GetCellCol() + 1])) {
+          Habitat habTemp = new Habitat(hab.GetCellContent(),habitatMap.GetCellRow(),habitatMap.GetCellCol() + 1);
+          cage.add(habTemp);
         }
       }
-      if (h.GetCellRow() + 1 < height) {
-        if (map[h.GetCellRow() + 1][h.GetCellCol()].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[h.GetCellRow() + 1][h.GetCellCol()])) {
-          Habitat b = new Habitat(hab.GetCellContent(),h.GetCellRow() + 1,h.GetCellCol());
-          cage.add(b);
+      if (habitatMap.GetCellRow() + 1 < height) {
+        if (map[habitatMap.GetCellRow() + 1][habitatMap.GetCellCol()].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[habitatMap.GetCellRow() + 1][habitatMap.GetCellCol()])) {
+          Habitat habTemp = new Habitat(hab.GetCellContent(),habitatMap.GetCellRow() + 1,habitatMap.GetCellCol());
+          cage.add(habTemp);
         }
       }
-      if (h.GetCellCol() - 1 >= 0) {
-        if (map[h.GetCellRow()][h.GetCellCol() - 1].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[h.GetCellRow()][h.GetCellCol() - 1])) {
-          Habitat b = new Habitat(hab.GetCellContent(),h.GetCellRow(),h.GetCellCol() - 1);
-          cage.add(b);
+      if (habitatMap.GetCellCol() - 1 >= 0) {
+        if (map[habitatMap.GetCellRow()][habitatMap.GetCellCol() - 1].GetCellContent() == hab.GetCellContent() && !InCage(cage, map[habitatMap.GetCellRow()][habitatMap.GetCellCol() - 1])) {
+          Habitat habTemp = new Habitat(hab.GetCellContent(),habitatMap.GetCellRow(),habitatMap.GetCellCol() - 1);
+          cage.add(habTemp);
         }
       }
-      i++;
+      iIdx++;
     }
     System.out.println();
     return cage;
   }
 
-  public boolean InCage(Vector<Habitat> v, Cell c) {
-    if (IsHabitat(c.GetCellContent())) {
+  public boolean InCage(Vector<Habitat> vMap, Cell cellMap) {
+    if (IsHabitat(cellMap.GetCellContent())) {
       boolean found = false;
-      int i = 0;
-      while (!found && i < v.size()) {
-        if (c.GetCellRow() == v.get(i).GetCellRow() && c.GetCellCol() == v.get(i).GetCellCol()) {
+      int iIdx = 0;
+      while (!found && iIdx < vMap.size()) {
+        if (cellMap.GetCellRow() == vMap.get(iIdx).GetCellRow() && cellMap.GetCellCol() == vMap.get(iIdx).GetCellCol()) {
           found = true;
         }
-        i++;
+        iIdx++;
       }
       return (found);
     } else {
@@ -169,90 +169,90 @@ public class Zoo {
     System.out.println();
 
     System.out.println("Masukkan kode binatang yang ingin dimasukkan kedalam kandang : ");
-    Scanner S = new Scanner(System.in);
-    char input_user = S.next().trim().charAt(0);
+    Scanner sInput = new Scanner(System.in);
+    char inputUser = sInput.next().trim().charAt(0);
 
     boolean[] arr = new boolean[size];
-    for (int i = 0; i < size; i++) {
-      arr[i] = false;
+    for (int iIdx = 0; iIdx < size; iIdx++) {
+      arr[iIdx] = false;
     }
 
-    switch (input_user) {
+    switch (inputUser) {
       case 'H': {
-        Tiger H = new Tiger(-1,-1,-1);
-        CheckCage(arr, H);
+        Tiger animalTemp = new Tiger(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'B': {
-        Panda H = new Panda(-1,-1,-1);
-        CheckCage(arr, H);
+        Panda animalTemp = new Panda(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'A': {
-        Anoa H = new Anoa(-1,-1,-1);
-        CheckCage(arr, H);
+        Anoa animalTemp = new Anoa(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'R': {
-        Rhino H = new Rhino(-1,-1,-1);
-        CheckCage(arr, H);
+        Rhino animalTemp = new Rhino(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'D': {
-        Kangaroo H = new Kangaroo(-1,-1,-1);
-        CheckCage(arr, H);
+        Kangaroo animalTemp = new Kangaroo(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'L': {
-        Dolphin H = new Dolphin(-1,-1,-1);
-        CheckCage(arr, H);
+        Dolphin animalTemp = new Dolphin(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'W': {
-        Whale H = new Whale(-1,-1,-1);
-        CheckCage(arr, H);
+        Whale animalTemp = new Whale(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'S': {
-        Shark H = new Shark(-1,-1,-1);
-        CheckCage(arr, H);
+        Shark animalTemp = new Shark(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'K': {
-        Kelelawar H = new Kelelawar(-1,-1,-1);
-        CheckCage(arr, H);
+        Kelelawar animalTemp = new Kelelawar(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'E': {
-        ElangB H = new ElangB(-1,-1,-1);
-        CheckCage(arr, H);
+        ElangB animalTemp = new ElangB(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'T': {
-        Toucan H = new Toucan(-1,-1,-1);
-        CheckCage(arr, H);
+        Toucan animalTemp = new Toucan(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'P': {
-        Penguin H = new Penguin(-1,-1,-1);
-        CheckCage(arr, H);
+        Penguin animalTemp = new Penguin(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'C': {
-        Crocodile H = new Crocodile(-1,-1,-1);
-        CheckCage(arr, H);
+        Crocodile animalTemp = new Crocodile(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
       case 'N': {
-        Hippopotamus H = new Hippopotamus(-1,-1,-1);
-        CheckCage(arr, H);
+        Hippopotamus animalTemp = new Hippopotamus(-1,-1,-1);
+        CheckCage(arr, animalTemp);
         break;
       }
     }
     
     System.out.println("Kandang yang tersedia :");
-    for(int i=0; i<size; i++) {
-      if(arr[i]) {
+    for(int iIdx = 0; iIdx < size; iIdx++) {
+      if(arr[iIdx]) {
         System.out.print(i + " ");
       }
     }
@@ -261,93 +261,93 @@ public class Zoo {
     System.out.println("Masukkan kode binatang yang ingin dimasukkan kedalam kandang: ");
     System.out.println("Untuk kandang bebas masukkan -1");
     System.out.println("Untuk membatalkan masukkan -2");
-    int x;
+    int pilihanAngka;
     do {
-      Scanner T = new Scanner(System.in);
-      x = T.nextInt();
+      Scanner tInput = new Scanner(System.in);
+      pilihanAngka = tInput.nextInt();
       found = true;
-      if(x==-1 || x==-2){
+      if(pilihanAngka == -1 || pilihanAngka == -2){
         break;
       }
-      if((x>=size)||(x<-2)) {
+      if((pilihanAngka >= size)||(pilihanAngka < -2)) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
       }
-      else if(arr[x]==false && x<size && x>=0) {
+      else if(arr[pilihanAngka] == false && pilihanAngka < size && pilihanAngka >= 0) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
       }
     } while (!found);
-    if (x==-1) {
-      int i = 0;
+    if (pilihanAngka == -1) {
+      int iIdx = 0;
       found = false;
-      while(i<size && !found) {
-        if(arr[i]) {
+      while(iIdx < size && !found) {
+        if(arr[iIdx]) {
           found = true;
         } else {
-          i++;
+          iIdx++;
         }
       }
       if(found) {
         do {
-          x = (int) (Math.random() * size);
-        } while (arr[x] == false);
+          pilihanAngka = (int) (Math.random() * size);
+        } while (arr[pilihanAngka] == false);
       }
       else {
         System.out.println("Tidak ada kandang yang cocok");
       }
     }
 
-    if (x!=-2 && found) {
-      cages.get(x).AddAnimal(input_user,x);
+    if (pilihanAngka != -2 && found) {
+      cages.get(pilihanAngka).AddAnimal(inputUser,pilihanAngka);
     }
   }
 
   public void CheckCage(boolean arr[], Animal animal) {
-    for (int j = 0; j < animal.GetSize(); j++) {
-      int i = 0;
-      while (i < cages.size()) {
-        if ((arr[i] == false) && (animal.GetArrayOfHabitat()[j] == cages.get(i).GetHabitat()[0].GetCellContent())) {
+    for (int jIdx = 0; jIdx < animal.GetSize(); jIdx++) {
+      int iIdx = 0;
+      while (iIdx < cages.size()) {
+        if ((arr[iIdx] == false) && (animal.GetArrayOfHabitat()[jIdx] == cages.get(iIdx).GetHabitat()[0].GetCellContent())) {
           //System.out.println(cages.get(i).GetNeff());
-          if (cages.get(i).IsEmpty()) {
-            arr[i] = true;
-          } else if ((!cages.get(i).IsFull()) && (animal.GetTame() == cages.get(i).GetAnimal()[0].GetTame())) {
-            arr[i] = true;
+          if (cages.get(iIdx).IsEmpty()) {
+            arr[iIdx] = true;
+          } else if ((!cages.get(iIdx).IsFull()) && (animal.GetTame() == cages.get(iIdx).GetAnimal()[0].GetTame())) {
+            arr[iIdx] = true;
           }
         }
-        i++;
+        iIdx++;
       }
     }
   }
 
   public void Tour() {
-    int i = playerPos.GetCellRow();
-    int j = playerPos.GetCellCol();
+    int iIdx = playerPos.GetCellRow();
+    int jIdx = playerPos.GetCellCol();
     TourInteract(playerPos);
-    if (IsRoad(map[i][j + 1])) {
-      Cell next = new Cell('=',i, j + 1);
+    if (IsRoad(map[iIdx][jIdx + 1])) {
+      Cell next = new Cell('=',iIdx, jIdx + 1);
       playerPos = next;
-    } else if (IsRoad(map[i + 1][j])) {
-      Cell next = new Cell('=',i + 1, j);
+    } else if (IsRoad(map[iIdx + 1][jIdx])) {
+      Cell next = new Cell('=',iIdx + 1, jIdx);
       playerPos = next;
-    } else if (IsRoad(map[i - 1][j])) {
-      Cell next = new Cell('=',i - 1, j);
+    } else if (IsRoad(map[iIdx - 1][jIdx])) {
+      Cell next = new Cell('=',iIdx - 1, jIdx);
       playerPos = next;
-    } else if (IsRoad(map[i][j - 1])) {
-      Cell next = new Cell('=',i, j - 1);
+    } else if (IsRoad(map[iIdx][jIdx - 1])) {
+      Cell next = new Cell('=',iIdx, jIdx - 1);
       playerPos = next;
     }
   }
 
   public void TourInteract(Cell pos) {
     if (pos.GetCellRow() > 0) {
-      int x = pos.GetCellRow() - 1;
-      int y = pos.GetCellCol();
-      for (int k = 0; k < cages.size(); k++) {
-        if (cages.get(k).InsideCage(x, y)) {
-          if (!cages.get(k).IsEmpty()) {
-            System.out.println(cages.get(k).GetAnimal()[0].GetContent() + ":" + cages.get(k).GetAnimal()[0].GetInteract());
-            cages.get(k).GetAnimal()[0].GiveFood();
+      int xRow = pos.GetCellRow() - 1;
+      int yCol = pos.GetCellCol();
+      for (int kIdx = 0; kIdx < cages.size(); kIdx++) {
+        if (cages.get(kIdx).InsideCage(xRow, yCol)) {
+          if (!cages.get(kIdx).IsEmpty()) {
+            System.out.println(cages.get(kIdx).GetAnimal()[0].GetContent() + ":" + cages.get(kIdx).GetAnimal()[0].GetInteract());
+            cages.get(kIdx).GetAnimal()[0].GiveFood();
           }
         }
       }
@@ -357,20 +357,20 @@ public class Zoo {
   public void RandomEntrance() {
     Vector<Cell> ent = new Vector<Cell>();
     Vector<Cell> ex = new Vector<Cell>();
-    for (int i = 0; i < width; i++) {
-      if (IsRoad(map[i][0])) {
-        ent.add(map[i][0]);
+    for (int iIdx = 0; iIdx < width; iIdx++) {
+      if (IsRoad(map[iIdx][0])) {
+        ent.add(map[iIdx][0]);
       }
-      if (IsRoad(map[i][width - 1])) {
-        ex.add(map[i][width - 1]);
+      if (IsRoad(map[iIdx][width - 1])) {
+        ex.add(map[iIdx][width - 1]);
       }
     }
-    for (int j = 0; j < height; j++) {
-      if (IsRoad(map[0][j])) {
-        ent.add(map[0][j]);
+    for (int jIdx = 0; jIdx < height; jIdx++) {
+      if (IsRoad(map[0][jIdx])) {
+        ent.add(map[0][jIdx]);
       }
-      if (IsRoad(map[height - 1][j])) {
-        ex.add(map[height - 1][j]);
+      if (IsRoad(map[height - 1][jIdx])) {
+        ex.add(map[height - 1][jIdx]);
       }
     }
     int randidx = (int)(Math.random() * ent.size());
@@ -381,19 +381,19 @@ public class Zoo {
     return (pos.GetCellRow() == height - 1 || pos.GetCellCol() == width - 1);
   }
 
-  public boolean IsPlayer(int i, int j) {
-    return (playerPos.GetCellRow() == i && playerPos.GetCellCol() == j);
+  public boolean IsPlayer(int iIdx, int jIdx) {
+    return (playerPos.GetCellRow() == iIdx && playerPos.GetCellCol() == jIdx);
   }
 
-  public boolean IsRoad(Cell c) {
-    return (c.GetCellContent() == '_');
+  public boolean IsRoad(Cell cellMap) {
+    return (cellMap.GetCellContent() == '_');
   }
 
-  public boolean IsHabitat(char c) {
-    return (c == '^' || c == '~' || c == '`');
+  public boolean IsHabitat(char cellMap) {
+    return (cellMap == '^' || cellMap == '~' || cellMap == '`');
   }
 
-  public boolean IsFacility(char c) {
-    return (c == '#' || c == '_' || c == 'R');
+  public boolean IsFacility(char cellMap) {
+    return (cellMap == '#' || cellMap == '_' || cellMap == 'R');
   }
 }
