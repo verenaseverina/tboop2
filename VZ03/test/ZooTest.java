@@ -100,20 +100,14 @@ public class ZooTest {
     }
 
     @Test
-    public void putInAnimal() throws Exception {
-        System.out.print("Testing Method PutInAnimal... ");
-        Zoo virtualZoo = new Zoo();
-        virtualZoo.randomEntrance();
-        virtualZoo.putInAnimal();
-        System.out.println("OK");
-    }
-
-    @Test
     public void checkCage() throws Exception {
-        System.out.print("Testing Method Tour... ");
+        System.out.print("Testing Method CheckCage... ");
         Zoo virtualZoo = new Zoo();
         Tiger animalTemp = new Tiger(0,0,0);
         boolean[] arr = new boolean[5];
+        for (int iidx = 0; iidx < 5; iidx++) {
+            arr[iidx] = false;
+        }
         virtualZoo.randomEntrance();
         virtualZoo.checkCage(arr,animalTemp);
         System.out.println("OK");
