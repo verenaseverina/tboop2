@@ -13,7 +13,7 @@ import cell.Cell;
  *     kebenaran exit dan entrance.
  * </p>
  * @author Winarto
- * @authir Verena Severina
+ * @author Verena Severina
  */
 public class Facility extends Cell {
   /**

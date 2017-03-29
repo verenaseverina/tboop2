@@ -4,18 +4,8 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd0588a2-a570-4888-8b27-9de6ea4db4e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/CageTest.java" afterPath="$PROJECT_DIR$/VZ03/test/CageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/RenderableTest.java" afterPath="$PROJECT_DIR$/VZ03/test/RenderableTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/ZooTest.java" afterPath="$PROJECT_DIR$/VZ03/test/ZooTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/animal/AnimalTest.java" afterPath="$PROJECT_DIR$/VZ03/test/animal/AnimalTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/animal/turunananimal/LandAnimalTest.java" afterPath="$PROJECT_DIR$/VZ03/test/animal/turunananimal/LandAnimalTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/animal/turunananimal/binatang/TigerTest.java" afterPath="$PROJECT_DIR$/VZ03/test/animal/turunananimal/binatang/TigerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/cell/CellTest.java" afterPath="$PROJECT_DIR$/VZ03/test/cell/CellTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/cell/turunancell/FacilityTest.java" afterPath="$PROJECT_DIR$/VZ03/test/cell/turunancell/FacilityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/cell/turunancell/HabitatTest.java" afterPath="$PROJECT_DIR$/VZ03/test/cell/turunancell/HabitatTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/test/state/StateTest.java" afterPath="$PROJECT_DIR$/VZ03/test/state/StateTest.java" />
+    <list default="true" id="dd0588a2-a570-4888-8b27-9de6ea4db4e9" name="Default" comment="JavaDocs vz03">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/src/Cell/turunancell/Facility.java" afterPath="$PROJECT_DIR$/VZ03/src/Cell/turunancell/Facility.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,8 +111,8 @@
       <file leaf-file-name="TigerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VZ03/test/animal/turunananimal/binatang/TigerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="12" column="58" lean-forward="false" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+            <state relative-caret-position="441">
+              <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -807,13 +797,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490415779327</updated>
     </task>
-    <task id="LOCAL-00013" summary="benerin Cage.java">
-      <created>1490461744179</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1490461744179</updated>
-    </task>
     <task id="LOCAL-00014" summary="benerin Cage.java">
       <created>1490501547829</created>
       <option name="number" value="00014" />
@@ -1150,7 +1133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490769863069</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="JavaDocs vz03">
+      <created>1490770041186</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1490770041186</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1160,13 +1150,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07793634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1221,7 +1211,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="benerin nama fungsi di Animal" />
     <MESSAGE value="benerin nama fungsi" />
     <MESSAGE value="sesuain sama CheckStyle" />
     <MESSAGE value="nambahin Animal pake default case" />
@@ -1246,7 +1235,8 @@
     <MESSAGE value="VZ02 Animal&#10;VZ02 Main" />
     <MESSAGE value="State refactored" />
     <MESSAGE value="JavaDocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs" />
+    <MESSAGE value="JavaDocs vz03" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs vz03" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1680,8 +1670,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VZ03/test/animal/turunananimal/binatang/TigerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="12" column="58" lean-forward="false" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+        <state relative-caret-position="441">
+          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
           <folding />
         </state>
       </provider>
