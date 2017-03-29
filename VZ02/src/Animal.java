@@ -1,3 +1,10 @@
+/**
+ * Created by Kebun Binatang Bandung on 3/26/17.
+ */
+
+/**
+ * Kelas Animal adalah kelas untuk seluruh hewan di Zoo.
+ */
 public class Animal {
   private String interaction;
   private char content;
@@ -12,6 +19,13 @@ public class Animal {
   private int sizeOfHabitat;
   private String type;
 
+  /**
+   * Constructor Animal dengan parameter.
+   * @param posX Kolom dari Animal
+   * @param posY Baris dari Animal
+   * @param id Cage ID penempatan Animal
+   * @param con Content Animal
+   */
   public Animal(int posX, int posY, int id,char con) {
     positionX = posX;
     positionY = posY;
@@ -291,54 +305,113 @@ public class Animal {
     }
   }
 
+  /**
+   * Getter Animal Interation.
+   * @return String interaksi Animal
+   */
   public String GetInteract() {
     return interaction;
   }
 
+  /**
+   * Getter size habitat.
+   * @return integer besar habitat Animal
+   */
   public int GetSizeOfHabitat() {
     return sizeOfHabitat;
   }
 
+  /**
+   * Getter content Animal.
+   * @return karakter konten Animal
+   */
   public char GetContent() {
     return content;
   }
 
+  /**
+   * Getter massa Animal.
+   * @return float massa Animal
+   */
   public float GetWeight() {
     return myWeight;
   }
 
+  /**
+   * Getter HowMuchIEat.
+   * @return float jumlah hewan makan
+   */
   public float GetEat() {
     return howMuchIEat;
   }
 
+  /**
+   * Getter cage ID Animal.
+   * @return integer ID Cage Animal
+   */
   public int GetID() {
     return cageID;
   }
 
-  public int GetWEat() {
+  /**
+   * Getter pengelompokan makanan hewan.
+   * @return karakter makanan hewan
+   */
+  public char GetWEat() {
     return whatIEat;
   }
 
+  /**
+   * Getter posisi X hewan.
+   * @return integer positionX
+   */
   public int GetX() {
     return positionX;
   }
 
+  /**
+   * Getter posisi Y hewan.
+   * @return integer positionY
+   */
   public int GetY() {
     return positionY;
   }
 
+  /**
+   * Getter kejinakkan hewan.
+   * @return boolean apakah hewan jinak
+   */
   public boolean GetTame() {
     return isTame;
   }
 
+  /**
+   * Getter array of Habitat.
+   * @return array of char Cage hewan
+   */
   public char[] GetArrayOfHabitat() {
     return arrayOfHabitat;
   }
 
+  /**
+   * Getter Size hewan.
+   * @return array of char alam tempat hidup hewan
+   */
   public int GetSize() {
     return sizeOfHabitat;
   }
 
+  /**
+   * Prosedur move untuk menggerakan hewan pada Zoo. Berikut adalah
+   * response method pada parameter yang diberikan:
+   * <ol>
+   *     <li>Atas</li>
+   *     <li>Kanan</li>
+   *     <li>Bawah</li>
+   *     <li>Kiri</li>
+   * </ol>
+   * @param dir integer input untuk menentukan arah move yang dipilih
+   */
   public void Move(int dir) {
     switch(dir) {
       case 1: { //top
@@ -359,6 +432,10 @@ public class Animal {
       }
     }
   }
+
+  /**
+   * Interaksi memberikan makan kepada hewan. Menulis jumlah hewan makan ke layar.
+   */
   public void GiveFood() {
     System.out.println("Animal makan sebanyak" + howMuchIEat + " kg\n");
   }

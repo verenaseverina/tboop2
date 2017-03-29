@@ -1,9 +1,33 @@
+/**
+ * Created by Kebun Binatang Bandung on 3/26/17.
+ */
 import java.io.IOException;
 import java.util.Scanner;
 
 import static java.lang.Thread.sleep;
+/**
+ * Driver dari perangkat lunak virtual zoo.
+ * @author Adrian Hartarto
+ * @author Winarto
+ */
 public class Main {
-  public static void main(String[] args) throws IOException,InterruptedException {
+    /**
+     * Driver dari perangkat lunak virtual zoo.
+     * Program mengkonstruksi sebuah objek Zoo dan ditampilkan ke layar.
+     * menggunakan kelas Renderable. Lalu program menerima user input
+     * untuk instruksi berikutnya yang terdiri dari:
+     * <ol>
+     *     <li>Tambahkan Animal.</li>
+     *     <li>Tour.</li>
+     *     <li>Exit.</li>
+     * </ol>
+     *
+     * @see Renderable
+     * @see Zoo
+     * @throws IOException Error handling
+     * @throws InterruptedException Error handling
+     */
+    public static void main(String[] args) throws IOException,InterruptedException {
     Zoo z = new Zoo();
     int input;
     Renderable r = new Renderable();
