@@ -1,12 +1,37 @@
 import java.util.Vector;
 import java.lang.Math;
 
+/**
+ * Kelas yang merepresentasikan sebuah kandang pada Zoo.
+ * Kelas Cage memiliki kumpulan habitat yang ada pada cage tersebut beserta
+ * jumlahnya, selain itu kelas juga menyimpan kumpulan hewan yang ada di
+ * dalam kandang beserta jumlah dari hewan yang ada di dalam Cage.
+ *
+ * @author Adrian Hartarto
+ * @author Verena Severina
+ */
+
 public class Cage {
+  /**
+   * Atribut array of Cell dari Cage.
+   */
   private Cell[] arrayOfHabitat;
+  /**
+   * Atribut array of Animal dari Cage.
+   */
   private Animal[] arrayOfAnimal;
+
   private int cageSize;
+  /** .
+   * Atribut banyaknya Animal didalam Cage.
+   */
   private int animalNeff;
 
+  /**
+   * Menciptakan cage dari kumpulan Habitat dalam bentuk Vector.
+   *
+   * @param buf Vector habitat yang ada didalam cage
+   */
   public Cage(Vector<Cell> buf) {
     cageSize = buf.size();
     arrayOfHabitat = new Cell[buf.size()];
@@ -18,18 +43,46 @@ public class Cage {
     int manyAnimal = (int) Math.floor(tempManyAnimal);
     arrayOfAnimal = new Animal[manyAnimal];
   }
+
+  /**
+   * Getter cageSize.
+   * @return Integer banyaknya Habitat dalam Cage
+   */
   public int getCageSize() {
     return cageSize;
   }
+
+  /**
+   * Getter arrayOfAnimal.
+   * @return Array of Animal seluruh hewan dalam Cage
+   */
   public Animal[] getAnimal() {
     return arrayOfAnimal;
   }
+
+  /**
+   * Getter arrayOfHabitat.
+   * @return Array of Habitat seluruh habitat dalam Cage
+   */
   public Cell[] getHabitat() {
     return arrayOfHabitat;
   }
+
+  /**
+   * Getter animalNeff.
+   * @return Integer jumlah hewan dalam Cage
+   */
   public int getNeff() {
     return animalNeff;
   }
+
+  /**
+   * Memasukkan suatu hewan dalam kadang tertentu.
+   *
+   * @param animal Hewan yang akan dimasukkan dalam Cage, direpresentasiakan
+   *               dengan kode satu karakter.
+   * @param iidx ID Cage tempat hewan akan ditempatkan
+   */
   public void AddAnimal(char animal, int iIdx) {
     int positionIndex = 0;
     int xRow, yCol;
@@ -122,6 +175,13 @@ public class Cage {
       }
     }
   }
+
+  /**
+   * Menentukan apakah suatu posisi xrow, ycol dalam peta sedang diisi oleh Animal.
+   * @param xRow baris yang ditinjau
+   * @param yCol kolom yang ditinjau
+   * @return boolean kebenaran suaut peta xRow, yCol sedang diisi Animal
+   */
   public boolean containAnimal(int xRow, int yCol) {
     boolean found = false;
     int iIdx = 0;
@@ -140,6 +200,13 @@ public class Cage {
     return found;
   }
 
+  /**
+   * Memeriksa apakah suatu lokasi pada peta termasuk dalam Cage.
+   *
+   * @param xRow baris Cell yang ditinjau
+   * @param yCol kolom Cell yang ditinjau
+   * @return Boolean kebenaran suatu Cell dengan indeks xRow, yCol berada didalam kandang
+   */
   public boolean insideCage(int xRow, int yCol) {
     int iIdx = 0;
     boolean found = false;
@@ -153,6 +220,18 @@ public class Cage {
     }
     return found;
   }
+
+  /**
+   * Memberikan posisi baru dari suatu Animal. Membuat posisi Animal
+   * terus berubah pada iterasi Tour Zoo. Algoritma pergerakan Animal
+   * diimplementasi secara brute-force dengan urutan:
+   * <ol>
+   *     <li>Memanggil method Animal move(1).</li>
+   *     <li>Memanggil method Animal move(2).</li>
+   *     <li>Memanggil method Animal move(3).</li>
+   *     <li>Memanggil method Animal move(4).</li>
+   * </ol>
+   */
   public void updatePosition() {
     for(int iIdx=0; iIdx<=animalNeff; iIdx++) {
       boolean found = false;
@@ -199,9 +278,19 @@ public class Cage {
       }
     }
   }
+
+  /**
+   * Peninjauan apakah suatu Cage tidak memiliki Animal.
+   * @return boolean apakah suatu Cage tidak memiliki binatang
+   */
   public boolean isEmpty() {
     return (animalNeff == -1);
   }
+
+  /**
+   * Peninjauan apakah suatu Cage sudah penuh dan tidak bisa diisi Animal lagi.
+   * @return boolean kebenaran apakah suatu Cage telah penuh
+   */
   public boolean isFull() {
     double tempManyAnimal = 0.3 * cageSize;
     int manyAnimal = (int) Math.floor(tempManyAnimal);
