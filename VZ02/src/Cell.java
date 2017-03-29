@@ -45,7 +45,7 @@ public class Cell {
    * Getter Content Cell.
    * @return Content dari Cell
    */
-  public char GetCellContent() {
+  public char getCellContent() {
     return content;
   }
 
@@ -53,7 +53,7 @@ public class Cell {
    * Getter Baris dari Cell.
    * @return Baris dari Cell
    */
-  public int GetCellRow() {
+  public int getCellRow() {
     return cellIdRow;
   }
 
@@ -61,7 +61,7 @@ public class Cell {
    * Getter Kolom dari Cell.
    * @return Kolom dari Cell
    */
-  public int GetCellCol() {
+  public int getCellCol() {
     return cellIdCol;
   }
 
@@ -69,11 +69,10 @@ public class Cell {
    * Mengassign Cell merupakan entrance atau exit
    * @param n boolean yang menyatakan apakah Cell entrance atau exit
    */
-  public void SetTrueEntranceExit(int n) {
+  public void setTrueEntranceExit(int n) {
     if (n == 0) {
       entrance = true;
-    }
-    else if (n == 1) {
+    } else if (n == 1) {
       exit = true;
     }
   }
