@@ -34,19 +34,19 @@ import java.util.Vector;
  */
 public class Cage {
   /**
-   * Atribut array of Habitat dari Cage
+   * Atribut array of Habitat dari Cage.
    */
   private Habitat[] arrayOfHabitat;
   /**
-   * Atribut array of Animal dari Cage
+   * Atribut array of Animal dari Cage.
    */
   private Animal[] arrayOfAnimal;
-  /**
-   * Atribut ukuran cage atau banyaknya Cell Habitat
+  /** .
+   * Atribut ukuran cage atau banyaknya Cell Habitat.
    */
   private int cageSize;
-  /**
-   * Atribut banyaknya Animal didalam Cage
+  /** .
+   * Atribut banyaknya Animal didalam Cage.
    */
   private int animalNeff;
 
@@ -68,7 +68,7 @@ public class Cage {
   }
 
   /**
-   * Getter cageSize
+   * Getter cageSize.
    * @return Integer banyaknya Habitat dalam Cage
    */
   public int getCageSize() {
@@ -76,7 +76,7 @@ public class Cage {
   }
 
   /**
-   * Getter arrayOfAnimal
+   * Getter arrayOfAnimal.
    * @return Array of Animal seluruh hewan dalam Cage
    */
   public Animal[] getAnimal() {
@@ -84,7 +84,7 @@ public class Cage {
   }
 
   /**
-   * Getter arrayOfHabitat
+   * Getter arrayOfHabitat.
    * @return Array of Habitat seluruh habitat dalam Cage
    */
   public Habitat[] getHabitat() {
@@ -92,7 +92,7 @@ public class Cage {
   }
 
   /**
-   * Getter animalNeff
+   * Getter animalNeff.
    * @return Integer jumlah hewan dalam Cage
    */
   public int getNeff() {
@@ -204,7 +204,7 @@ public class Cage {
   }
 
   /**
-   * Menentukan apakah suatu posisi xrow, ycol dalam peta sedang diisi oleh Animal
+   * Menentukan apakah suatu posisi xrow, ycol dalam peta sedang diisi oleh Animal.
    * @param xrow baris yang ditinjau
    * @param ycol kolom yang ditinjau
    * @return boolean kebenaran suaut peta xrow, ycol sedang diisi Animal
@@ -215,12 +215,11 @@ public class Cage {
     double tempManyAnimal = 0.3 * cageSize;
     int manyAnimal = (int) Math.floor(tempManyAnimal);
     if (!isEmpty()) {
-      while ((iidx < manyAnimal) && (!found) && (iidx < animalNeff+1)) {
+      while ((iidx < manyAnimal) && (!found) && (iidx < animalNeff + 1)) {
         if ((xrow == arrayOfAnimal[iidx].getX()) && (ycol == arrayOfAnimal[iidx].getY())) {
           found = true;
-        }
-      else {
-          iidx = iidx + 1;
+        } else {
+          iidx++;
         }
       }
     }
@@ -232,17 +231,15 @@ public class Cage {
    *
    * @param xrow baris Cell yang ditinjau
    * @param ycol kolom Cell yang ditinjau
-   * @return Boolean kebenaran suatu Cell dengan indeks xrow, ycol berada
-   * didalam kandang
+   * @return Boolean kebenaran suatu Cell dengan indeks xrow, ycol berada didalam kandang
    */
   public boolean insideCage(int xrow, int ycol) {
     int iidx = 0;
     boolean found = false;
-    while(!found && iidx < cageSize) {
-      if(xrow == arrayOfHabitat[iidx].getCellRow() && ycol == arrayOfHabitat[iidx].getCellCol()) {
+    while (!found && iidx < cageSize) {
+      if (xrow == arrayOfHabitat[iidx].getCellRow() && ycol == arrayOfHabitat[iidx].getCellCol()) {
         found = true;
-      }
-      else {
+      } else {
         iidx++;
       }
     }
@@ -261,54 +258,56 @@ public class Cage {
    * </ol>
    */
   public void updatePosition() {
-    for(int iidx=0; iidx<=animalNeff; iidx++) {
+    for (int iidx = 0; iidx <= animalNeff; iidx++) {
       boolean found = false;
-      int jIdx = 1;
-      int xrow,ycol;
-      while(!found) {
-          if(jIdx == 1) {
-            ycol = arrayOfAnimal[iidx].getY() - 1;
-            if (!containAnimal(arrayOfAnimal[iidx].getX(), ycol) && insideCage(arrayOfAnimal[iidx].getX(), ycol)) {
-              System.out.println(jIdx);
-              arrayOfAnimal[iidx].move(1);
-              found = true;
-            }
-            jIdx = jIdx + 1;
-          }else if(jIdx == 2) {
-            xrow = arrayOfAnimal[iidx].getX() + 1;
-            System.out.println(jIdx);
-            if (!containAnimal(xrow, arrayOfAnimal[iidx].getY()) && insideCage(xrow, arrayOfAnimal[iidx].getY())) {
-             arrayOfAnimal[iidx].move(2);
-             found = true;
-            }
-            jIdx = jIdx+1;
-          }
-          else if(jIdx == 3) {
-            ycol = arrayOfAnimal[iidx].getY() + 1;
-            if (!containAnimal(arrayOfAnimal[iidx].getX(), ycol) && insideCage(arrayOfAnimal[iidx].getX(), ycol)) {
-             arrayOfAnimal[iidx].move(3);
-             found = true;
-            }
-            jIdx = jIdx+1;
-          }
-          else if(jIdx == 4) {
-            xrow = arrayOfAnimal[iidx].getX() - 1;
-            if (!containAnimal(xrow, arrayOfAnimal[iidx].getY()) && insideCage(xrow, arrayOfAnimal[iidx].getY())) {
-             arrayOfAnimal[iidx].move(4);
-             found = true;
-            }
-            jIdx = jIdx+1;
-          }
-          else {
+      int jidx = 1;
+      int xrow;
+      int ycol;
+      while (!found) {
+        if (jidx == 1) {
+          ycol = arrayOfAnimal[iidx].getY() - 1;
+          if (!containAnimal(arrayOfAnimal[iidx].getX(), ycol)
+                  && insideCage(arrayOfAnimal[iidx].getX(), ycol)) {
+            System.out.println(jidx);
+            arrayOfAnimal[iidx].move(1);
             found = true;
-            System.out.println(jIdx);
           }
+          jidx = jidx + 1;
+        } else if (jidx == 2) {
+          xrow = arrayOfAnimal[iidx].getX() + 1;
+          System.out.println(jidx);
+          if (!containAnimal(xrow, arrayOfAnimal[iidx].getY())
+                  && insideCage(xrow, arrayOfAnimal[iidx].getY())) {
+            arrayOfAnimal[iidx].move(2);
+            found = true;
+          }
+          jidx = jidx + 1;
+        } else if (jidx == 3) {
+          ycol = arrayOfAnimal[iidx].getY() + 1;
+          if (!containAnimal(arrayOfAnimal[iidx].getX(), ycol)
+                  && insideCage(arrayOfAnimal[iidx].getX(), ycol)) {
+            arrayOfAnimal[iidx].move(3);
+            found = true;
+          }
+          jidx = jidx + 1;
+        } else if (jidx == 4) {
+          xrow = arrayOfAnimal[iidx].getX() - 1;
+          if (!containAnimal(xrow, arrayOfAnimal[iidx].getY())
+                  && insideCage(xrow, arrayOfAnimal[iidx].getY())) {
+            arrayOfAnimal[iidx].move(4);
+            found = true;
+          }
+          jidx = jidx + 1;
+        } else {
+          found = true;
+          System.out.println(jidx);
         }
       }
+    }
   }
 
   /**
-   * Peninjauan apakah suatu Cage tidak memiliki Animal
+   * Peninjauan apakah suatu Cage tidak memiliki Animal.
    * @return boolean apakah suatu Cage tidak memiliki binatang
    */
   public boolean isEmpty() {
@@ -316,13 +315,12 @@ public class Cage {
   }
 
   /**
-   * Peninjauan apakah suatu Cage sudah penuh dan tidak bisa diisi Animal
-   * lagi
+   * Peninjauan apakah suatu Cage sudah penuh dan tidak bisa diisi Animal lagi.
    * @return boolean kebenaran apakah suatu Cage telah penuh
    */
   public boolean isFull() {
     double tempManyAnimal = 0.3 * cageSize;
     int manyAnimal = (int) Math.floor(tempManyAnimal);
-    return (manyAnimal == animalNeff+1);
+    return (manyAnimal == animalNeff + 1);
   }
 }
