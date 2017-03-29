@@ -1,13 +1,14 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.WaAnimal;
 import java.lang.Math;
 
 /**
- * Kelas FlyingFish adalah turunan LandAnimal dan merepresentasikan spesies FlyingFish
+ * Kelas FlyingFish adalah turunan LandAnimal dan merepresentasikan spesies FlyingFish.
  */
 public class FlyingFish extends WaAnimal {
   /**

@@ -1,13 +1,14 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.LaAnimal;
 import java.lang.Math;
 
 /**
- * Kelas Kasuari adalah turunan LandAnimal dan merepresentasikan spesies Kasuari
+ * Kelas Kasuari adalah turunan LaAnimal dan merepresentasikan spesies Kasuari.
  */
 public class Kasuari extends LaAnimal {
   /**
