@@ -25,23 +25,23 @@ import static java.lang.Thread.sleep;
  */
 public class Zoo {
   /**
-   * Atribut kandang-kandang yang ada di Zoo
+   * Atribut kandang-kandang yang ada di Zoo.
    */
   private Vector<Cage> cages;
   /**
-   * Atribut posisi pengunjung
+   * Atribut posisi pengunjung.
    */
   private Cell playerPos;
   /**
-   * Atribut matriks peta
+   * Atribut matriks peta.
    */
   private Cell[][] map;
   /**
-   * Atribut height Zoo
+   * Atribut height Zoo.
    */
   private int height;
   /**
-   * Atribut width Zoo
+   * Atribut width Zoo.
    */
   private int width;
 
@@ -185,7 +185,7 @@ public class Zoo {
   }
 
   /**
-   * Getter atribut map
+   * Getter atribut map.
    * @return Atribut matriks Cell sebagai peta suatu Zoo
    */
   public Cell[][] getMap() {
@@ -193,7 +193,7 @@ public class Zoo {
   }
 
   /**
-   * Getter atribut cages
+   * Getter atribut cages.
    * @return Atribut kumpulan dari semua cage yang ada di Zoo
    */
   public Vector<Cage> getCages() {
@@ -201,7 +201,7 @@ public class Zoo {
   }
 
   /**
-   * Getter atribut height
+   * Getter atribut height.
    * @return Atribut height Zoo
    */
   public int getHeight() {
@@ -209,7 +209,7 @@ public class Zoo {
   }
 
   /**
-   * Getter atribut width
+   * Getter atribut width.
    * @return Atribut width Zoo
    */
   public int getWidth() {
@@ -217,7 +217,7 @@ public class Zoo {
   }
 
   /**
-   * Getter posisi pengunjung
+   * Getter posisi pengunjung.
    * @return Atribut posisi pengunjung
    */
   public Cell getPlayerPos() {
@@ -494,7 +494,7 @@ public class Zoo {
   }
 
   /**
-   * Peninjauan apakah suatu Cell termasuk pintu keluar Zoo
+   * Peninjauan apakah suatu Cell termasuk pintu keluar Zoo.
    * @param pos Cell yang ditinjau
    * @return boolean kebenaran Cell adalah pintu keluar
    */
@@ -503,7 +503,7 @@ public class Zoo {
   }
 
   /**
-   * Peninjauan kebenaran suatu posisi (iIdx,jIdx) adalah posisi pengunjung Zoo
+   * Peninjauan kebenaran suatu posisi (iIdx,jIdx) adalah posisi pengunjung Zoo.
    * @param iIdx baris map yang ditinjau
    * @param jIdx kolom map yang ditinjau
    * @return boolean kebenaran cell dengan baris ke-iIdx dan kolom ke-jIdx adalah posisi pemain.
@@ -513,7 +513,7 @@ public class Zoo {
   }
 
   /**
-   * Peninjauan apakah suatu Cell termasuk jalanan untuk manusia
+   * Peninjauan apakah suatu Cell termasuk jalanan untuk manusia.
    * @param cellMap Cell yang ditinjau
    * @return nilai kebenaran suatu Cell adalah Road
    */
@@ -522,7 +522,7 @@ public class Zoo {
   }
 
   /**
-   * Peninjauan apakah suatu Cell termasuk habitat untuk hewan
+   * Peninjauan apakah suatu Cell termasuk habitat untuk hewan.
    * @param cellMap Cell yang ditinjau
    * @return nilai kebenaran suatu Cell adalah Habitat
    */
@@ -531,7 +531,7 @@ public class Zoo {
   }
 
   /**
-   * Peninjauan apakah suatu Cell termasuk restoran, taman, atau jalanan manusia
+   * Peninjauan apakah suatu Cell termasuk restoran, taman, atau jalanan manusia.
    * @param cellMap Cell yang ditinjau
    * @return nilai kebenaran suatu Cell adalah Facility
    */
