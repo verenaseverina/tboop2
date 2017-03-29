@@ -77,8 +77,8 @@
       <file leaf-file-name="State.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VZ02/src/State.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1953">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="1822">
+              <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -812,13 +812,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490415779327</updated>
     </task>
-    <task id="LOCAL-00010" summary="benerin turunananimal">
-      <created>1490458917644</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1490458917644</updated>
-    </task>
     <task id="LOCAL-00011" summary="benerin packagenya turunananimal lagi">
       <created>1490459678843</created>
       <option name="number" value="00011" />
@@ -1155,7 +1148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490764725556</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="State refactored">
+      <created>1490767966913</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1490767966914</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1226,7 +1226,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="benerin Cage.java di VZ02" />
     <MESSAGE value="ada Jdepend" />
     <MESSAGE value="benerin nama fungsi di Animal" />
     <MESSAGE value="benerin nama fungsi" />
@@ -1251,7 +1250,8 @@
     <MESSAGE value="anoa" />
     <MESSAGE value="animal VZ03 done" />
     <MESSAGE value="VZ02 Animal&#10;VZ02 Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="VZ02 Animal&#10;VZ02 Main" />
+    <MESSAGE value="State refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="State refactored" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1638,8 +1638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VZ02/src/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1953">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="1822">
+          <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
