@@ -1,6 +1,6 @@
-package Animal;
+package animal;
 
-import Animal.turunananimal.binatang.Tiger;
+import animal.turunananimal.binatang.Tiger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Test;
@@ -33,61 +33,61 @@ public class AnimalTest {
     
     @Test
     public void getTame() throws Exception {
-        System.out.print("Testing Method GetTame... ");
+        System.out.print("Testing Method getTame... ");
         Animal a = new Tiger(1, 1, 1);
-        assertTrue(a.GetTame() == false);
+        assertTrue(a.getTame() == false);
         System.out.println("OK");
     }
 
     @Test
     public void getX() throws Exception {
-        System.out.print("Testing Method GetX...");
+        System.out.print("Testing Method getX...");
         Animal a = new Animal(1, 1, 1) {
             @Override
-            public String GetInteract() {
+            public String getInteract() {
                 return null;
             }
 
             @Override
-            public int GetSize() {
+            public int getSize() {
                 return 0;
             }
         };
-        assertTrue(a.GetX() == 1);
+        assertTrue(a.getX() == 1);
         System.out.println("OK");
     }
 
     @Test
     public void getY() throws Exception {
-        System.out.print("Testing Method GetY...");
+        System.out.print("Testing Method getY...");
         Animal a = new Animal(1, 1, 1) {
             @Override
-            public String GetInteract() {
+            public String getInteract() {
                 return null;
             }
 
             @Override
-            public int GetSize() {
+            public int getSize() {
                 return 0;
             }
         };
-        assertTrue(a.GetY() == 1);
+        assertTrue(a.getY() == 1);
         System.out.println("OK");
     }
 
     @Test
     public void getHab() throws Exception {
-        System.out.print("Testing Method GetHab...");
+        System.out.print("Testing Method getHab...");
         Animal a = new Tiger(1, 1, 1);
-        assertTrue(a.GetArrayOfHabitat()[0] == '^');
+        assertTrue(a.getArrayOfHabitat()[0] == '^');
         System.out.println("OK");
     }
 
     @Test
     public void getContent() throws Exception {
-        System.out.print("Testing Method GetContent...");
+        System.out.print("Testing Method getContent...");
         Animal a = new Tiger(1, 1, 1);
-        assertTrue(a.GetContent() == 'H');
+        assertTrue(a.getContent() == 'H');
         System.out.println("OK");
     }
 
@@ -95,8 +95,8 @@ public class AnimalTest {
     public void move() throws Exception {
         System.out.print("Testing Method Move...");
         Animal a = new Tiger(1, 1, 1);
-        a.Move(1);
-        assertTrue(a.GetY() == 1);
+        a.move(1);
+        assertTrue(a.getY() == 1);
         System.out.println("OK");
     }
 

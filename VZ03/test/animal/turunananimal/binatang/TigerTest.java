@@ -1,4 +1,4 @@
-package Animal.turunananimal.binatang;
+package animal.turunananimal.binatang;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -38,31 +38,31 @@ public class TigerTest {
     public void interact() throws Exception {
         System.out.print("Testing Method Interact... ");
         Tiger a = new Tiger(1, 1, 1);
-        assertTrue(a.GetInteract().equals("Roooarrrr") == true);
+        assertTrue(a.getInteract().equals("Roooarrrr") == true);
         System.out.println("OK");
     }
 
     @Test
     public void getWeight() throws Exception {
-        System.out.print("Testing Method GetWeight... ");
+        System.out.print("Testing Method getWeight... ");
         Tiger a = new Tiger(1, 1, 1);
-        assertTrue(a.GetWeight() >= 90f && a.GetWeight() <= 310f);
+        assertTrue(a.getWeight() >= 90f && a.getWeight() <= 310f);
         System.out.println("OK");
     }
 
     @Test
     public void getEat() throws Exception {
-        System.out.print("Testing Method GetEat... ");
+        System.out.print("Testing Method getEat... ");
         Tiger a = new Tiger(1, 1, 1);
-        assertTrue(a.GetEat() == 7.23f * a.GetWeight() / 100f);
+        assertTrue(a.getEat() == 7.23f * a.getWeight() / 100f);
         System.out.println("OK");
     }
 
     @Test
     public void getWEat() throws Exception {
-        System.out.print("Testing Method GetEat... ");
+        System.out.print("Testing Method getEat... ");
         Tiger a = new Tiger(1, 1, 1);
-        assertTrue(a.GetWEat() == 'c');
+        assertTrue(a.getWEat() == 'c');
         System.out.println("OK");
     }
 

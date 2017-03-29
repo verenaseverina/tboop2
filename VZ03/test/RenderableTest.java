@@ -44,10 +44,10 @@ public class RenderableTest {
    */
   @Test
   public void testRender() throws Exception {
-    System.out.print("Testing Method Render... ");
+    System.out.print("Testing Method render... ");
     Zoo virtual_zoo = null;
     Renderable instance = new Renderable();
-    instance.Render(virtual_zoo);
+    instance.render(virtual_zoo);
     System.out.println("OK");
   }
 
@@ -57,13 +57,13 @@ public class RenderableTest {
    */
   @Test
   public void testSearchCageIndex() throws Exception {
-    System.out.print("Testing Method SearchCageIndex... ");
+    System.out.print("Testing Method searchCageIndex... ");
     Zoo virtual_zoo = null;
     int x = 0;
     int y = 0;
     Renderable instance = new Renderable();
     int expResult = 0;
-    int result = instance.SearchCageIndex(virtual_zoo, x, y);
+    int result = instance.searchCageIndex(virtual_zoo, x, y);
     assertEquals(expResult, result);
     System.out.println("OK");
   }
@@ -74,14 +74,14 @@ public class RenderableTest {
    */
   @Test
   public void testSearchAnimalIndex() throws Exception {
-    System.out.print("Testing Method SearchAnimalIndex... ");
+    System.out.print("Testing Method searchAnimalIndex... ");
     Zoo virtual_zoo = null;
     int i = 0;
     int x = 0;
     int y = 0;
     Renderable instance = new Renderable();
     int expResult = 0;
-    int result = instance.SearchAnimalIndex(virtual_zoo, i, x, y);
+    int result = instance.searchAnimalIndex(virtual_zoo, i, x, y);
     assertEquals(expResult, result);
     System.out.println("OK");
   }

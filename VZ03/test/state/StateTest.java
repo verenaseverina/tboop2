@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package State;
+package state;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -36,44 +36,44 @@ public class StateTest {
   }
 
   /**
-   * Test of GetMap method, of class State.
+   * Test of getMap method, of class State.
    * @throws java.lang.Exception
    */
   @Test
-  public void testGetMap() throws Exception {
-    System.out.print("Testing Method GetMap... ");
+  public void testgetMap() throws Exception {
+    System.out.print("Testing Method getMap... ");
     State instance = new State();
     State instance2 = new State();
-    char[][] expResult = instance2.GetMap();
-    char[][] result = instance.GetMap();
+    char[][] expResult = instance2.getMap();
+    char[][] result = instance.getMap();
     assertArrayEquals(expResult, result);
     System.out.println("OK");
   }
 
   /**
-   * Test of GetHeight method, of class State.
+   * Test of getHeight method, of class State.
    * @throws java.lang.Exception
    */
   @Test
-  public void testGetHeight() throws Exception {
-    System.out.print("Testing Method GetHeight... ");
+  public void testgetHeight() throws Exception {
+    System.out.print("Testing Method getHeight... ");
     State instance = new State();
     int expResult = 8;
-    int result = instance.GetHeight();
+    int result = instance.getHeight();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
 
   /**
-   * Test of GetWidth method, of class State.
+   * Test of getWidth method, of class State.
    * @throws java.lang.Exception
    */
   @Test
-  public void testGetWidth() throws Exception {
-    System.out.print("Testing Method GetWidth... ");
+  public void testgetWidth() throws Exception {
+    System.out.print("Testing Method getWidth... ");
     State instance = new State();
     int expResult = 8;
-    int result = instance.GetWidth();
+    int result = instance.getWidth();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
