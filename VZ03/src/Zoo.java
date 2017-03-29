@@ -87,9 +87,9 @@ public class Zoo {
         } else if (isFacility(smap[iidx][jidx])) {
           map[iidx][jidx] = new Facility(smap[iidx][jidx], iidx, jidx);
           if (iidx == 0 || jidx == 0) {
-            map[iidx][jidx].setTrueEntranceExit(0);
+            ((Facility)map[iidx][jidx]).setTrue(0);
           } else if (iidx == height || jidx == width) {
-            map[iidx][jidx].setTrueEntranceExit(1);
+            ((Facility)map[iidx][jidx]).setTrue(1);
           }
         }
       }

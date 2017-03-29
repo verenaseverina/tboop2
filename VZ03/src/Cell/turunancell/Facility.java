@@ -11,6 +11,8 @@ import cell.Cell;
  *     Kelas Facility memiliki atribut berupa boolean atau nilai
  *     kebenaran exit dan entrance.
  * </p>
+ * @author Winarto
+ * @authir Verena Severina
  */
 public class Facility extends Cell {
   /**

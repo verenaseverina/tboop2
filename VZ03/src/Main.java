@@ -29,7 +29,7 @@ public class Main {
    * @throws IOException Error handling
    * @throws InterruptedException Error handling
    */
-  public static void main() throws IOException,InterruptedException {
+  public static void main(String[] args) throws IOException,InterruptedException {
     Zoo z = new Zoo();
     int input;
     Renderable r = new Renderable();
