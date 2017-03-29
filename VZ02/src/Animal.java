@@ -10,7 +10,7 @@ public class Animal {
   private char content;
   private int positionX;
   private int positionY;
-  private int cageID;
+  private int cageId;
   private float myWeight;
   private float howMuchIEat;
   private char whatIEat;
@@ -29,10 +29,10 @@ public class Animal {
   public Animal(int posX, int posY, int id,char con) {
     positionX = posX;
     positionY = posY;
-    cageID = id;
+    cageId = id;
     content = con;
 
-    switch(content) {
+    switch (content) {
       case 'H': {
         sizeOfHabitat = 1;
         arrayOfHabitat = new char[sizeOfHabitat];
@@ -302,6 +302,9 @@ public class Animal {
         type = "WAAnimal";
         break;
       }
+      default : {
+        break;
+      }
     }
   }
 
@@ -309,7 +312,7 @@ public class Animal {
    * Getter Animal Interation.
    * @return String interaksi Animal
    */
-  public String GetInteract() {
+  public String getInteract() {
     return interaction;
   }
 
@@ -317,7 +320,7 @@ public class Animal {
    * Getter size habitat.
    * @return integer besar habitat Animal
    */
-  public int GetSizeOfHabitat() {
+  public int getSizeOfHabitat() {
     return sizeOfHabitat;
   }
 
@@ -325,7 +328,7 @@ public class Animal {
    * Getter content Animal.
    * @return karakter konten Animal
    */
-  public char GetContent() {
+  public char getContent() {
     return content;
   }
 
@@ -333,7 +336,7 @@ public class Animal {
    * Getter massa Animal.
    * @return float massa Animal
    */
-  public float GetWeight() {
+  public float getWeight() {
     return myWeight;
   }
 
@@ -341,7 +344,7 @@ public class Animal {
    * Getter HowMuchIEat.
    * @return float jumlah hewan makan
    */
-  public float GetEat() {
+  public float getEat() {
     return howMuchIEat;
   }
 
@@ -349,15 +352,15 @@ public class Animal {
    * Getter cage ID Animal.
    * @return integer ID Cage Animal
    */
-  public int GetID() {
-    return cageID;
+  public int getId() {
+    return cageId;
   }
 
   /**
    * Getter pengelompokan makanan hewan.
    * @return karakter makanan hewan
    */
-  public char GetWEat() {
+  public char getWEat() {
     return whatIEat;
   }
 
@@ -365,7 +368,7 @@ public class Animal {
    * Getter posisi X hewan.
    * @return integer positionX
    */
-  public int GetX() {
+  public int getX() {
     return positionX;
   }
 
@@ -373,7 +376,7 @@ public class Animal {
    * Getter posisi Y hewan.
    * @return integer positionY
    */
-  public int GetY() {
+  public int getY() {
     return positionY;
   }
 
@@ -381,7 +384,7 @@ public class Animal {
    * Getter kejinakkan hewan.
    * @return boolean apakah hewan jinak
    */
-  public boolean GetTame() {
+  public boolean getTame() {
     return isTame;
   }
 
@@ -389,7 +392,7 @@ public class Animal {
    * Getter array of Habitat.
    * @return array of char Cage hewan
    */
-  public char[] GetArrayOfHabitat() {
+  public char[] getArrayOfHabitat() {
     return arrayOfHabitat;
   }
 
@@ -397,7 +400,7 @@ public class Animal {
    * Getter Size hewan.
    * @return array of char alam tempat hidup hewan
    */
-  public int GetSize() {
+  public int getSize() {
     return sizeOfHabitat;
   }
 
@@ -412,8 +415,8 @@ public class Animal {
    * </ol>
    * @param dir integer input untuk menentukan arah move yang dipilih
    */
-  public void Move(int dir) {
-    switch(dir) {
+  public void move(int dir) {
+    switch (dir) {
       case 1: { //top
         positionY -=  1;
         break;
@@ -430,13 +433,16 @@ public class Animal {
         positionX -=  1;
         break;
       }
+      default : {
+        break;
+      }
     }
   }
 
   /**
    * Interaksi memberikan makan kepada hewan. Menulis jumlah hewan makan ke layar.
    */
-  public void GiveFood() {
+  public void giveFood() {
     System.out.println("Animal makan sebanyak" + howMuchIEat + " kg\n");
   }
 }

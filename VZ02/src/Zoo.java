@@ -412,7 +412,7 @@ public class Zoo {
       int iidx = 0;
       while (iidx < cages.size()) {
         char peekContent = cages.get(iidx).getHabitat()[0].getCellContent();
-        if ((arr[iidx] == false) && (animal.GetArrayOfHabitat()[jidx] == peekContent)) {
+        if ((arr[iidx] == false) && (animal.getArrayOfHabitat()[jidx] == peekContent)) {
           //System.out.println(cages.get(i).GetNeff());
           boolean tame = cages.get(iidx).getAnimal()[0].getTame();
           if (cages.get(iidx).isEmpty()) {

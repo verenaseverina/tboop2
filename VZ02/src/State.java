@@ -1,3 +1,9 @@
+/**
+ * Created by Kebun Binatang Bandung on 3/26/17.
+ */
+
+package state;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.logging.Logger;
@@ -15,13 +21,13 @@ public class State {
   private char[][] map;
   /**
    * Atribut integer width zoo.
-   */  
+   */
   private int width;
   /**
    * Atribut integer height zoo.
    */
   private int height;
-  
+
   /**
    * Konstruktor State untuk membaca peta.
    * <p>
@@ -36,181 +42,166 @@ public class State {
    * </p>
    */
   public State() {
-    //BufferedReader buffer_map;
-    // buffer_map = new BufferedReader(new FileReader("src/map.txt"));
-    try (BufferedReader buffer_map = new BufferedReader(new FileReader("VZ03/src/map.txt"))) {
-      StringBuilder string_builder_map = new StringBuilder();
-      String line = buffer_map.readLine();
+    //BufferedReader bufferMap;
+    // bufferMap = new BufferedReader(new FileReader("src/map.txt"));
+    try (BufferedReader bufferMap = new BufferedReader(new FileReader("VZ03/src/map.txt"))) {
+      StringBuilder stringBuilderMap = new StringBuilder();
+      String line = bufferMap.readLine();
 
       while (line != null) {
-        string_builder_map.append(line);
-        line = buffer_map.readLine();
+        stringBuilderMap.append(line);
+        line = bufferMap.readLine();
       }
-      String string_buffer_map;
-      string_buffer_map = string_builder_map.toString();
-      //System.out.printf(string_buffer_map);
+      String stringBufferMap;
+      stringBufferMap = stringBuilderMap.toString();
+      //System.out.printf(stringBufferMap);
 
-      int i = 0;
-      int s_height;
-      height=0;
-      while(string_buffer_map.charAt(i) != ' ') {
-        s_height=Character.getNumericValue(string_buffer_map.charAt(i));
-        height = (10 * height) + s_height;
-        i++;
+      int iidx = 0;
+      int sheight;
+      height = 0;
+      while (stringBufferMap.charAt(iidx) != ' ') {
+        sheight = Character.getNumericValue(stringBufferMap.charAt(iidx));
+        height = (10 * height) + sheight;
+        iidx++;
       }
-      i=i+3;
+      iidx = iidx + 3;
 
-      int s_width;
-      width=0;
-      while(string_buffer_map.charAt(i) <= '9' && string_buffer_map.charAt(i) >= '0') {
-        s_width=Character.getNumericValue(string_buffer_map.charAt(i));
-        width = (10 * width) + s_width;
-        i++;
+      int swidth;
+      width = 0;
+      while (stringBufferMap.charAt(iidx) <= '9' && stringBufferMap.charAt(iidx) >= '0') {
+        swidth = Character.getNumericValue(stringBufferMap.charAt(iidx));
+        width = (10 * width) + swidth;
+        iidx++;
       }
 
-      int k = 0, l = 0;
+      int kidx = 0;
+      int lidx = 0;
       map = new char [height][width];
-      //char[] temp_string_char = string_buffer_map.toCharArray();
-      int length = string_buffer_map.length();
-      while (i < length) {
-        if (l < width) {
-          map[k][l] = string_buffer_map.charAt(i);
-          l++;
-          i++;
-        }
-        else {
-          k++;
-          l=0;
+      //char[] temp_string_char = stringBufferMap.toCharArray();
+      int length = stringBufferMap.length();
+      while (iidx < length) {
+        if (lidx < width) {
+          map[kidx][lidx] = stringBufferMap.charAt(iidx);
+          lidx++;
+          iidx++;
+        } else {
+          kidx++;
+          lidx = 0;
         }
       }
-      buffer_map.close();
-    } catch(Exception E) {
-      MakeDefaultMap();
+      bufferMap.close();
+    } catch (Exception ex) {
+      makeDefaultMap();
     }
   }
-  
+
   /**
    * Prosedur untuk membuat map default apabila file {@code map.txt}
    * tidak ditemukan.
    */
-  private void MakeDefaultMap() {
+  private void makeDefaultMap() {
     map = new char [8][8];
     width = 8;
-    height = 8;    
-    
-    for (int i = 0; i < 8 ; i++) {
-      for (int j = 0; j < 8; j++) {
-        switch (i) {
+    height = 8;
+
+    for (int iidx = 0; iidx < 8 ; iidx++) {
+      for (int jidx = 0; jidx < 8; jidx++) {
+        switch (iidx) {
           case 0 : {
-            if (j < 2) {
-              map[i][j] = '~';
-            } 
-            else if (j < 3) {
-              map[i][j] = '#';
-            }
-            else if (j < 6) {
-              map[i][j] = '~';
-            }
-            else if (j < 8) {
-              map[i][j] = '#';
+            if (jidx < 2) {
+              map[iidx][jidx] = '~';
+            } else if (jidx < 3) {
+              map[iidx][jidx] = '#';
+            } else if (jidx < 6) {
+              map[iidx][jidx] = '~';
+            } else if (jidx < 8) {
+              map[iidx][jidx] = '#';
             }
             break;
           }
           case 1 : {
-            if (j < 2) {
-              map[i][j] = '`';
-            }
-            else if (j < 3) {
-              map[i][j] = '#';
-            }
-            else if (j < 8) {
-              map[i][j] = '~';
+            if (jidx < 2) {
+              map[iidx][jidx] = '`';
+            } else if (jidx < 3) {
+              map[iidx][jidx] = '#';
+            } else if (jidx < 8) {
+              map[iidx][jidx] = '~';
             }
             break;
           }
           case 2 : {
-            if (j < 3) {
-              map[i][j] = '_';
-            }
-            else if (j < 4) {
-              map[i][j] = '~';
-            }
-            else if (j < 5) {
-              map[i][j] = '#';
-            }
-            else if (j < 8) {
-              map[i][j] = '~';
+            if (jidx < 3) {
+              map[iidx][jidx] = '_';
+            } else if (jidx < 4) {
+              map[iidx][jidx] = '~';
+            } else if (jidx < 5) {
+              map[iidx][jidx] = '#';
+            } else if (jidx < 8) {
+              map[iidx][jidx] = '~';
             }
             break;
           }
           case 3 : {
-            if (j < 1) {
-              map[i][j] = '^';
-            }
-            else if (j < 3) {
-              map[i][j] = '_';
-            }
-            else if (j < 4) {
-              map[i][j] = '#';
-            }
-            else if (j < 8) {
-              map[i][j] = '_';
+            if (jidx < 1) {
+              map[iidx][jidx] = '^';
+            } else if (jidx < 3) {
+              map[iidx][jidx] = '_';
+            } else if (jidx < 4) {
+              map[iidx][jidx] = '#';
+            } else if (jidx < 8) {
+              map[iidx][jidx] = '_';
             }
             break;
           }
           case 4 : {
-            if (j < 1) {
-              map[i][j] = '^';
-            }
-            else if (j < 3) {
-              map[i][j] = '_';
-            }
-            else if (j < 4) {
-              map[i][j] = '^';
-            }
-            else if (j < 6) {
-              map[i][j] = '_';
-            }
-            else if (j < 8) {
-              map[i][j] = '#';
+            if (jidx < 1) {
+              map[iidx][jidx] = '^';
+            } else if (jidx < 3) {
+              map[iidx][jidx] = '_';
+            } else if (jidx < 4) {
+              map[iidx][jidx] = '^';
+            } else if (jidx < 6) {
+              map[iidx][jidx] = '_';
+            } else if (jidx < 8) {
+              map[iidx][jidx] = '#';
             }
             break;
           }
           case 5 : {
-            if (j < 1) {
-              map[i][j] = '^';
-            }
-            else if (j < 5) {
-              map[i][j] = '_';
-            }
-            else if (j < 8) {
-              map[i][j] = '#';
+            if (jidx < 1) {
+              map[iidx][jidx] = '^';
+            } else if (jidx < 5) {
+              map[iidx][jidx] = '_';
+            } else if (jidx < 8) {
+              map[iidx][jidx] = '#';
             }
             break;
           }
           case 6 : {
-            if (j < 5) {
-              map[i][j] = 'R';
-            }
-            else if (i < 8) {
-              map[i][j] = '#';
+            if (jidx < 5) {
+              map[iidx][jidx] = 'R';
+            } else if (jidx < 8) {
+              map[iidx][jidx] = '#';
             }
             break;
           }
           case 7 : {
-            map[i][j] = '_';
+            map[iidx][jidx] = '_';
+            break;
+          }
+          default : {
             break;
           }
         }
       }
     }
   }
-  
+
   /**
    * Getter atribut map.
    * @return matriks char atribut map
    */
-  public char[][] GetMap() {
+  public char[][] getMap() {
     return map;
   }
 
@@ -218,7 +209,7 @@ public class State {
    * Getter atribut height.
    * @return integer atribut height
    */
-  public int GetHeight() {
+  public int getHeight() {
     return height;
   }
 
@@ -226,7 +217,7 @@ public class State {
    * Getter atribut width.
    * @return integer atribut width
    */
-  public int GetWidth() {
+  public int getWidth() {
     return width;
   }
 }
