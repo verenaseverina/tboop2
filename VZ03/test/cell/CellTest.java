@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Cell;
+package cell;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -35,43 +35,43 @@ public class CellTest {
   }
 
   /**
-   * Test of GetCellContent method, of class Cell.
+   * Test of getCellContent method, of class Cell.
    * @throws java.lang.Exception
    */
   @Test
-  public void testGetCellContent() throws Exception {
-    System.out.print("Testing Method GetCellContent... ");
+  public void testgetCellContent() throws Exception {
+    System.out.print("Testing Method getCellContent... ");
     Cell instance = new Cell('~',3,3);
     char expResult = '~';
-    char result = instance.GetCellContent();
+    char result = instance.getCellContent();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
 
   /**
-   * Test of GetCellRow method, of class Cell.
+   * Test of getCellRow method, of class Cell.
    * @throws java.lang.Exception
    */
   @Test
-  public void testGetCellRow() throws Exception {
-    System.out.print("Testing Method GetCellRow... ");
+  public void testgetCellRow() throws Exception {
+    System.out.print("Testing Method getCellRow... ");
     Cell instance = new Cell();
     int expResult = -1;
-    int result = instance.GetCellRow();
+    int result = instance.getCellRow();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
 
   /**
-   * Test of GetCellCol method, of class Cell.
+   * Test of getCellCol method, of class Cell.
    * @throws java.lang.Exception
    */
   @Test
-  public void testGetCellCol() throws Exception {
-    System.out.print("Testing Method GetCellCol... ");
+  public void testgetCellCol() throws Exception {
+    System.out.print("Testing Method getCellCol... ");
     Cell instance = new Cell();
     int expResult = -1;
-    int result = instance.GetCellCol();
+    int result = instance.getCellCol();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
@@ -82,10 +82,10 @@ public class CellTest {
    */
   @Test
   public void testSetTrueEntranceExit() throws Exception {
-    System.out.print("Testing Method SetTrueEntranceExit... ");
+    System.out.print("Testing Method setTrueEntranceExit... ");
     int n = 0;
     Cell instance = new Cell();
-    instance.SetTrueEntranceExit(n);
+    instance.setTrueEntranceExit(n);
     System.out.println("OK");
   }
 
@@ -95,10 +95,10 @@ public class CellTest {
    */
   @Test
   public void testIsEntrance() throws Exception {
-    System.out.print("Testing Method IsEntrance... ");
+    System.out.print("Testing Method isEntrance... ");
     Cell instance = new Cell();
     boolean expResult = false;
-    boolean result = instance.IsEntrance();
+    boolean result = instance.isEntrance();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
@@ -109,10 +109,10 @@ public class CellTest {
    */
   @Test
   public void testIsExit() throws Exception {
-    System.out.print("Testing Method IsExit... ");
+    System.out.print("Testing Method isExit... ");
     Cell instance = new Cell();
     boolean expResult = false;
-    boolean result = instance.IsExit();
+    boolean result = instance.isExit();
     assertEquals(expResult, result);
     System.out.println("OK");
   }

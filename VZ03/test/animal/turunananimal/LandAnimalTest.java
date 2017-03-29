@@ -1,4 +1,4 @@
-package Animal.turunananimal;
+package animal.turunananimal;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -33,13 +33,13 @@ public class LandAnimalTest {
     
     @Test
     public void getSize() throws Exception {
-        System.out.print("Testing Method GetSize...");
+        System.out.print("Testing Method getSize...");
         LandAnimal a = new LandAnimal(1, 1, 1) {
-            public String GetInteract() {
+            public String getInteract() {
                 return null;
             }
         };
-        assertTrue(a.GetSize() == 1);
+        assertTrue(a.getSize() == 1);
         System.out.println("OK");
     }
 
