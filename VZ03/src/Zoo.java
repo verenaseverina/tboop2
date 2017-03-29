@@ -2,16 +2,34 @@
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
 import animal.Animal;
-import animal.turunananimal.binatang.*;
+import animal.turunananimal.binatang.Anoa;
+import animal.turunananimal.binatang.Cormorants;
+import animal.turunananimal.binatang.Crocodile;
+import animal.turunananimal.binatang.Dolphin;
+import animal.turunananimal.binatang.ElangB;
+import animal.turunananimal.binatang.FlyingFish;
+import animal.turunananimal.binatang.Hippopotamus;
+import animal.turunananimal.binatang.Kangaroo;
+import animal.turunananimal.binatang.Kasuari;
+import animal.turunananimal.binatang.Kelelawar;
+import animal.turunananimal.binatang.Kiwi;
+import animal.turunananimal.binatang.Ostrich;
+import animal.turunananimal.binatang.Panda;
+import animal.turunananimal.binatang.Pelikan;
+import animal.turunananimal.binatang.Penguin;
+import animal.turunananimal.binatang.Rhino;
+import animal.turunananimal.binatang.Shark;
+import animal.turunananimal.binatang.Tiger;
+import animal.turunananimal.binatang.Toucan;
+import animal.turunananimal.binatang.Whale;
 import cell.Cell;
 import cell.turunancell.Facility;
 import cell.turunancell.Habitat;
-import state.State;
-
 import java.util.Scanner;
 import java.util.Vector;
+import state.State;
 
-import static java.lang.Thread.sleep;
+
 
 /**
  * Kelas yang merepresentasikan sebuah virtual zoo. Kelas memiliki atribut
@@ -56,27 +74,27 @@ public class Zoo {
     cages = new Vector<>();
     State stateMap = new State();
     height = stateMap.getHeight();
-    widtanimalTemp = stateMap.getWidth();
+    width = stateMap.getWidth();
     char[][] smap = new char[height][];
-    for (int iIdx = 0; iIdx < width; iIdx++) {
-      smap[iIdx] = stateMap.getMap()[iIdx].clone();
+    for (int iidx = 0; iidx < width; iidx++) {
+      smap[iidx] = stateMap.getMap()[iidx].clone();
     }
     map = new Cell[height][width];
-    for (int iIdx = 0; iIdx < height; iIdx++) {
-      for (int jIdx = 0; jIdx < width; jIdx++) {
-        if (isHabitat(smap[iIdx][jIdx])) {
-          map[iIdx][jIdx] = new Habitat(smap[iIdx][jIdx], iIdx, jIdx);
-        } else if (isFacility(smap[iIdx][jIdx])) {
-          map[iIdx][jIdx] = new Facility(smap[iIdx][jIdx], iIdx, jIdx);
-          if (iIdx == 0 || jIdx == 0) {
-            map[i][j].SetTrueEntranceExit(0);
-          } else if (iIdx == height || jIdx == width) {
-            map[iIdx][jIdx].SetTrueEntranceExit(1);
+    for (int iidx = 0; iidx < height; iidx++) {
+      for (int jidx = 0; jidx < width; jidx++) {
+        if (isHabitat(smap[iidx][jidx])) {
+          map[iidx][jidx] = new Habitat(smap[iidx][jidx], iidx, jidx);
+        } else if (isFacility(smap[iidx][jidx])) {
+          map[iidx][jidx] = new Facility(smap[iidx][jidx], iidx, jidx);
+          if (iidx == 0 || jidx == 0) {
+            map[iidx][jidx].setTrueEntranceExit(0);
+          } else if (iidx == height || jidx == width) {
+            map[iidx][jidx].setTrueEntranceExit(1);
           }
         }
       }
     }
-    initAllCage(s);
+    initAllCage(stateMap);
   }
 
   /**
@@ -89,29 +107,29 @@ public class Zoo {
   public void initAllCage(State stateMap) {
     Vector<Vector<Habitat>> cageBuffer = new Vector<Vector<Habitat>>(1);
     char[][] smap = new char[height][];
-    for (int iIdx = 0; iIdx < width; iIdx++) {
-      smap[iIdx] = s.getMap()[iIdx].clone();
+    for (int iidx = 0; iidx < width; iidx++) {
+      smap[iidx] = stateMap.getMap()[iidx].clone();
     }
-    int nIdx = 1;
-    for (int iIdx = 0; iIdx < height; iIdx++) {
-      for (int jIdx = 0; jIdx < width; jIdx++) {
-        if (isHabitat(smap[iIdx][jIdx])) {
+    int nidx = 1;
+    for (int iidx = 0; iidx < height; iidx++) {
+      for (int jidx = 0; jidx < width; jidx++) {
+        if (isHabitat(smap[iidx][jidx])) {
           boolean recorded = false;
-          int xIdx = 0;
-          while ((!recorded) && (xIdx < cageBuffer.size())) {
-            recorded = inCage(cageBuffer.get(xIdx), map[iIdx][jIdx]);
-            xIdx++;
+          int xidx = 0;
+          while ((!recorded) && (xidx < cageBuffer.size())) {
+            recorded = inCage(cageBuffer.get(xidx), map[iidx][jidx]);
+            xidx++;
           }
           if (!recorded) {
-            cageBuffer.setSize(nIdx);
-            cageBuffer.set(nIdx-1, initCage((Habitat)map[iIdx][jIdx]));
-            nIdx++;
+            cageBuffer.setSize(nidx);
+            cageBuffer.set(nidx - 1, initCage((Habitat)map[iidx][jidx]));
+            nidx++;
           }
         }
       }
     }
-    for (int iIdx = 0; iIdx < cageBuffer.size(); iIdx++) {
-      Cage cgbuf = new Cage(cageBuffer.get(iIdx));
+    for (int iidx = 0; iidx < cageBuffer.size(); iidx++) {
+      Cage cgbuf = new Cage(cageBuffer.get(iidx));
       cages.add(cgbuf);
     }
   }
@@ -127,34 +145,54 @@ public class Zoo {
     Vector<Habitat> cage = new Vector<Habitat>(1);
     Habitat habitatMap;
     cage.add(hab);
-    int iIdx = 0;
-    while (i < cage.size()) {
-      animalTemp = cage.get(iIdx);
+    int iidx = 0;
+    while (iidx < cage.size()) {
+      habitatMap = cage.get(iidx);
       if (habitatMap.getCellRow() - 1 >= 0) {
-        if (map[habitatMap.getCellRow() - 1][habitatMap.getCellCol()].getCellContent() == hab.getCellContent() && !inCage(cage, map[habitatMap.getCellRow() - 1][habitatMap.getCellCol()])) {
-          Habitat habTemp = new Habitat(hab.getCellContent(),habitatMap.getCellRow() - 1,habitatMap.getCellCol());
+        Cell peekCell = map[habitatMap.getCellRow() + 1][habitatMap.getCellCol()];
+        char peekContent = peekCell.getCellContent();
+        if (peekContent == hab.getCellContent() && !inCage(cage, peekCell)) {
+          char tempCon = hab.getCellContent();
+          int tempRow = habitatMap.getCellRow() - 1;
+          int tempCol = habitatMap.getCellCol();
+          Habitat habTemp = new Habitat(tempCon,tempRow,tempCol);
           cage.add(habTemp);
         }
       }
       if (habitatMap.getCellCol() + 1 < width) {
-        if (map[habitatMap.getCellRow()][habitatMap.getCellCol() + 1].getCellContent() == hab.getCellContent() && !inCage(cage, map[habitatMap.getCellRow()][habitatMap.getCellCol() + 1])) {
-          Habitat habTemp = new Habitat(hab.getCellContent(),habitatMap.getCellRow(),habitatMap.getCellCol() + 1);
+        Cell peekCell = map[habitatMap.getCellRow()][habitatMap.getCellCol() + 1];
+        char peekContent = peekCell.getCellContent();
+        if (peekContent == hab.getCellContent() && !inCage(cage, peekCell)) {
+          char tempCon = hab.getCellContent();
+          int tempRow = habitatMap.getCellRow();
+          int tempCol = habitatMap.getCellCol() + 1;
+          Habitat habTemp = new Habitat(tempCon,tempRow,tempCol);
           cage.add(habTemp);
         }
       }
       if (habitatMap.getCellRow() + 1 < height) {
-        if (map[habitatMap.getCellRow() + 1][habitatMap.getCellCol()].getCellContent() == hab.getCellContent() && !inCage(cage, map[habitatMap.getCellRow() + 1][habitatMap.getCellCol()])) {
-          Habitat habTemp = new Habitat(hab.getCellContent(),habitatMap.getCellRow() + 1,habitatMap.getCellCol());
+        Cell peekCell = map[habitatMap.getCellRow() + 1][habitatMap.getCellCol()];
+        char peekContent = peekCell.getCellContent();
+        if (peekContent == hab.getCellContent() && !inCage(cage, peekCell)) {
+          char tempCon = hab.getCellContent();
+          int tempRow = habitatMap.getCellRow() + 1;
+          int tempCol = habitatMap.getCellCol();
+          Habitat habTemp = new Habitat(tempCon,tempRow,tempCol);
           cage.add(habTemp);
         }
       }
       if (habitatMap.getCellCol() - 1 >= 0) {
-        if (map[habitatMap.getCellRow()][habitatMap.getCellCol() - 1].getCellContent() == hab.getCellContent() && !inCage(cage, map[habitatMap.getCellRow()][habitatMap.getCellCol() - 1])) {
-          Habitat habTemp = new Habitat(hab.getCellContent(),habitatMap.getCellRow(),habitatMap.getCellCol() - 1);
+        Cell peekCell = map[habitatMap.getCellRow()][habitatMap.getCellCol() - 1];
+        char peekContent = peekCell.getCellContent();
+        if (peekContent == hab.getCellContent() && !inCage(cage, peekCell)) {
+          char con = hab.getCellContent();
+          int row = habitatMap.getCellRow();
+          int col = habitatMap.getCellCol() - 1;
+          Habitat habTemp = new Habitat(con,row,col);
           cage.add(habTemp);
         }
       }
-      iIdx++;
+      iidx++;
     }
     System.out.println();
     return cage;
@@ -164,19 +202,20 @@ public class Zoo {
    * Melihat apakah suatu parameter cell termasuk dari suatu
    * parameter vector of Habitat.
    *
-   * @param vMap vector Habitat yang akan ditinjau
+   * @param vectorMap vector Habitat yang akan ditinjau
    * @param cellMap cell yang akan ditinjau
    * @return boolean kebenaran suatu cell termasuk bagian dari suatu vector Habitat.
    */
-  public boolean inCage(Vector<Habitat> vMap, Cell cellMap) {
+  public boolean inCage(Vector<Habitat> vectorMap, Cell cellMap) {
     if (isHabitat(cellMap.getCellContent())) {
       boolean found = false;
-      int iIdx = 0;
-      while (!found && iIdx < vMap.size()) {
-        if (cellMap.getCellRow() == vMap.get(iIdx).getCellRow() && cellMap.getCellCol() == vMap.get(iIdx).getCellCol()) {
+      int iidx = 0;
+      while (!found && iidx < vectorMap.size()) {
+        if (cellMap.getCellRow() == vectorMap.get(iidx).getCellRow()
+                && cellMap.getCellCol() == vectorMap.get(iidx).getCellCol()) {
           found = true;
         }
-        iIdx++;
+        iidx++;
       }
       return (found);
     } else {
@@ -253,12 +292,12 @@ public class Zoo {
     System.out.println();
 
     System.out.println("Masukkan kode binatang yang ingin dimasukkan kedalam kandang : ");
-    Scanner sInput = new Scanner(System.in);
-    char inputUser = sInput.next().trim().charAt(0);
+    Scanner sinput = new Scanner(System.in);
+    char inputUser = sinput.next().trim().charAt(0);
 
     boolean[] arr = new boolean[size];
-    for (int iIdx = 0; iIdx < size; iIdx++) {
-      arr[iIdx] = false;
+    for (int iidx = 0; iidx < size; iidx++) {
+      arr[iidx] = false;
     }
 
     switch (inputUser) {
@@ -332,58 +371,59 @@ public class Zoo {
         checkCage(arr, animalTemp);
         break;
       }
+      default : {
+        break;
+      }
     }
     
     System.out.println("Kandang yang tersedia :");
-    for(int iIdx = 0; iIdx < size; iIdx++) {
-      if(arr[iIdx]) {
-        System.out.print(i + " ");
+    for (int iidx = 0; iidx < size; iidx++) {
+      if (arr[iidx]) {
+        System.out.print(iidx + " ");
       }
     }
     System.out.println();
-    boolean found = false;
     System.out.println("Masukkan kode binatang yang ingin dimasukkan kedalam kandang: ");
     System.out.println("Untuk kandang bebas masukkan -1");
     System.out.println("Untuk membatalkan masukkan -2");
     int pilihanAngka;
+    boolean found = false;
     do {
-      Scanner tInput = new Scanner(System.in);
-      pilihanAngka = tInput.nextInt();
+      Scanner tinput = new Scanner(System.in);
+      pilihanAngka = tinput.nextInt();
       found = true;
-      if(pilihanAngka == -1 || pilihanAngka == -2){
+      if (pilihanAngka == -1 || pilihanAngka == -2) {
         break;
       }
-      if((pilihanAngka >= size)||(pilihanAngka < -2)) {
+      if ((pilihanAngka >= size) || (pilihanAngka < -2)) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
-      }
-      else if(arr[pilihanAngka] == false && pilihanAngka < size && pilihanAngka >= 0) {
+      } else if (!arr[pilihanAngka] && pilihanAngka < size && pilihanAngka >= 0) {
         System.out.println("Input salah, masukkan kembali input :");
         found = false;
       }
     } while (!found);
     if (pilihanAngka == -1) {
-      int iIdx = 0;
+      int iidx = 0;
       found = false;
-      while(iIdx < size && !found) {
-        if(arr[iIdx]) {
+      while (iidx < size && !found) {
+        if (arr[iidx]) {
           found = true;
         } else {
-          iIdx++;
+          iidx++;
         }
       }
-      if(found) {
+      if (found) {
         do {
           pilihanAngka = (int) (Math.random() * size);
-        } while (arr[pilihanAngka] == false);
-      }
-      else {
+        } while (!arr[pilihanAngka]);
+      } else {
         System.out.println("Tidak ada kandang yang cocok");
       }
     }
 
     if (pilihanAngka != -2 && found) {
-      cages.get(pilihanAngka).AddAnimal(inputUser,pilihanAngka);
+      cages.get(pilihanAngka).addAnimal(inputUser,pilihanAngka);
     }
   }
 
@@ -395,19 +435,21 @@ public class Zoo {
    *            dapat dimasukkan ke cage dengan indeks yang sama dengan arr.
    * @param animal Animal yang akan dimasukkan ke Cage
    */
-  public void checkCage(boolean arr[], Animal animal) {
-    for (int jIdx = 0; jIdx < animal.getSize(); jIdx++) {
-      int iIdx = 0;
-      while (iIdx < cages.size()) {
-        if ((arr[iIdx] == false) && (animal.getArrayOfHabitat()[jIdx] == cages.get(iIdx).getHabitat()[0].getCellContent())) {
+  public void checkCage(boolean[] arr, Animal animal) {
+    for (int jidx = 0; jidx < animal.getSize(); jidx++) {
+      int iidx = 0;
+      while (iidx < cages.size()) {
+        char tempCon = cages.get(iidx).getHabitat()[0].getCellContent();
+        if ((!arr[iidx]) && (animal.getArrayOfHabitat()[jidx] == tempCon)) {
           //System.out.println(cages.get(i).getNeff());
-          if (cages.get(iIdx).IsEmpty()) {
-            arr[iIdx] = true;
-          } else if ((!cages.get(iIdx).IsFull()) && (animal.getTame() == cages.get(iIdx).getAnimal()[0].getTame())) {
-            arr[iIdx] = true;
+          boolean tame = cages.get(iidx).getAnimal()[0].getTame();
+          if (cages.get(iidx).isEmpty()) {
+            arr[iidx] = true;
+          } else if ((!cages.get(iidx).isFull()) && (animal.getTame() == tame)) {
+            arr[iidx] = true;
           }
         }
-        iIdx++;
+        iidx++;
       }
     }
   }
@@ -424,20 +466,20 @@ public class Zoo {
    * </ol>
    */
   public void tour() {
-    int iIdx = playerPos.getCellRow();
-    int jIdx = playerPos.getCellCol();
+    int iidx = playerPos.getCellRow();
+    int jidx = playerPos.getCellCol();
     tourInteract(playerPos);
-    if (isRoad(map[iIdx][jIdx + 1])) {
-      Cell next = new Cell('=',iIdx, jIdx + 1);
+    if (isRoad(map[iidx][jidx + 1])) {
+      Cell next = new Cell('=',iidx, jidx + 1);
       playerPos = next;
-    } else if (isRoad(map[iIdx + 1][jIdx])) {
-      Cell next = new Cell('=',iIdx + 1, jIdx);
+    } else if (isRoad(map[iidx + 1][jidx])) {
+      Cell next = new Cell('=',iidx + 1, jidx);
       playerPos = next;
-    } else if (isRoad(map[iIdx - 1][jIdx])) {
-      Cell next = new Cell('=',iIdx - 1, jIdx);
+    } else if (isRoad(map[iidx - 1][jidx])) {
+      Cell next = new Cell('=',iidx - 1, jidx);
       playerPos = next;
-    } else if (isRoad(map[iIdx][jIdx - 1])) {
-      Cell next = new Cell('=',iIdx, jIdx - 1);
+    } else if (isRoad(map[iidx][jidx - 1])) {
+      Cell next = new Cell('=',iidx, jidx - 1);
       playerPos = next;
     }
   }
@@ -451,13 +493,15 @@ public class Zoo {
    */
   public void tourInteract(Cell pos) {
     if (pos.getCellRow() > 0) {
-      int xRow = pos.getCellRow() - 1;
-      int yCol = pos.getCellCol();
-      for (int kIdx = 0; kIdx < cages.size(); kIdx++) {
-        if (cages.get(kIdx).InsideCage(xRow, yCol)) {
-          if (!cages.get(kIdx).IsEmpty()) {
-            System.out.println(cages.get(kIdx).getAnimal()[0].getContent() + ":" + cages.get(kIdx).getAnimal()[0].getInteract());
-            cages.get(kIdx).getAnimal()[0].GiveFood();
+      int xrow = pos.getCellRow() - 1;
+      int ycol = pos.getCellCol();
+      for (int kidx = 0; kidx < cages.size(); kidx++) {
+        if (cages.get(kidx).insideCage(xrow, ycol)) {
+          if (!cages.get(kidx).isEmpty()) {
+            char tempCon = cages.get(kidx).getAnimal()[0].getContent();
+            String tempIn = cages.get(kidx).getAnimal()[0].getInteract();
+            System.out.println(tempCon + ":" + tempIn);
+            cages.get(kidx).getAnimal()[0].giveFood();
           }
         }
       }
@@ -473,24 +517,27 @@ public class Zoo {
   public void randomEntrance() {
     Vector<Cell> ent = new Vector<Cell>();
     Vector<Cell> ex = new Vector<Cell>();
-    for (int iIdx = 0; iIdx < width; iIdx++) {
-      if (isRoad(map[iIdx][0])) {
-        ent.add(map[iIdx][0]);
+    for (int iidx = 0; iidx < width; iidx++) {
+      if (isRoad(map[iidx][0])) {
+        ent.add(map[iidx][0]);
       }
-      if (isRoad(map[iIdx][width - 1])) {
-        ex.add(map[iIdx][width - 1]);
+      if (isRoad(map[iidx][width - 1])) {
+        ex.add(map[iidx][width - 1]);
       }
     }
-    for (int jIdx = 0; jIdx < height; jIdx++) {
-      if (isRoad(map[0][jIdx])) {
-        ent.add(map[0][jIdx]);
+    for (int jidx = 0; jidx < height; jidx++) {
+      if (isRoad(map[0][jidx])) {
+        ent.add(map[0][jidx]);
       }
-      if (isRoad(map[height - 1][jIdx])) {
-        ex.add(map[height - 1][jIdx]);
+      if (isRoad(map[height - 1][jidx])) {
+        ex.add(map[height - 1][jidx]);
       }
     }
     int randidx = (int)(Math.random() * ent.size());
-    playerPos = new Cell(ent.get(randidx).getCellContent(), ent.get(randidx).getCellRow(), ent.get(randidx).getCellCol());
+    char tempcon = ent.get(randidx).getCellContent();
+    int tempx = ent.get(randidx).getCellRow();
+    int tempy = ent.get(randidx).getCellCol();
+    playerPos = new Cell(tempcon,tempx,tempy);
   }
 
   /**
@@ -503,13 +550,13 @@ public class Zoo {
   }
 
   /**
-   * Peninjauan kebenaran suatu posisi (iIdx,jIdx) adalah posisi pengunjung Zoo.
-   * @param iIdx baris map yang ditinjau
-   * @param jIdx kolom map yang ditinjau
-   * @return boolean kebenaran cell dengan baris ke-iIdx dan kolom ke-jIdx adalah posisi pemain.
+   * Peninjauan kebenaran suatu posisi (iidx,jidx) adalah posisi pengunjung Zoo.
+   * @param iidx baris map yang ditinjau
+   * @param jidx kolom map yang ditinjau
+   * @return boolean kebenaran cell dengan baris ke-iidx dan kolom ke-jidx adalah posisi pemain.
    */
-  public boolean isPlayer(int iIdx, int jIdx) {
-    return (playerPos.getCellRow() == iIdx && playerPos.getCellCol() == jIdx);
+  public boolean isPlayer(int iidx, int jidx) {
+    return (playerPos.getCellRow() == iidx && playerPos.getCellCol() == jidx);
   }
 
   /**
