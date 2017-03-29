@@ -442,9 +442,10 @@ public class Zoo {
         char tempCon = cages.get(iidx).getHabitat()[0].getCellContent();
         if ((!arr[iidx]) && (animal.getArrayOfHabitat()[jidx] == tempCon)) {
           //System.out.println(cages.get(i).getNeff());
+          boolean tame = cages.get(iidx).getAnimal()[0].getTame();
           if (cages.get(iidx).isEmpty()) {
             arr[iidx] = true;
-          } else if ((!cages.get(iidx).isFull()) && (animal.getTame() == cages.get(iidx).getAnimal()[0].getTame())) {
+          } else if ((!cages.get(iidx).isFull()) && (animal.getTame() == tame)) {
             arr[iidx] = true;
           }
         }

@@ -1,6 +1,7 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal;
 
 /**
@@ -122,8 +123,7 @@ public abstract class Animal {
 
   /**
    * Getter alam tempat hidup Animal.
-   * @return array yang berisi seluruh simbol Habitat yang bisa menjadi
-   * tempat hidup Animal
+   * @return array yang berisi seluruh simbol Habitat yang bisa menjadi tempat hidup Animal
    */
   public char[] getArrayOfHabitat() {
     return arrayOfHabitat;

@@ -1,6 +1,7 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package cell;
 
 /**
@@ -22,15 +23,15 @@ package cell;
  */
 public class Cell {
   /**
-   * Atribut konten karakter dari Cell
+   * Atribut konten karakter dari Cell.
    */
   protected char content;
   /**
-   * Atribut indeks baris dari Cell
+   * Atribut indeks baris dari Cell.
    */
   protected int cellIdRow;
   /**
-   * Atribut indeks kolom dari Cell
+   * Atribut indeks kolom dari Cell.
    */
   protected int cellIdCol;
 
@@ -86,8 +87,8 @@ public class Cell {
   }
 
   /**
-   *
-   * @param nx
+   * Method setTrueEntranceExit.
+   * @param nx adalah input dari setTrueEntranceExit
    */
   public void setTrueEntranceExit(int nx) {
     nx = 0;
