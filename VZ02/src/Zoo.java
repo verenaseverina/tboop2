@@ -241,7 +241,7 @@ public class Zoo {
    * <ol>
    *     <li>Berada pada alam tempat tinggalnya</li>
    *     <li>Hewan jinak tidak bersama dengan hewan tidak jinak</li>
-   *     <li>Kadang tidak penuh (Jumlah hewan < 30% Jumlah cell pada cage)</li>
+   *     <li>Kadang tidak penuh (Jumlah hewan kurang dari 30% Jumlah cell pada cage)</li>
    * </ol>
    */
   public void putInAnimal() {
@@ -411,14 +411,15 @@ public class Zoo {
     for (int jidx = 0; jidx < animal.getSize(); jidx++) {
       int iidx = 0;
       while (iidx < cages.size()) {
-        char peekContent = cages.get(iidx).getHabitat()[0].getCellContent();
-        if ((arr[iidx] == false) && (animal.getArrayOfHabitat()[jidx] == peekContent)) {
-          //System.out.println(cages.get(i).GetNeff());
-          boolean tame = cages.get(iidx).getAnimal()[0].getTame();
+        char tempCon = cages.get(iidx).getHabitat()[0].getCellContent();
+        if ((!arr[iidx]) && (animal.getArrayOfHabitat()[jidx] == tempCon)) {
+          //System.out.println(cages.get(i).getNeff());
           if (cages.get(iidx).isEmpty()) {
             arr[iidx] = true;
-          } else if ((!cages.get(iidx).isFull()) && (animal.getTame() == tame)) {
-            arr[iidx] = true;
+          } else if (!cages.get(iidx).isFull()) {
+            if (animal.getTame() == cages.get(iidx).getAnimal()[0].getTame()) {
+              arr[iidx] = true;
+            }
           }
         }
         iidx++;

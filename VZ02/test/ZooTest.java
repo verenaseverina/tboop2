@@ -34,8 +34,8 @@ public class ZooTest {
         System.out.print("Testing Method InitAllCage... ");
         Zoo virtualZoo = new Zoo();
         State stateMap = new State();
-        virtualZoo.InitAllCage(stateMap);
-        assertTrue(virtualZoo.GetCages().isEmpty());
+        virtualZoo.initAllCage(stateMap);
+        assertTrue(virtualZoo.getCages().isEmpty());
         System.out.println("OK");
     }
 
@@ -44,7 +44,7 @@ public class ZooTest {
         System.out.print("Testing Method InitCage... ");
         Zoo virtualZoo = new Zoo();
         Cell habitatTemp = new Cell('~',0,0);
-        assertTrue('~' == virtualZoo.InitCage(habitatTemp).get(0).GetCellContent());
+        assertTrue('~' == virtualZoo.initCage(habitatTemp).get(0).getCellContent());
         System.out.println("OK");
     }
 
@@ -53,7 +53,7 @@ public class ZooTest {
         System.out.print("Testing Method InCage... ");
         Zoo virtualZoo = new Zoo();
         Cell habitatTemp = new Cell('~',0,0);
-        assertTrue(virtualZoo.InCage(virtualZoo.InitCage(habitatTemp), new Cell('~',0,0)));
+        assertTrue(virtualZoo.inCage(virtualZoo.initCage(habitatTemp), new Cell('~',0,0)));
         System.out.println("OK");
     }
 
@@ -61,7 +61,7 @@ public class ZooTest {
     public void GetMap() throws Exception {
         System.out.print("Testing Method GetMap... ");
         Zoo virtualZoo = new Zoo();
-        assertTrue(virtualZoo.GetMap()[0][0].GetCellContent() == '~');
+        assertTrue(virtualZoo.getMap()[0][0].getCellContent() == '~');
         System.out.println("OK");
     }
 
@@ -69,7 +69,7 @@ public class ZooTest {
     public void GetHeight() throws Exception {
         System.out.print("Testing Method GetHeight... ");
         Zoo virtualZoo = new Zoo();
-        assertTrue(virtualZoo.GetHeight()>0);
+        assertTrue(virtualZoo.getHeight()>0);
         System.out.println("OK");
     }
 
@@ -77,7 +77,7 @@ public class ZooTest {
     public void GetWidth() throws Exception {
         System.out.print("Testing Method GetWidth... ");
         Zoo virtualZoo = new Zoo();
-        assertTrue(virtualZoo.GetWidth()>0);
+        assertTrue(virtualZoo.getWidth()>0);
         System.out.println("OK");
     }
 
@@ -85,8 +85,8 @@ public class ZooTest {
     public void GetPlayerPos() throws Exception {
         System.out.print("Testing Method GetPlayerPos... ");
         Zoo virtualZoo = new Zoo();
-        virtualZoo.RandomEntrance();
-        assertTrue(virtualZoo.GetPlayerPos().GetCellCol() >=0 && virtualZoo.GetPlayerPos().GetCellRow() >= 0);
+        virtualZoo.randomEntrance();
+        assertTrue(virtualZoo.getPlayerPos().getCellCol() >=0 && virtualZoo.getPlayerPos().getCellRow() >= 0);
         System.out.println("OK");
     }
 
@@ -94,8 +94,8 @@ public class ZooTest {
     public void Tour() throws Exception {
         System.out.print("Testing Method Tour... ");
         Zoo virtualZoo = new Zoo();
-        virtualZoo.RandomEntrance();
-        virtualZoo.Tour();
+        virtualZoo.randomEntrance();
+        virtualZoo.tour();
         System.out.println("OK");
     }
 
@@ -103,8 +103,8 @@ public class ZooTest {
     public void TourInteract() throws Exception {
         System.out.print("Testing Method TourInteract... ");
         Zoo virtualZoo = new Zoo();
-        virtualZoo.RandomEntrance();
-        virtualZoo.TourInteract(virtualZoo.GetMap()[0][0]);
+        virtualZoo.randomEntrance();
+        virtualZoo.tourInteract(virtualZoo.getMap()[0][0]);
         System.out.println("OK");
     }
 
@@ -112,7 +112,7 @@ public class ZooTest {
     public void RandomEntrance() throws Exception {
         System.out.print("Testing Method RandomEntrance... ");
         Zoo virtualZoo = new Zoo();
-        virtualZoo.RandomEntrance();
+        virtualZoo.randomEntrance();
         System.out.println("OK");
     }
 
@@ -120,8 +120,8 @@ public class ZooTest {
     public void IsExit() throws Exception {
         System.out.print("Testing Method IsExit... ");
         Zoo virtualZoo = new Zoo();
-        virtualZoo.RandomEntrance();
-        assertTrue(virtualZoo.IsExit(virtualZoo.GetMap()[7][7]));
+        virtualZoo.randomEntrance();
+        assertTrue(virtualZoo.isExit(virtualZoo.getMap()[7][7]));
         System.out.println("OK");
     }
 
@@ -129,8 +129,8 @@ public class ZooTest {
     public void IsPlayer() throws Exception {
         System.out.print("Testing Method IsPlayer... ");
         Zoo virtualZoo = new Zoo();
-        virtualZoo.RandomEntrance();
-        assertTrue(virtualZoo.IsPlayer(virtualZoo.GetPlayerPos().GetCellRow(), virtualZoo.GetPlayerPos().GetCellCol()));
+        virtualZoo.randomEntrance();
+        assertTrue(virtualZoo.isPlayer(virtualZoo.getPlayerPos().getCellRow(), virtualZoo.getPlayerPos().getCellCol()));
         System.out.println("OK");
     }
 
@@ -138,7 +138,7 @@ public class ZooTest {
     public void IsRoad() throws Exception {
         System.out.print("Testing Method IsRoad... ");
         Zoo virtualZoo = new Zoo();
-        assertTrue(virtualZoo.IsRoad(virtualZoo.GetMap()[7][0]));
+        assertTrue(virtualZoo.isRoad(virtualZoo.getMap()[7][0]));
         System.out.println("OK");
     }
 
@@ -146,7 +146,7 @@ public class ZooTest {
     public void IsHabitat() throws Exception {
         System.out.print("Testing Method IsHabitat... ");
         Zoo virtualZoo = new Zoo();
-        assertTrue(virtualZoo.IsHabitat('~'));
+        assertTrue(virtualZoo.isHabitat('~'));
         System.out.println("OK");
 
     }
@@ -155,7 +155,7 @@ public class ZooTest {
     public void IsFacility() throws Exception {
         System.out.print("Testing Method IsFacility... ");
         Zoo virtualZoo = new Zoo();
-        assertTrue(virtualZoo.IsFacility('#'));
+        assertTrue(virtualZoo.isFacility('#'));
         System.out.println("OK");
     }
 

@@ -2,8 +2,6 @@
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
 
-package state;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.logging.Logger;

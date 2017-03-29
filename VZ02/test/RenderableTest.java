@@ -46,8 +46,8 @@ public class RenderableTest {
     System.out.print("Testing Method Render... ");
     Zoo virtualZoo = new Zoo();
     Renderable instance = new Renderable();
-    virtualZoo.RandomEntrance();
-    instance.Render(virtualZoo);
+    virtualZoo.randomEntrance();
+    instance.render(virtualZoo);
     System.out.println("OK");
   }
 

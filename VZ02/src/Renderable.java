@@ -18,7 +18,7 @@ public class Renderable {
       for (jidx = 0; jidx < virtualZoo.getWidth(); jidx++) {
         if ((searchCageIndex(virtualZoo, iidx, jidx)) != -999) {
           cgIdx = searchCageIndex(virtualZoo, iidx, jidx);
-          anIdx = searchAnimalIndex(virtualZoo, cageIdx, iidx, jidx);
+          anIdx = searchAnimalIndex(virtualZoo, cgIdx, iidx, jidx);
           System.out.printf("%c", virtualZoo.getCages().get(cgIdx).getAnimal()[anIdx].getContent());
         } else if (virtualZoo.isPlayer(iidx, jidx)) {
           System.out.printf("P");

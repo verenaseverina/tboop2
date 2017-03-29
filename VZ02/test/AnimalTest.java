@@ -35,7 +35,7 @@ public class AnimalTest {
     public void getTame() throws Exception {
         System.out.print("Testing Method GetTame... ");
         Animal animalTemp = new Animal(1, 1, 1,'H');
-        assertTrue(animalTemp.GetTame() == false);
+        assertTrue(animalTemp.getTame() == false);
         System.out.println("OK");
     }
 
@@ -43,7 +43,7 @@ public class AnimalTest {
     public void getX() throws Exception {
         System.out.print("Testing Method GetX...");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetX() == 1);
+        assertTrue(animalTemp.getX() == 1);
         System.out.println("OK");
     }
 
@@ -51,7 +51,7 @@ public class AnimalTest {
     public void getY() throws Exception {
         System.out.print("Testing Method GetY...");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetY() == 1);
+        assertTrue(animalTemp.getY() == 1);
         System.out.println("OK");
     }
 
@@ -59,7 +59,7 @@ public class AnimalTest {
     public void getHab() throws Exception {
         System.out.print("Testing Method GetHab...");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetArrayOfHabitat()[0] == '^');
+        assertTrue(animalTemp.getArrayOfHabitat()[0] == '^');
         System.out.println("OK");
     }
 
@@ -67,7 +67,7 @@ public class AnimalTest {
     public void getContent() throws Exception {
         System.out.print("Testing Method GetContent...");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetContent() == 'H');
+        assertTrue(animalTemp.getContent() == 'H');
         System.out.println("OK");
     }
 
@@ -75,8 +75,8 @@ public class AnimalTest {
     public void move() throws Exception {
         System.out.print("Testing Method Move...");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        animalTemp.Move(1);
-        assertTrue(animalTemp.GetY() == 0);
+        animalTemp.move(1);
+        assertTrue(animalTemp.getY() == 0);
         System.out.println("OK");
     }
 
@@ -84,7 +84,7 @@ public class AnimalTest {
     public void getSize() throws Exception {
         System.out.print("Testing Method GetSize...");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetSize() == 1);
+        assertTrue(animalTemp.getSize() == 1);
         System.out.println("OK");
     }
 
@@ -92,7 +92,7 @@ public class AnimalTest {
     public void interact() throws Exception {
         System.out.print("Testing Method Interact... ");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetInteract().equals("Roooarrrr") == true);
+        assertTrue(animalTemp.getInteract().equals("Roooarrrr") == true);
         System.out.println("OK");
     }
 
@@ -100,7 +100,7 @@ public class AnimalTest {
     public void getWeight() throws Exception {
         System.out.print("Testing Method GetWeight... ");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetWeight() >= 90f && animalTemp.GetWeight() <= 310f);
+        assertTrue(animalTemp.getWeight() >= 90f && animalTemp.getWeight() <= 310f);
         System.out.println("OK");
     }
 
@@ -108,7 +108,7 @@ public class AnimalTest {
     public void getEat() throws Exception {
         System.out.print("Testing Method GetEat... ");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetEat() == 7.23f * animalTemp.GetWeight() / 100f);
+        assertTrue(animalTemp.getEat() == 7.23f * animalTemp.getWeight() / 100f);
         System.out.println("OK");
     }
 
@@ -116,7 +116,7 @@ public class AnimalTest {
     public void getWEat() throws Exception {
         System.out.print("Testing Method GetEat... ");
         Animal animalTemp = new Animal(1, 1, 1, 'H');
-        assertTrue(animalTemp.GetWEat() == 'c');
+        assertTrue(animalTemp.getWEat() == 'c');
         System.out.println("OK");
     }
 }

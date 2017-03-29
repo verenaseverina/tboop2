@@ -40,8 +40,8 @@ public class StateTest {
     System.out.print("Testing Method GetMap... ");
     State instance = new State();
     State instance2 = new State();
-    char[][] expResult = instance2.GetMap();
-    char[][] result = instance.GetMap();
+    char[][] expResult = instance2.getMap();
+    char[][] result = instance.getMap();
     assertArrayEquals(expResult, result);
     System.out.println("OK");
   }
@@ -55,7 +55,7 @@ public class StateTest {
     System.out.print("Testing Method GetHeight... ");
     State instance = new State();
     int expResult = 8;
-    int result = instance.GetHeight();
+    int result = instance.getHeight();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
@@ -69,7 +69,7 @@ public class StateTest {
     System.out.print("Testing Method GetWidth... ");
     State instance = new State();
     int expResult = 8;
-    int result = instance.GetWidth();
+    int result = instance.getWidth();
     assertEquals(expResult, result);
     System.out.println("OK");
   }

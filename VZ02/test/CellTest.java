@@ -39,7 +39,7 @@ public class CellTest {
     System.out.print("Testing Method GetCellContent... ");
     Cell instance = new Cell('~',3,3);
     char expResult = '~';
-    char result = instance.GetCellContent();
+    char result = instance.getCellContent();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
@@ -53,7 +53,7 @@ public class CellTest {
     System.out.print("Testing Method GetCellRow... ");
     Cell instance = new Cell();
     int expResult = -1;
-    int result = instance.GetCellRow();
+    int result = instance.getCellRow();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
@@ -67,7 +67,7 @@ public class CellTest {
     System.out.print("Testing Method GetCellCol... ");
     Cell instance = new Cell();
     int expResult = -1;
-    int result = instance.GetCellCol();
+    int result = instance.getCellCol();
     assertEquals(expResult, result);
     System.out.println("OK");
   }
@@ -81,7 +81,7 @@ public class CellTest {
     System.out.print("Testing Method SetTrueEntranceExit... ");
     int n = 0;
     Cell instance = new Cell();
-    instance.SetTrueEntranceExit(n);
+    instance.setTrueEntranceExit(n);
     System.out.println("OK");
   }
   
