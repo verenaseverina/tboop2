@@ -114,7 +114,7 @@ public abstract class Animal {
   }
 
   /**
-   * Getter ornidnat.
+   * Getter ordinat.
    * @return integer atribut ordinat Animal
    */
   public int getY() {
