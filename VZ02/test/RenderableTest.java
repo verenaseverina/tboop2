@@ -12,8 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author nim_13515091
+ * jUnit Kelas Renderable.
  */
 public class RenderableTest {
   

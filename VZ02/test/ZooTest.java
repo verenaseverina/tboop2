@@ -8,7 +8,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
- * Created by Winarto on 03/29/2017.
+ * jUnit Kelas Zoo.
  */
 public class ZooTest {
     @BeforeClass

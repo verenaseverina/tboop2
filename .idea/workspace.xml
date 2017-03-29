@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="3" />
+    <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd0588a2-a570-4888-8b27-9de6ea4db4e9" name="Default" comment="">
+    <list default="true" id="dd0588a2-a570-4888-8b27-9de6ea4db4e9" name="Default" comment="JavaDocs">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Animal/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Animal/turunananimal/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Animal/turunananimal/binatang/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Cage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Cell/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Cell/turunancell/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Renderable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/State/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/Zoo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ03/bin/map.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ02/src/State.java" afterPath="$PROJECT_DIR$/VZ02/src/State.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ02/test/AnimalTest.java" afterPath="$PROJECT_DIR$/VZ02/test/AnimalTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ02/test/CageTest.java" afterPath="$PROJECT_DIR$/VZ02/test/CageTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ02/test/CellTest.java" afterPath="$PROJECT_DIR$/VZ02/test/CellTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ02/test/RenderableTest.java" afterPath="$PROJECT_DIR$/VZ02/test/RenderableTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ02/test/StateTest.java" afterPath="$PROJECT_DIR$/VZ02/test/StateTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ02/test/ZooTest.java" afterPath="$PROJECT_DIR$/VZ02/test/ZooTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ03/src/Zoo.java" afterPath="$PROJECT_DIR$/VZ03/src/Zoo.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,85 +36,83 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Animal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VZ02/src/Animal.java">
+      <file leaf-file-name="Facility.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VZ03/src/cell/turunancell/Facility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4494">
-              <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VZ02/src/Cage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="189">
+              <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VZ02/src/Cell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-922">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VZ02/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Renderable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VZ02/src/Renderable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="State.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/VZ02/src/State.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1822">
-              <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <marker date="1490767892720" expanded="false" signature="5553:5560" ph=" { " />
-                <marker date="1490767892720" expanded="false" signature="5571:5575" ph=" }" />
-                <marker date="1490767892720" expanded="false" signature="5677:5684" ph=" { " />
-                <marker date="1490767892720" expanded="false" signature="5698:5702" ph=" }" />
-                <marker date="1490767892720" expanded="false" signature="5801:5808" ph=" { " />
-                <marker date="1490767892720" expanded="false" signature="5821:5825" ph=" }" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Zoo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VZ02/src/Zoo.java">
+        <entry file="file://$PROJECT_DIR$/VZ03/src/Zoo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="359">
+              <caret line="274" column="18" lean-forward="true" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnimalTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VZ02/test/AnimalTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CageTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VZ02/test/CageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CellTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VZ02/test/CellTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RenderableTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VZ02/test/RenderableTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StateTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VZ02/test/StateTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZooTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/VZ02/test/ZooTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -128,6 +143,7 @@
       <find>AirAnimal</find>
       <find>hewan</find>
       <find>s_width</find>
+      <find>&lt;</find>
     </findStrings>
     <replaceStrings>
       <replace>y</replace>
@@ -170,12 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/VZ03/src/Cell/Cell.java" />
-        <option value="$PROJECT_DIR$/VZ02/src/Cell.java" />
-        <option value="$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Anoa.java" />
-        <option value="$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Kangaroo.java" />
-        <option value="$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Panda.java" />
-        <option value="$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Shark.java" />
         <option value="$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Tiger.java" />
         <option value="$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Toucan.java" />
         <option value="$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Whale.java" />
@@ -193,10 +203,8 @@
         <option value="$PROJECT_DIR$/VZ03/src/Renderable.java" />
         <option value="$PROJECT_DIR$/VZ03/src/state/State.java" />
         <option value="$PROJECT_DIR$/VZ03/src/Cage.java" />
-        <option value="$PROJECT_DIR$/VZ03/src/cell/turunancell/Facility.java" />
         <option value="$PROJECT_DIR$/VZ03/src/Main.java" />
         <option value="$PROJECT_DIR$/VZ03/src/Animal/Animal.java" />
-        <option value="$PROJECT_DIR$/VZ03/src/Zoo.java" />
         <option value="$PROJECT_DIR$/VZ03/src/Cell/turunancell/Facility.java" />
         <option value="$PROJECT_DIR$/VZ03/src/cell/turunancell/Habitat.java" />
         <option value="$PROJECT_DIR$/VZ03/src/cell/Cell.java" />
@@ -221,13 +229,21 @@
         <option value="$PROJECT_DIR$/VZ02/src/Main.java" />
         <option value="$PROJECT_DIR$/VZ02/src/Animal.java" />
         <option value="$PROJECT_DIR$/VZ02/src/State.java" />
+        <option value="$PROJECT_DIR$/VZ03/src/cell/turunancell/Facility.java" />
+        <option value="$PROJECT_DIR$/VZ03/src/Zoo.java" />
+        <option value="$PROJECT_DIR$/VZ02/test/AnimalTest.java" />
+        <option value="$PROJECT_DIR$/VZ02/test/CageTest.java" />
+        <option value="$PROJECT_DIR$/VZ02/test/CellTest.java" />
+        <option value="$PROJECT_DIR$/VZ02/test/RenderableTest.java" />
+        <option value="$PROJECT_DIR$/VZ02/test/StateTest.java" />
+        <option value="$PROJECT_DIR$/VZ02/test/ZooTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
+    <option name="width" value="1932" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -360,43 +376,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tboop2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VZ03" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="State" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tboop2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VZ03" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Animal" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -407,6 +387,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="VZ02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tboop2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VZ02" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -448,117 +442,6 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="groovy.util.GroovyTestCase" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/VZ02/src/Cell.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/VZ02/src/Renderable.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -811,13 +694,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490415779327</updated>
-    </task>
-    <task id="LOCAL-00011" summary="benerin packagenya turunananimal lagi">
-      <created>1490459678843</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1490459678843</updated>
     </task>
     <task id="LOCAL-00012" summary="benerin package binatang">
       <created>1490461640986</created>
@@ -1155,29 +1031,36 @@
       <option name="project" value="LOCAL" />
       <updated>1490767966914</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="State refactored">
+      <created>1490767999760</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1490767999760</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07793634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18286312" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1189,7 +1072,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24934037" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1226,7 +1108,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ada Jdepend" />
     <MESSAGE value="benerin nama fungsi di Animal" />
     <MESSAGE value="benerin nama fungsi" />
     <MESSAGE value="sesuain sama CheckStyle" />
@@ -1251,7 +1132,8 @@
     <MESSAGE value="animal VZ03 done" />
     <MESSAGE value="VZ02 Animal&#10;VZ02 Main" />
     <MESSAGE value="State refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="State refactored" />
+    <MESSAGE value="JavaDocs" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,75 +1146,57 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/VZ03/src/State/map.txt" />
-    <entry file="file://$PROJECT_DIR$/VZ03/.project" />
-    <entry file="file://$PROJECT_DIR$/VZ03/test/animal/AnimalTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/CageTest.groovy" />
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Cage.class" />
-    <entry file="file://$PROJECT_DIR$/VZ03/bin/Cage.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VZ03/bin/State/State.class" />
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Panda.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Panda.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Shark.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Shark.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Tiger.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Tiger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="29" column="2" lean-forward="false" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Toucan.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Toucan.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="30" column="2" lean-forward="false" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Whale.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Whale.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Rhino.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Rhino.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Penguin.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Penguin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Pelikan.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Pelikan.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
@@ -1367,137 +1231,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Anoa.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Anoa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Cell/turunancell/Habitat.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/cell/turunancell/Habitat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Zoo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Cell/turunancell/Facility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Cell/Cell.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/cell/Cell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/WaterAnimal.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/WaterAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/AirAnimal.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/AirAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/LaAnimal.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/LaAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/LandAnimal.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/LandAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/LwAnimal.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/LwAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/WaAnimal.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/WaAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Cormorants.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Cormorants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
           <caret line="55" column="46" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="61" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Crocodile.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Crocodile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="54" column="45" lean-forward="false" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/FlyingFish.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/FlyingFish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/ElangB.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/ElangB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="56" column="42" lean-forward="false" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Kiwi.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Kiwi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="e#807#808#0" expanded="false" />
-            <element signature="e#835#836#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#956#957#0" expanded="false" />
-            <element signature="e#1063#1064#0" expanded="false" />
-            <element signature="e#1091#1092#0" expanded="false" />
-            <element signature="e#1204#1205#0" expanded="false" />
-            <element signature="e#1229#1230#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Ostrich.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Ostrich.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Dolphin.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Dolphin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="635">
           <caret line="54" column="43" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="59" selection-end-column="1" />
@@ -1509,7 +1348,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Kasuari.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Kasuari.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="54" column="43" lean-forward="false" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
@@ -1521,7 +1360,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Kelelawar.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Kelelawar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="54" column="45" lean-forward="false" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
@@ -1533,7 +1372,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Hippopotamus.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Hippopotamus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="54" column="48" lean-forward="false" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
@@ -1545,7 +1384,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/turunananimal/binatang/Kangaroo.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/turunananimal/binatang/Kangaroo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="903">
           <caret line="44" column="3" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
@@ -1567,7 +1406,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/Animal/Animal.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/animal/Animal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="147" column="2" lean-forward="true" selection-start-line="147" selection-start-column="2" selection-end-line="157" selection-end-column="5" />
@@ -1575,33 +1414,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ02/src/Cage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VZ02/src/Cell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-922">
+        <state relative-caret-position="0">
           <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VZ02/src/Animal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4494">
-          <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VZ03/src/State/State.java">
+    <entry file="file://$PROJECT_DIR$/VZ03/src/state/State.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
           <caret line="219" column="2" lean-forward="true" selection-start-line="215" selection-start-column="2" selection-end-line="219" selection-end-column="2" />
@@ -1612,7 +1433,7 @@
     <entry file="file://$PROJECT_DIR$/VZ02/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -1623,33 +1444,116 @@
     <entry file="file://$PROJECT_DIR$/VZ02/src/Renderable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VZ02/src/Zoo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VZ02/src/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1822">
-          <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
+        <state relative-caret-position="819">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1490767892720" expanded="false" signature="5553:5560" ph=" { " />
-            <marker date="1490767892720" expanded="false" signature="5571:5575" ph=" }" />
-            <marker date="1490767892720" expanded="false" signature="5677:5684" ph=" { " />
-            <marker date="1490767892720" expanded="false" signature="5698:5702" ph=" }" />
-            <marker date="1490767892720" expanded="false" signature="5801:5808" ph=" { " />
-            <marker date="1490767892720" expanded="false" signature="5821:5825" ph=" }" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/src/Animal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/src/Cage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/src/Zoo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="e#1104#1118#0" expanded="true" />
+            <element signature="e#1968#1974#0" expanded="true" />
+            <element signature="e#9732#9738#0" expanded="true" />
+            <element signature="e#9774#9780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ03/src/cell/turunancell/Facility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ03/src/Zoo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="274" column="18" lean-forward="true" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/test/AnimalTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/test/CageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/test/CellTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/test/RenderableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/test/StateTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ02/test/ZooTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

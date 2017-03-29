@@ -269,7 +269,7 @@ public class Zoo {
    * <ol>
    *     <li>Berada pada alam tempat tinggalnya</li>
    *     <li>Hewan jinak tidak bersama dengan hewan tidak jinak</li>
-   *     <li>Kadang tidak penuh (Jumlah hewan < 30% Jumlah cell pada cage)</li>
+   *     <li>Kadang tidak penuh (Jumlah hewan kurang dari 30% Jumlah cell pada cage)</li>
    * </ol>
    */
   public void putInAnimal() {
