@@ -8,6 +8,9 @@ package cell.turunancell;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * jUnit Kelas Habitat.
+ */
 public class HabitatTest {
   
   @Test

@@ -8,6 +8,10 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
+/**
+ * jUnit Kelas LandAnimal.
+ * Mewakili seluruh package animal.turunananimal.
+ */
 public class LandAnimalTest {
     
     public LandAnimalTest() {

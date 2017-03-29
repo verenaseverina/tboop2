@@ -9,7 +9,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 
 /**
- * Created by Winarto on 03/27/2017.
+ * jUnit Kelas Tiger.
+ * Mewakili seluruh package animal.turunananimal.binatang.
  */
 public class TigerTest {
     
