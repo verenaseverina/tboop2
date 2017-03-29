@@ -66,7 +66,7 @@ public class Cell {
   }
 
   /**
-   * Mengassign Cell merupakan entrance atau exit
+   * Mengassign Cell merupakan entrance atau exit.
    * @param n boolean yang menyatakan apakah Cell entrance atau exit
    */
   public void setTrueEntranceExit(int n) {
