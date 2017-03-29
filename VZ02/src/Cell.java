@@ -72,8 +72,7 @@ public class Cell {
   public void setTrueEntranceExit(int n) {
     if (n == 0) {
       entrance = true;
-    }
-    else if (n == 1) {
+    } else if (n == 1) {
       exit = true;
     }
   }
