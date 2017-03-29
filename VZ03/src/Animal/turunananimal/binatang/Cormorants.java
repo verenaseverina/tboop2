@@ -28,32 +28,32 @@ public class Cormorants extends WaAnimal {
 
 
   /**
-   * Getter interaction hewan.
-   * @return String interaksi hewan
+   * Getter interaction Cormorants.
+   * @return String interaksi Cormorants
    */
   public String getInteract() {
     return interaction;
   }
 
   /**
-   * Getter massa hewan.
-   * @return float massa hewan
+   * Getter massa Cormorants.
+   * @return float massa Cormorants
    */
   public float getWeight() {
     return myWeight;
   }
 
   /**
-   * Getter jumlah makan hewan.
-   * @return float jumlah makan hewan
+   * Getter jumlah makan Cormorants.
+   * @return float jumlah makan Cormorants
    */
   public float getEat() {
     return howMuchIEat;
   }
 
   /**
-   * Getter jenis makanan hewan.
-   * @return karakter jenis makanan hewan.
+   * Getter jenis makanan Cormorants.
+   * @return karakter jenis makanan Cormorants.
    */
   public char getWEat() {
     return whatIEat;
