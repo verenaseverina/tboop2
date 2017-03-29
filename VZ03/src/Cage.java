@@ -1,3 +1,6 @@
+/**
+ * Created by Kebun Binatang Bandung on 3/26/17.
+ */
 import animal.Animal;
 import animal.turunananimal.binatang.Anoa;
 import animal.turunananimal.binatang.Cormorants;
