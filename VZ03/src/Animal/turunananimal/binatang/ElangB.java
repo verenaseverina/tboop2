@@ -1,13 +1,14 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.AirAnimal;
 import java.lang.Math;
 
 /**
- * Kelas ElangB adalah turunan LandAnimal dan merepresentasikan spesies ElangB
+ * Kelas ElangB adalah turunan LandAnimal dan merepresentasikan spesies ElangB.
  */
 public class ElangB extends AirAnimal {
   /**

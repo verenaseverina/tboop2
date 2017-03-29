@@ -1,13 +1,14 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.LwAnimal;
 import java.lang.Math;
 
 /**
- * Kelas Hippopotamus adalah turunan LandAnimal dan merepresentasikan spesies Hippopotamus
+ * Kelas Hippopotamus adalah turunan LwAnimal dan merepresentasikan spesies Hippopotamus.
  */
 public class Hippopotamus extends LwAnimal {
   /**

@@ -1,13 +1,14 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.LwAnimal;
 import java.lang.Math;
 
 /**
- * Kelas Crocodile adalah turunan LandAnimal dan merepresentasikan spesies Crocodile
+ * Kelas Crocodile adalah turunan LandAnimal dan merepresentasikan spesies Crocodile.
  */
 public class Crocodile extends LwAnimal {
   /**

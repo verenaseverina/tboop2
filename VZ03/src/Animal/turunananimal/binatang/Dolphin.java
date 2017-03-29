@@ -1,20 +1,17 @@
-/**
- * Created by Kebun Binatang Bandung on 3/26/17.
- */
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.WaterAnimal;
 import java.lang.Math;
 
 /**
- * Kelas hewan adalah turunan LandAnimal dan merepresentasikan spesies hewan
+ * Kelas Dolphin adalah turunan WaterAnimal dan merepresentasikan spesies Dolphin.
  */
 public class Dolphin extends WaterAnimal {
   /**
-   * Konstruktor hewan.
-   * @param absis indeks kolom hewan ditempatkan pada peta
-   * @param ordinat indeks baris hewan ditempatkan pada peta
-   * @param id indeks penempatan Cage untuk hewan
+   * Konstruktor Dolphin.
+   * @param absis indeks kolom Dolphin ditempatkan pada peta
+   * @param ordinat indeks baris Dolphin ditempatkan pada peta
+   * @param id indeks penempatan Cage untuk Dolphin
    */
   public Dolphin(int absis, int ordinat, int id) {
     super(absis,ordinat,id);

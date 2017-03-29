@@ -1,13 +1,14 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.LandAnimal;
 import java.lang.Math;
 
 /**
- * Kelas Kangaroo adalah turunan LandAnimal dan merepresentasikan spesies Kangaroo
+ * Kelas Kangaroo adalah turunan LandAnimal dan merepresentasikan spesies Kangaroo.
  */
 public class Kangaroo extends LandAnimal {
   /**

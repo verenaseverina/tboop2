@@ -1,13 +1,14 @@
 /**
  * Created by Kebun Binatang Bandung on 3/26/17.
  */
+
 package animal.turunananimal.binatang;
 
 import animal.turunananimal.LandAnimal;
 import java.lang.Math;
 
 /**
- * Kelas Anoa adalah turunan LandAnimal dan merepresentasikan spesies Anoa
+ * Kelas Anoa adalah turunan LandAnimal dan merepresentasikan spesies Anoa.
  */
 public class Anoa extends LandAnimal {
   /**
